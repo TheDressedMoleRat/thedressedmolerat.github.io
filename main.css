@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #313338;
+    margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #01a8fd
+}
+
+div {
+    width: 40vw; /* Half the viewport width */
+    text-align: center;
+    color: white;
+    font-size: 1.8vw;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent; /* Or you can use a different background color */
+}

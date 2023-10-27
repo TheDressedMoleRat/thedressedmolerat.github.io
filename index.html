@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mole-rat's website</title>
+</head>
+<body>
+    <div>
+        Hello I'm (the dressed) mole-rat.
+        <br><br>
+        I like <a href="https://en.wikipedia.org/wiki/Ambigram" target="_blank">ambigrams</a>
+        and    <a href="https://en.wikipedia.org/wiki/Toki_Pona" target="_blank">toki pona</a>
+        and maths 
+        and    <a href="https://en.wikipedia.org/wiki/Water" target="_blank">water</a>
+        and    <a href="https://en.wikipedia.org/wiki/Courier_(typeface)" target="_blank">courier new</a>... 
+        and other things also.
+    </div>
+</body>
+</html>
+
+<style>
+    body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #313338;
+    margin: 0;
+    }
+
+    a {
+        color: white;
+        animation-name: animation;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    div {
+        width: 70vw;
+        text-align: center;
+        color: white;
+        font-size: 3.4vw;
+        font-family: '4x3';
+        background-color: transparent;
+    }
+    
+    @keyframes animation {
+        0% {color: lime;}
+        50% {color: yellow;}
+        100% {color: lime;}
+    }
+
+    @font-face {
+        font-family: '4x3';
+        src: url(4x3-pixel/4x3-pixel.ttf);
+    }
+</style>
