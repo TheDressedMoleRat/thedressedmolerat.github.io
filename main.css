@@ -1,11 +1,12 @@
 body {
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-background-color: #313338;
-margin: 0;
-font-family: 'Atkinson Hyperlegible';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #313338;
+    margin: 0;
+    text-align: left;
+    font-family: 'Atkinson Hyperlegible';
 }
 
 a {
@@ -21,10 +22,8 @@ a:hover {
 }
 
 div {
-    text-transform: uppercase;
     line-height: 130%;
-    width: 70vw;
-    text-align: center;
+    width: 45vw;
     color: white;
     font-size: 3vw;
     font-family: 'Atkinson Hyperlegible';
