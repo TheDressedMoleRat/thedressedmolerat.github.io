@@ -1,0 +1,8 @@
+body {
+    display:flex;
+    flex-direction: column;
+}
+
+canvas {
+    margin: 40px;
+}
