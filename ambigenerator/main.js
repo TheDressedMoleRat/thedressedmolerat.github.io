@@ -50,6 +50,12 @@ function generateAmbigram() {
 	if (words.length != 2) {
 		alert("NOOOO");
 	}
+
+	let permutsA = cartesian(glyphs[0])
+	let permutsB = cartesian(glyphs[1])
+
+	console.log(permutsA)
+	
 	// define permutsA, permutsB
 	// for a in permutsA:
 	// - for b in permutsB:
