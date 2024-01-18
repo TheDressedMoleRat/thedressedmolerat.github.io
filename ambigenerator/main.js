@@ -1,7 +1,7 @@
 // Functions (All for symbiotogram):
 // X getPossibleGlyphs
-// - cartesianProduct
-// - countDownstrokes
+// X cartesianProduct
+// X countDownstrokes
 // X initializeCanvas
 // - combineHorizontal
 
@@ -42,23 +42,39 @@ function getPossibleGlyphs(words) {
 	return glyphs;
 }
 
-const cartesian = (...a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+const cartesian = (a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+
+//['a1','l1','v2','a2','r2']
+function countStrokes(structure) {
+	let strokes = 0;
+	structure.forEach(glyph => {
+		strokes += parseInt(glyph[1]);
+	});
+	return strokes;
+} 
 
 function generateAmbigram() {
 	let words = document.getElementById("wordInput").value;
 	words = words.split(' ');
+	let glyphs = [[],[]];
+	
 	if (words.length != 2) {
 		alert("NOOOO");
+		return;
+	}
+	else {
+		glyphs = getPossibleGlyphs(words);
 	}
 
-	let permutsA = cartesian(glyphs[0])
-	let permutsB = cartesian(glyphs[1])
+	let permutsA = cartesian(glyphs[0]);
+	let permutsB = cartesian(glyphs[1]);
 
-	console.log(permutsA)
+	let matchingCombos = [];
+	permutsA.forEach(permutA => { permutsB.forEach(permutB => {
+		if (countStrokes(permutA) == countStrokes(permutB)) {
+			matchingCombos.push([permutA, permutB]);
+		}
+	});});
 	
-	// define permutsA, permutsB
-	// for a in permutsA:
-	// - for b in permutsB:
-	// - - if count(a) == count(b):
-	// - - - add [a, b] to combos
+// Image trickery goes here please ↓
 }
