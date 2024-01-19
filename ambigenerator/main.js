@@ -10,14 +10,22 @@ let middleGlyphs = [['a2'], ['b2'], ['c1', 'c2'], ['d2i'], ['e2i', 'e1'], ['f1']
 let endGlyphs = [['a1i', 'a2'], ['b2'], ['c1', 'c2'], ['d2i'], ['e2i', 'e1'], ['f1'], ['g2'], ['h1', 'h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n1', 'n2'], ['o2'], ['p1'], ['q1', 'q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x1', 'x2'], ['y1', 'y2'], ['z1', 'z2']];
 let bannedPairs = [['h2i','y2'],['r1','r2'],['h1','y2'],['v1','v2'],['e1','e2i'],['s1','s2']];
 
-function initializeCanvas(width, height) {
+function spawnCanvas(width, height) {
 	const canvas = document.createElement("canvas");
-	var canvasContext = canvas.getContext("2d");
+	var ctx = canvas.getContext("2d");
 	canvas.width = width;
 	canvas.height = height;
 	document.body.appendChild(canvas);
-	canvasContext.fillStyle = "white";
-	canvasContext.fillRect(0,0,width,height);
+	ctx.fillStyle = "white";
+	ctx.fillRect(0,0,width,height);
+	return canvas;
+}
+
+async function getGlyphImage(name) {
+	//return await fetch(glyph).then(res => res.blob());
+	const glyph = new Image();
+	glyph.src = "/g2/" + name;
+	return glyph;	
 }
 
 function letterIndex(letter) {
@@ -42,7 +50,10 @@ function getPossibleGlyphs(words) {
 	return glyphs;
 }
 
-const cartesian = (a) => a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+// Code from https://stackoverflow.com/questions/12303989/cartesian-product-of-multiple-arrays-in-javascript
+function cartesian(a) {
+	return a.reduce((a, b) => a.flatMap(d => b.map(e => [d, e].flat())));
+}
 
 //['a1','l1','v2','a2','r2']
 function countStrokes(structure) {
@@ -76,5 +87,10 @@ function generateAmbigram() {
 		}
 	});});
 	
-// Image trickery goes here please ↓
+	matchingCombos.forEach(element => {
+		let width = countStrokes(matchingCombos[0])+countStrokes(matchingCombos[1]);
+		width *= 3000;
+		const strokeWidth = 500;
+		let ctx = spawnCanvas();
+	});
 }
