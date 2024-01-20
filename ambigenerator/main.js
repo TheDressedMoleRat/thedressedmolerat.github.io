@@ -18,14 +18,17 @@ function spawnCanvas(width, height) {
 	document.body.appendChild(canvas);
 	ctx.fillStyle = "white";
 	ctx.fillRect(0,0,width,height);
+	console.log("spawned canvas. Width: " + width + ", height: " + height);
 	return canvas;
 }
 
 async function getGlyphImage(name) {
 	//return await fetch(glyph).then(res => res.blob());
-	const glyph = new Image();
-	glyph.src = "/g2/" + name;
-	return glyph;	
+	return new Promise((resolve) => {
+		const glyph = new Image();
+		glyph.src = "/g2/" + name;
+		glyph.onload = function() { resolve(glyph); };
+	});	
 }
 
 function letterIndex(letter) {
@@ -58,13 +61,13 @@ function cartesian(a) {
 //['a1','l1','v2','a2','r2']
 function countStrokes(structure) {
 	let strokes = 0;
-	structure.forEach(glyph => {
+	for (const glyph of structure) {
 		strokes += parseInt(glyph[1]);
-	});
+	}
 	return strokes;
 } 
 
-function generateAmbigram() {
+async function generateAmbigram() {
 	let words = document.getElementById("wordInput").value;
 	words = words.split(' ');
 	let glyphs = [[],[]];
@@ -81,16 +84,22 @@ function generateAmbigram() {
 	let permutsB = cartesian(glyphs[1]);
 
 	let matchingCombos = [];
-	permutsA.forEach(permutA => { permutsB.forEach(permutB => {
+	for (const permutA of permutsA) { for (const permutB of permutsB) {
 		if (countStrokes(permutA) == countStrokes(permutB)) {
 			matchingCombos.push([permutA, permutB]);
 		}
-	});});
+	}}
 	
-	matchingCombos.forEach(element => {
-		let width = countStrokes(matchingCombos[0])+countStrokes(matchingCombos[1]);
+	for (const combo of matchingCombos) {
+		let width = countStrokes(combo[0])+countStrokes(combo[1]);
 		width *= 3000;
 		const strokeWidth = 500;
-		let ctx = spawnCanvas();
-	});
+		let ctx = spawnCanvas(width, 3000);
+
+		for (const word of combo) {
+			for (const glyph of word) {
+				const glyphImage = await getGlyphImage(glyph);
+			}
+		}
+	}
 }
