@@ -3,6 +3,21 @@ body {
     flex-direction: column;
 }
 
+#input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+#canvases {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll; 
+}    
+
 canvas {
-    margin: 40px;
+    margin: 10px;
 }
