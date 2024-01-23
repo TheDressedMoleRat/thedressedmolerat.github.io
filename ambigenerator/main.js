@@ -23,7 +23,6 @@ function spawnCanvas(width, height) {
 }
 
 async function getGlyphImage(name) {
-	//return await fetch(glyph).then(res => res.blob());
 	return new Promise((resolve) => {
 		const glyph = new Image();
 		glyph.src = 'g/' + name + '.png';
@@ -47,8 +46,10 @@ function getPossibleGlyphs(words) {
 		for (let letterPos = 1; letterPos < word.length - 1; letterPos++) {
 			glyphList.push(middleGlyphs[letterIndex(word[letterPos])]);
 		}
-		// last letter
-		glyphList.push(endGlyphs[letterIndex(word[word.length-1])]);
+		// last letter (if length > 1)
+		if (word.length != 1) {
+			glyphList.push(endGlyphs[letterIndex(word[word.length-1])]);
+		}
 	}
 	return glyphs;
 }
@@ -60,6 +61,10 @@ function cartesian(a) {
 
 //['a1','l1','v2','a2','r2']
 function countStrokes(structure) {
+//	if (typeof structure === 'string') {
+//		return parseInt(structure[1]);
+//	}
+
 	let strokes = 0;
 	for (const glyph of structure) {
 		strokes += parseInt(glyph[1]);
@@ -75,14 +80,20 @@ async function generateAmbigram() {
 	clear();
 
 	let words = document.getElementById('wordInput').value;
+	
+	// Check if string is valid
+	if (!(/^[a-zA-Z\s]*$/.test(words))) {
+		say(["No no, you can't include anything other than letters..", 'No special characters...\nYou silly goose.', 'Only letters pleeease!']);
+	}
+
 	words = words.toLowerCase().split(' ');
 	
 	if (words.length > 2) {
-		say([`Obviously I can't make an ambigram of ${words.length} words!!`]);
+		say([`I can't make an ambigram of ${words.length} words you nincompoop`, 'How would I match more than two words together, huh?', `${words.length} words???`]);
 		return;
 	}
 	else if (words == '') {
-		say(['You have to actually type something for me to generate...']);
+		say(['You have to actually type something for me to generate...', 'No... You have to type something first...', "There's a box there for you to type!"]);
 		return;
 	}
 	else if (words.length == 1) {
@@ -95,14 +106,17 @@ async function generateAmbigram() {
 	let permutsB = cartesian(glyphs[1]);
 
 	let matchingCombos = [];
-	for (const permutA of permutsA) { for (const permutB of permutsB) {
+	for (let permutA of permutsA) { for (let permutB of permutsB) {
+		permutA = Array.isArray(permutA) ? permutA : [permutA];
+		permutB = Array.isArray(permutB) ? permutB : [permutB];
+
 		if (countStrokes(permutA) == countStrokes(permutB)) {
 			matchingCombos.push([permutA, permutB]);
 		}
 	}}
 	
 	if (matchingCombos.length == 0) {
-		say(['Nope', 'Why?']);
+		say(["Those two are completely different lengths!\n\n>:(", `${words[0]} doesn't fit with ${words[1]}...`, `How do you even expect me to match ${words[0]} with ${words[1]}?!`]);
 		return;
 	}
 	for (const combo of matchingCombos) {
