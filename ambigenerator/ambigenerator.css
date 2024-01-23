@@ -3,11 +3,21 @@ body {
     flex-direction: column;
 }
 
-#input {
+#top{
+    background-color: #414348;
+    width:100%;
+    font-size: large;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#input{
     margin: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 #canvases {

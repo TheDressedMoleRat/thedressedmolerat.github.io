@@ -7,20 +7,10 @@ body {
     margin: 0;
     text-align: left;
     font-family: 'Atkinson Hyperlegible';
-}
-    text-align: left;
-    font-family: 'Atkinson Hyperlegible';
+    color: white;
 }
 
 a {
-    color: white;
-    animation-name: animation;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
-    text-decoration: none;
-}
-a {
-    color: white;
     animation-name: animation;
     animation-duration: 7s;
     animation-iteration-count: infinite;
@@ -44,20 +34,6 @@ div {
     0% {color: lime;}
     50% {color: cyan;}
     100% {color: lime;}
-}
-a:hover {
-    text-decoration: underline;
-}
-
-@keyframes animation {
-    0% {color: lime;}
-    50% {color: cyan;}
-    100% {color: lime;}
-}
-
-@font-face {
-    font-family: 'Atkinson Hyperlegible';
-    src: url(Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf);
 }
 
 @font-face {
