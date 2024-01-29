@@ -1,0 +1,42 @@
+body {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#home {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+#top{
+    background-color: #414348;
+    width:100%;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#input{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#canvases {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll; 
+    height: 90vh;
+}    
+
+canvas {
+    margin: 10px;
+}

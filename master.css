@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #313338;
+    margin: 0;
+    text-align: left;
+    font-family: 'Atkinson Hyperlegible';
+    color: white;
+}
+
+a {
+    animation-name: animation;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@keyframes animation {
+    0% {color: lime;}
+    50% {color: cyan;}
+    100% {color: lime;}
+}
+
+@font-face {
+    font-family: 'Atkinson Hyperlegible';
+    src: url(Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf);
+}
