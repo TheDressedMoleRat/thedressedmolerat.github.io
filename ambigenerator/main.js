@@ -76,13 +76,19 @@ function say(choices) {
 	alert(choices[Math.floor(Math.random()*choices.length)]);
 }
 
+document.getElementById("wordInput").addEventListener("keydown", (event)=>{
+	if (event.key == "Enter") {
+		generateAmbigram();
+	}
+})
+
 async function generateAmbigram() {
 	clear();
 
 	let words = document.getElementById('wordInput').value;
 	
 	// Check if string is valid
-	if (!(/^[a-zA-Z\s]*$/.test(words))) {
+	if ((/[^a-zA-Z\s]/.test(words))) {
 		say(["No no, you can't include anything other than letters..", 'No special characters...\nYou silly goose.', 'Only letters pleeease!']);
 	}
 
