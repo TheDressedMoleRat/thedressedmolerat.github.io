@@ -1,7 +1,7 @@
-let startGlyphs = [['a1', 'a2i'], ['b2i'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1i'], ['g2'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m2', 'm3'], ['n2'], ['o2i', 'o1'], ['p1i'], ['q1', 'q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x1', 'x2'], ['y1', 'y2'], ['z1', 'z2']]
-let middleGlyphs = [['a2'], ['b2'], ['c1', 'c2'], ['d2i'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2'], ['o2i'], ['p1'], ['q1', 'q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x1', 'x2'], ['y1', 'y2'], ['z1', 'z2']];
-let endGlyphs = [['a1i', 'a2'], ['b2'], ['c1', 'c2'], ['d2i'], ['e2i', 'e1'], ['f1'], ['g2'], ['h1', 'h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n1', 'n2'], ['o2'], ['p1'], ['q1', 'q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x1', 'x2'], ['y1', 'y2'], ['z1', 'z2']];
-let bannedPairs = [['h2i','y2'],['r1','r2'],['h1','y2'],['v1','v2'],['e1','e2i'],['s1','s2']];
+let startGlyphs = [['a1', 'a2i'], ['r2i'], ['c1', 'c2i'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2i'], ['p1'], ['q2'], ['r1', 'r2i'], ['s1', 's2i'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']]
+let middleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
+let endGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
+// let bannedPairs = [['h2i','y2'],['r1','r2'],['h1','y2'],['v1','v2'],['e1','e2i'],['s1','s2']];
 
 function clear() {
 	const canvases = document.querySelectorAll('canvas');
@@ -25,7 +25,7 @@ function spawnCanvas(width, height) {
 async function getGlyphImage(name) {
 	return new Promise((resolve) => {
 		const glyph = new Image();
-		glyph.src = 'g/' + name + '.png';
+		glyph.src = 'g3/' + name + '.png';
 		glyph.onload = function() { resolve(glyph); };
 	});	
 }
@@ -86,6 +86,7 @@ async function generateAmbigram() {
 	clear();
 
 	let words = document.getElementById('wordInput').value;
+	let doubleWords = true;
 	
 	// Check if string is valid
 	if ((/[^a-zA-Z\s]/.test(words))) {
@@ -104,6 +105,7 @@ async function generateAmbigram() {
 	}
 	else if (words.length == 1) {
 		words = [words[0], words[0]];
+		doubleWords = false;
 	}
 
 	const glyphs = getPossibleGlyphs(words);
@@ -112,14 +114,24 @@ async function generateAmbigram() {
 	let permutsB = cartesian(glyphs[1]);
 
 	let matchingCombos = [];
-	for (let permutA of permutsA) { for (let permutB of permutsB) {
-		permutA = Array.isArray(permutA) ? permutA : [permutA];
-		permutB = Array.isArray(permutB) ? permutB : [permutB];
 
-		if (countStrokes(permutA) == countStrokes(permutB)) {
-			matchingCombos.push([permutA, permutB]);
+	// If two words:
+	if (doubleWords) {
+		for (let permutA of permutsA) { for (let permutB of permutsB) {
+			permutA = Array.isArray(permutA) ? permutA : [permutA];
+			permutB = Array.isArray(permutB) ? permutB : [permutB];
+
+			if (countStrokes(permutA) == countStrokes(permutB)) {
+				matchingCombos.push([permutA, permutB]);
+			}
+		}}
+	}
+	else {
+		for (let i of permutsA) {
+			matchingCombos.push([i,i]);
 		}
-	}}
+	}
+	// If one word, matchingCombos = [[a,a],[b,b]...] where a and b are elements of permutsA
 	
 	if (matchingCombos.length == 0) {
 		say(["Those two are completely different lengths!\n\n>:(", `${words[0]} doesn't fit with ${words[1]}...`, `How do you even expect me to match ${words[0]} with ${words[1]}?!`]);
@@ -127,14 +139,15 @@ async function generateAmbigram() {
 	}
 	for (const combo of matchingCombos) {
 		let width = countStrokes(combo[0]);
-		const strokeWidth = 50;
+		const strokeWidth = 25;
 		width += 3;
 		width *= strokeWidth;
-		let canvas = spawnCanvas(width, 300);
+		let canvas = spawnCanvas(width, 150);
 		let ctx = canvas.getContext('2d');
 
 		let x = 0;
 		for (const glyph of combo[0]) {
+			console.log(glyph);
 			const glyphImage = await getGlyphImage(glyph);
 			ctx.drawImage(glyphImage, x, 0);
 			x += strokeWidth * countStrokes([glyph]);
