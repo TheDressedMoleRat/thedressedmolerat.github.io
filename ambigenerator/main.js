@@ -91,6 +91,7 @@ async function generateAmbigram() {
 
 	let words = document.getElementById('wordInput').value;
 	let small = document.getElementById('box').checked;	
+	console.log(small);
 
 	let doubleWords = true;
 	
@@ -154,7 +155,6 @@ async function generateAmbigram() {
 		// These for loops could be less repetetive but no
 		let x = 0;
 		for (const glyph of combo[0]) {
-			console.log(glyph);
 			const glyphImage = await getGlyphImage(glyph, small);
 			ctx.drawImage(glyphImage, x, 0);
 			x += strokeWidth * countStrokes([glyph]);
