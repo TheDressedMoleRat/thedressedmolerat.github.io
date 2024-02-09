@@ -1,7 +1,10 @@
-let startGlyphs = [['a1', 'a2i'], ['r2i'], ['c1', 'c2i'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2i'], ['p1'], ['q2'], ['r1', 'r2i'], ['s1', 's2i'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']]
+let startGlyphs = [['a1', 'a2i'], ['r2i'], ['c1', 'c2i'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2i'], ['p1i'], ['q2'], ['r1', 'r2i'], ['s1', 's2i'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']]
 let middleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
-let endGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
+let endGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
 // let bannedPairs = [['h2i','y2'],['r1','r2'],['h1','y2'],['v1','v2'],['e1','e2i'],['s1','s2']];
+
+// Small: ds=25, side=150 
+// Big: ds=150, side=900
 
 function clear() {
 	const canvases = document.querySelectorAll('canvas');
@@ -12,7 +15,7 @@ function clear() {
 
 function spawnCanvas(width, height) {
 	const canvas = document.createElement('canvas');
-	var ctx = canvas.getContext('2d');
+	let ctx = canvas.getContext('2d');
 	canvas.width = width;
 	canvas.height = height;
 	const canvases = document.getElementById("canvases");
@@ -22,10 +25,11 @@ function spawnCanvas(width, height) {
 	return canvas;
 }
 
-async function getGlyphImage(name) {
+async function getGlyphImage(name, small) {
 	return new Promise((resolve) => {
 		const glyph = new Image();
-		glyph.src = 'g3/' + name + '.png';
+		let folder = small ? 'g3/' : 'g4/';
+		glyph.src = folder + name + '.png';
 		glyph.onload = function() { resolve(glyph); };
 	});	
 }
@@ -35,7 +39,7 @@ function letterIndex(letter) {
 }
 
 function getPossibleGlyphs(words) {
-	var glyphs = [[],[]];
+	let glyphs = [[],[]];
 	// for both words:
 	for (let wordIndex = 0; wordIndex < 2; wordIndex++) {
 		const glyphList = glyphs[wordIndex];
@@ -86,6 +90,8 @@ async function generateAmbigram() {
 	clear();
 
 	let words = document.getElementById('wordInput').value;
+	let small = document.getElementById('box').checked;	
+
 	let doubleWords = true;
 	
 	// Check if string is valid
@@ -139,16 +145,17 @@ async function generateAmbigram() {
 	}
 	for (const combo of matchingCombos) {
 		let width = countStrokes(combo[0]);
-		const strokeWidth = 25;
+		const strokeWidth = small ? 25 : 100;
 		width += 3;
 		width *= strokeWidth;
-		let canvas = spawnCanvas(width, 150);
+		let canvas = spawnCanvas(width, strokeWidth * 6);
 		let ctx = canvas.getContext('2d');
 
+		// These for loops could be less repetetive but no
 		let x = 0;
 		for (const glyph of combo[0]) {
 			console.log(glyph);
-			const glyphImage = await getGlyphImage(glyph);
+			const glyphImage = await getGlyphImage(glyph, small);
 			ctx.drawImage(glyphImage, x, 0);
 			x += strokeWidth * countStrokes([glyph]);
 		}
@@ -156,7 +163,7 @@ async function generateAmbigram() {
 		
 		x = 0;
 		for (const glyph of combo[1]) {
-			const glyphImage = await getGlyphImage(glyph);
+			const glyphImage = await getGlyphImage(glyph, small);
 			ctx.drawImage(glyphImage, x-canvas.width, -canvas.height);
 			x += strokeWidth * countStrokes([glyph]);
 		}
