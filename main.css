@@ -5,4 +5,5 @@ div {
     font-size: clamp(0px,6vw,40px);
     font-family: 'Atkinson Hyperlegible';
     background-color: transparent;
+    white-space: normal;
 }
