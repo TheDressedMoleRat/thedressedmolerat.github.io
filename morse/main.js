@@ -65,9 +65,9 @@ let buffer = '';
 let output = '';
 let down = false;
 
-const DASHTIME = 200;
-const GAPTIME = 300;
-const SPACETIME = 1000;
+let dashTime = 150;
+let gapTime = dashTime;
+let spaceTime = (7/3)*dashTime;
 
 function keyDown() {
     down = true;
@@ -78,21 +78,22 @@ function keyUp() {
     down = false;
 	upStartTime = Date.now();
 
-    if (Date.now() - downStartTime > DASHTIME) { buffer += '-'; }
-	else { buffer += '.'; }
+    if (Date.now() - downStartTime > dashTime) { buffer += '-'; }
+	else { buffer += '.';}
 }
 
 function update() {
+    console.log(Date.now() - downStartTime);
+
     // if upTime > spaceTime, add a space
-    if (!down && Date.now() - upStartTime > SPACETIME) { 
-        console.log(output);
-        if (output.charAt(output.length-1) != '_') {
+    if (!down && Date.now() - upStartTime > spaceTime) { 
+        if (output.charAt(output.length-1) != '_' && output != '') {
             output += '_';
         }
     }
 
     // if upTime > gapTime and key is up, move buffer to output
-    if (!down && Date.now() - upStartTime > GAPTIME) {
+    if (!down && Date.now() - upStartTime > gapTime) {
 
         if (morseDictionary.hasOwnProperty(buffer)) { output += morseDictionary[buffer]; }
         else { output += buffer; }
@@ -101,6 +102,16 @@ function update() {
     }
 
 	document.getElementById('output').textContent = output;
+}
+
+function updateDuration() {
+    value = document.getElementById('inputNumber').value;
+    dashTime = parseInt(value);
+    document.getElementById('inputNumber').value = '';
+}
+
+function clearText() {
+    output = '';
 }
 
 setInterval(update, 100);

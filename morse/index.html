@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +9,16 @@
     <title>Molerat's morse code</title>
 </head>
 <body>
-    Use your favorite key to input morse code! I might make it work on phones some time.<br> <a href=".">Refresh</a>
+    <div style="display: flex;">use your favorite key to input morse code <button onclick="clearText()">clear</button>
+    </div>
+
     <p id="output"></p>
+
+    <div style="display: flex;">
+        <input type="number" id="inputNumber" min="0" max="500" placeholder="Dash length (150ms)">
+        <button onclick="updateDuration()">update</button>
+    </div>
+
     <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

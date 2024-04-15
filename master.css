@@ -12,6 +12,10 @@ body {
     white-space: pre;
 }
 
+button, input {
+    font-family: 'Atkinson Hyperlegible';
+}
+
 a {
     animation-name: animation;
     animation-duration: 7s;
