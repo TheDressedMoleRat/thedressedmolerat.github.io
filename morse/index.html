@@ -9,13 +9,14 @@
     <title>Molerat's morse code</title>
 </head>
 <body>
-    <div style="display: flex;">use your favorite key to input morse code <button onclick="clearText()">clear</button>
+    <div style="display: flex;">Use any key to input morse code!<br>Change the timing using the box below.
     </div>
 
     <p id="output"></p>
 
     <div style="display: flex;">
-        <input type="number" id="inputNumber" min="0" max="500" placeholder="Dash length (150ms)">
+        <button onclick="clearText()">clear</button>
+        <input type="number" id="inputNumber" min="0" max="500" placeholder="Dash length (150)">
         <button onclick="updateDuration()">update</button>
     </div>
 

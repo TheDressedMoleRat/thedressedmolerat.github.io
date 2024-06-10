@@ -83,12 +83,10 @@ function keyUp() {
 }
 
 function update() {
-    console.log(Date.now() - downStartTime);
-
     // if upTime > spaceTime, add a space
     if (!down && Date.now() - upStartTime > spaceTime) { 
-        if (output.charAt(output.length-1) != '_' && output != '') {
-            output += '_';
+        if (output.charAt(output.length-1) != ' ' && output != '') {
+            output += " ";
         }
     }
 
@@ -106,12 +104,16 @@ function update() {
 
 function updateDuration() {
     value = document.getElementById('inputNumber').value;
+    if(value == '') {return;}
     dashTime = parseInt(value);
-    document.getElementById('inputNumber').value = '';
+    let box = document.getElementById('inputNumber');
+    box.value = '';
+    box.placeholder = "Dash length (" + value + ")";
 }
 
 function clearText() {
     output = '';
+    document.activeElement.blur();
 }
 
 setInterval(update, 100);
