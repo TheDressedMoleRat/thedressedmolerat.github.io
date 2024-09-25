@@ -1,10 +1,14 @@
-let startGlyphs = [['a1', 'a2i'], ['r2i'], ['c2i', 'c1'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2'], ['p1i'], ['q2'], ['r2i', 'r1'], ['s2i', 's1'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']]
-let middleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
-let endGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
+let modernStartGlyphs = [['a1', 'a2i'], ['r2i'], ['c2i', 'c1'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2'], ['p1i'], ['q2'], ['r2i', 'r1'], ['s2i', 's1'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']]
+let modernMiddleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
+let modernEndGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
 // let bannedPairs = [['h2i','y2'],['r1','r2'],['h1','y2'],['v1','v2'],['e1','e2i'],['s1','s2']];
 
-// Small: ds=25, side=150 
-// Big: ds=150, side=900
+let oldStartGlyphs = [['a1', 'a2i'], ['b2i'], ['c2', 'c1'], ['d2i'], ['e2', 'e1'], ['f1i'], ['g2'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m2', 'm3'], ['n2'], ['o1', 'o2i'], ['p1i'], ['q1', 'q2'], ['r2', 'r1'], ['s2', 's1'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1i', 'y2'], ['z1', 'z2']]
+let oldMiddleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2'], ['o2i'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']];
+let oldEndGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2', 'h1'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2', 'n1'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']];
+
+
+// Current problem: the old and new glyph-sets have different glyphs, uh oh.
 
 function clear() {
 	const canvases = document.querySelectorAll('canvas');
@@ -29,11 +33,17 @@ function spawnCanvas(width, height) {
 	return canvas;
 }
 
-async function getGlyphImage(name, small) {
+async function getGlyphImage(name, small, modern) {
 	return new Promise((resolve) => {
 		const glyph = new Image();
-		let folder = small ? 'g3/' : 'g4/';
+
+		let folder = '';
+		folder += modern ? 'new' : 'old';
+		folder += small ? '150' : '600';
+		folder += '/';
+
 		glyph.src = folder + name + '.png';
+		console.log(glyph.src);
 		glyph.onload = function() { resolve(glyph); };
 	});	
 }
@@ -44,19 +54,26 @@ function letterIndex(letter) {
 
 function getPossibleGlyphs(words) {
 	let glyphs = [[],[]];
+	// I check this again even though I checked it somewhere before but uughhhh
+	let modern = !document.getElementById('box2').checked;	
+
+	let starters = modern ? modernStartGlyphs : oldStartGlyphs
+	let middlers = modern ? modernMiddleGlyphs : oldMiddleGlyphs
+	let enders = modern ? modernEndGlyphs : oldEndGlyphs
+
 	// for both words:
 	for (let wordIndex = 0; wordIndex < 2; wordIndex++) {
 		const glyphList = glyphs[wordIndex];
 		const word = words[wordIndex];
 		//first letter
-		glyphList.push(startGlyphs[letterIndex(word[0])]);
+		glyphList.push(starters[letterIndex(word[0])]);
 		// middle letters
 		for (let letterPos = 1; letterPos < word.length - 1; letterPos++) {
-			glyphList.push(middleGlyphs[letterIndex(word[letterPos])]);
+			glyphList.push(middlers[letterIndex(word[letterPos])]);
 		}
 		// last letter (if length > 1)
 		if (word.length != 1) {
-			glyphList.push(endGlyphs[letterIndex(word[word.length-1])]);
+			glyphList.push(enders[letterIndex(word[word.length-1])]);
 		}
 	}
 	return glyphs;
@@ -95,7 +112,7 @@ async function generateAmbigram() {
 
 	let words = document.getElementById('wordInput').value;
 	let small = document.getElementById('box').checked;	
-	console.log(small);
+	let modern = !document.getElementById('box2').checked;	
 
 	let doubleWords = true;
 	
@@ -159,7 +176,7 @@ async function generateAmbigram() {
 		// These for loops could be less repetetive but no
 		let x = 0;
 		for (const glyph of combo[0]) {
-			const glyphImage = await getGlyphImage(glyph, small);
+			const glyphImage = await getGlyphImage(glyph, small, modern);
 			ctx.drawImage(glyphImage, x, 0);
 			x += strokeWidth * countStrokes([glyph]);
 		}
@@ -167,7 +184,7 @@ async function generateAmbigram() {
 		
 		x = 0;
 		for (const glyph of combo[1]) {
-			const glyphImage = await getGlyphImage(glyph, small);
+			const glyphImage = await getGlyphImage(glyph, small, modern);
 			ctx.drawImage(glyphImage, x-canvas.width, -canvas.height);
 			x += strokeWidth * countStrokes([glyph]);
 		}
