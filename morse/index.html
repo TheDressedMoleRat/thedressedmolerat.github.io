@@ -12,12 +12,12 @@
     <div style="display: flex;">Use any key to input morse code!<br>Change the timing using the box below.
 </div>
 
-    <p id="output"></p>
+    <p id="out_paragraph"></p>
 
     <div style="display: flex;">
-        <button onclick="clearText()">clear</button>
-        <input type="number" id="inputNumber" min="0" max="500" placeholder="Dash length (150)">
-        <button onclick="updateDuration()">update</button>
+        <p id="slider_display"></p>
+        <input type="range" min="10" max="400" value="150" id="slider">
+        <button onclick="clear_text()">clear</button>
     </div>
 
     <script type="text/javascript" src="main.js"></script>

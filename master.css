@@ -7,12 +7,11 @@ body {
     background-color: #313338;
     margin: 0;
     text-align: left;
-    font-family: 'Atkinson Hyperlegible';
     color: white;
     white-space: pre;
 }
 
-button, input {
+body, button, input {
     font-family: 'Atkinson Hyperlegible';
 }
 

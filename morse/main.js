@@ -1,4 +1,4 @@
-const morseDictionary = {
+const morse_dict = {
     ".-": "A",
     "-...": "B",
     "-.-.": "C",
@@ -55,68 +55,92 @@ const morseDictionary = {
     ".-..-.": "\"",
     "...-..-": "$",
     ".--.-.": "@",
-  };
-  
-
-let downStartTime;
-let upStartTime;
-let character = '';
-let buffer = '';
-let output = '';
-let down = false;
-
-let dashTime = 150;
-let gapTime = dashTime;
-let spaceTime = (7/3)*dashTime;
-
-function keyDown() {
-    down = true;
-	downStartTime = Date.now();
 };
 
-function keyUp() {
-    down = false;
-	upStartTime = Date.now();
+let anyKeyPressed = false;
+let durations = [];
+let last_toggle = 0
 
-    if (Date.now() - downStartTime > dashTime) { buffer += '-'; }
-	else { buffer += '.';}
+let slider = document.getElementById("slider");
+let slider_display = document.getElementById("slider_display");
+let out_paragraph = document.getElementById("out_paragraph");
+
+update_timings()
+slider.oninput = update_timings;
+setInterval(update_output, 60);
+
+function update_timings() {
+	dash_ms = slider.value;
+	gap_ms = dash_ms;
+	space_ms = (7/3)*dash_ms;
+	
+	slider_display.innerHTML = slider.value;
+
+	update_output();
 }
 
-function update() {
-    // if upTime > spaceTime, add a space
-    if (!down && Date.now() - upStartTime > spaceTime) { 
-        if (output.charAt(output.length-1) != ' ' && output != '') {
-            output += " ";
-        }
-    }
+function add_duration() {
+	if (last_toggle == 0) {
+		last_toggle = Date.now();
+		return;
+	}
 
-    // if upTime > gapTime and key is up, move buffer to output
-    if (!down && Date.now() - upStartTime > gapTime) {
+	durations.push(Date.now() - last_toggle);
 
-        if (morseDictionary.hasOwnProperty(buffer)) { output += morseDictionary[buffer]; }
-        else { output += buffer; }
-        buffer = '';
-
-    }
-
-	document.getElementById('output').textContent = output;
+	last_toggle = Date.now();
 }
 
-function updateDuration() {
-    value = document.getElementById('inputNumber').value;
-    if(value == '') {return;}
-    dashTime = parseInt(value);
-    let box = document.getElementById('inputNumber');
-    box.value = '';
-    box.placeholder = "Dash length (" + value + ")";
+window.addEventListener('keydown', function(event) {
+	if (anyKeyPressed) {
+		return;
+	}
+
+	anyKeyPressed = true;
+
+	add_duration();
+});
+
+window.addEventListener('keyup', function(event) {
+	if (!anyKeyPressed) {
+		return;
+	}
+
+	anyKeyPressed = false;
+
+	add_duration();
+});
+
+function letter(morse) {
+	return (morse in morse_dict) ? morse_dict[morse] : morse;
 }
 
-function clearText() {
-    output = '';
-    document.activeElement.blur();
+function update_output() {
+	let out_string = "";
+	let buffer = "";
+
+	durations.forEach((duration, i) => {
+		let is_down_duration = (i % 2 == 0);
+
+		if (is_down_duration) {
+			if (duration > dash_ms) {buffer += "-";}
+			else {buffer += ".";}
+		}
+		else {
+			if (duration > gap_ms) {
+				out_string += letter(buffer);
+				buffer = "";
+			}
+			if (duration > space_ms) {out_string += "  ";}
+		}
+	});
+	
+	out_string += letter(buffer);
+
+	out_paragraph.textContent = out_string;
 }
 
-setInterval(update, 100);
-
-document.addEventListener('keydown', keyDown);
-document.addEventListener('keyup', keyUp);
+function clear_text() {
+    durations = [];
+    update_output();
+    last_toggle = 0;
+}
