@@ -70,9 +70,9 @@ slider.oninput = update_timings;
 setInterval(update_output, 60);
 
 function update_timings() {
-	dash_ms = slider.value;
-	gap_ms = dash_ms;
-	space_ms = (7/3)*dash_ms;
+	dash_ms = 3*slider.value;
+	gap_ms = 3*slider.value;
+	space_ms = 7*slider.value;
 	
 	slider_display.innerHTML = slider.value;
 
