@@ -8,7 +8,7 @@ body {
     margin: 0;
     text-align: left;
     color: white;
-    white-space: pre;
+    /*white-space: pre;*/
 }
 
 body, button, input {

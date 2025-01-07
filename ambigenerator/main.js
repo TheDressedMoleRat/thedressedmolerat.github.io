@@ -7,9 +7,6 @@ let oldStartGlyphs = [['a1', 'a2i'], ['b2i'], ['c2', 'c1'], ['d2i'], ['e2', 'e1'
 let oldMiddleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2'], ['o2i'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']];
 let oldEndGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2', 'h1'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2', 'n1'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']];
 
-
-// Current problem: the old and new glyph-sets have different glyphs, uh oh.
-
 function clear() {
 	const canvases = document.querySelectorAll('canvas');
 	for (const canvas of canvases) {
