@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OuO</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');</style>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Use the Morse Keyer on The Dressed Mole-Rat's website.">
+</head>
+<body>
+    <div id="header" class="box">
+        <h1>🤖 Mole-Rat's Morse Keyer</h1>
+        <a onclick="splash()" id="splash"></a>
+        <ul>
+            <li><a href="../index.html">home</a></li>
+            <li><a href="../toki pona/index.html">toki pona</a></li>
+            <li><a href="../ambigenerator/index.html">ambigenerator</a></li>
+            <li><a href="../morse keyer/index.html">morse keyer</a></li>
+            <li><a href="../things/index.html">things</a></li>
+        </ul>
+    </div>
+
+    <script src="../main.js"></script>
+    
+    <div class="box">
+        <p>Use any key to input morse code!</p>
+        <p>Change the length of one unit using the slider.</p>
+        <p id="out_paragraph"></p>
+        <p id="slider_display"></p>
+        <input type="range" min="10" max="100" value="50" id="slider"><br>
+        <button onclick="clear_text()">clear</button>
+    </div>
+
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+</html>

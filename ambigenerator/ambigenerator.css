@@ -1,0 +1,9 @@
+#ambigrams .ambigram_container {
+	width: 100%;
+	margin: 30px auto;
+	padding: 0;
+}
+
+#ambigrams canvas {
+	width: 100%;
+}
