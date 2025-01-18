@@ -2,9 +2,7 @@
 
 body {
 	background-color: #282a36;
-	background-image: url("images/bg.png");
 	color: #F8F8F2;
-	font-size: 16pt;
 	width: min(90vw, 960px);
 	margin: 0 auto;
 }
@@ -14,11 +12,11 @@ body {
 a { color: #8BE9FD; }
 
 /* || NAVBAR */
+
 #header ul {
 	display: inline-block;
 	list-style-type: none;
 	padding: 0;
-	font-size: 16pt;
 	width: 100%;
 }
 
@@ -36,15 +34,35 @@ a { color: #8BE9FD; }
 	background-color: #44475A;
 }
 
-/* || OBJECTS */
+/* || RESPONSIVENESS */
 
-.box {
-	background-color: #282a36;
-	margin: 40px 0; /* vertical, side */
-	padding: 5px 40px 40px; /* top, side, bottom */
-	outline: 4px solid #44475A; /* thickness, style, color */
-	border-radius: 15px;
+/* mobile ↓ */
+#header h1 { font-size: 20pt; }
+#header ul { margin: 0; }
+#header ul li a { font-size: 12pt; padding: 3px 10px; }
+#splash { display: block; font-size: 9pt; margin-bottom: 10px;}
+.box { margin: 0; padding: 0; }
+
+/* desktop ↓ */
+@media only screen and (min-width: 600px){
+	body { background-image: url("images/bg.png"); }
+	body p :not(footer) { text-align: justify; }
+
+	#header h1 { font-size: 30pt; }
+	#header ul { margin: 10px; }
+	#header ul li a { font-size: 16pt; padding: 5px 20px; }
+	#splash { font-size: 12pt; }
+
+	.box {
+		background-color: #282a36;
+		margin: 40px 0; /* vertical, side */
+		padding: 5px 40px 40px; /* top, side, bottom */
+		outline: 4px solid #44475A; /* thickness, style, color */
+		border-radius: 15px;
+	}
 }
+
+/* || OBJECTS */
 
 ul img, ol img {
 	padding: 20px;
