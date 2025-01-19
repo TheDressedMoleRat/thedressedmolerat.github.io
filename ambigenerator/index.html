@@ -15,7 +15,7 @@
     <div id="header" class="box">
         <h1>🦄 Mole-Rat's Ambigenerator</h1>
         <a onclick="splash()" id="splash"></a>
-        <ul>
+        <ul id="nav">
             <li><a href="../">home</a></li>
             <li><a href="../toki pona/">toki pona</a></li>
             <li><a href="../ambigenerator/">ambigenerator</a></li>
@@ -33,7 +33,7 @@
         <p>Check this box to get alternate glyphs → <input type="checkbox" id="alternate glyphs"></p>
 
         <script src="ambigenerator.js"></script>
-        <div id="ambigenerator input container">
+        <div>
             <input type="text" id="ambigenerator input" placeholder="Enter one or two words">
             <button onclick="generateAmbigram()">Generate</button>
         </div>

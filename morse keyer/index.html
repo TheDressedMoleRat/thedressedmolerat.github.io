@@ -14,7 +14,7 @@
     <div id="header" class="box">
         <h1>🤖 Mole-Rat's Morse Keyer</h1>
         <a onclick="splash()" id="splash"></a>
-        <ul>
+        <ul id="nav">
             <li><a href="../">home</a></li>
             <li><a href="../toki pona/">toki pona</a></li>
             <li><a href="../ambigenerator/">ambigenerator</a></li>
@@ -31,8 +31,10 @@
         <p>Change the length of one unit using the slider.</p>
         <p id="out_paragraph"></p>
         <p id="slider_display"></p>
-        <input type="range" min="10" max="100" value="50" id="slider"><br>
-        <button onclick="clear_text()">clear</button>
+        <div>
+            <input type="range" min="10" max="100" value="50" id="slider"><br>
+            <button onclick="clear_text()">clear</button>
+        </div>
     </div>
 
     <script type="text/javascript" src="main.js"></script>
