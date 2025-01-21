@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "nishiki";
+	src: url(fonts/nishiki-teki-lili.ttf);
+}
+
 /* PAGE */
 body { 
 	background-color: #282a36; 
@@ -6,24 +11,23 @@ body {
 	margin: 20px auto;
 }
 
-h1 { margin: 20px 0 5px; }
-* { font-family: "Space Grotesk"; }
+h1 { margin: 20px 0 10px; }
+*:not(.sitelen *) { font-family: "Space Grotesk", "sans serif"; }
+.sitelen * { font-family: "nishiki"; word-break: break-all;}
+.sitelen p, .sitelen a { font-size: 17pt; }
+.sitelen h2 { font-size: 27pt; font-weight: normal; }
 a { color: #8BE9FD; text-decoration: none; }
+p, a, input { font-size: 14pt; }
 
 
 /* HEADER */
-#nav { 
-	display: flex;
-	overflow-x: scroll; 
-	white-space: nowrap;
-	align-items: end;
-	height: 3em;
-	padding: 0;
-	margin: 0;
-}
-
-#nav li { list-style: none; padding-right: 20px; }
 #splash { color: #6272A4; }
+
+#nav { padding: 0; display: flex; margin: 20px 0 0;}
+#nav li { list-style: none; flex-grow: 1; text-align: center;}
+#nav a { width: 100%; display: inline-block; padding: 10px 0; }
+
+.current { background-color: #44475A; border-radius: 10px;}
 
 
 /* DESKTOP */
