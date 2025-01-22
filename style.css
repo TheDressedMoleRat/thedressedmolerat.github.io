@@ -18,7 +18,7 @@ h1 { margin: 20px 0 10px; }
 .sitelen h2 { font-size: 27pt; font-weight: normal; }
 a { color: #8BE9FD; text-decoration: none; }
 p, a, input { font-size: 14pt; }
-
+p { hyphens: auto; }
 
 /* HEADER */
 #splash { color: #6272A4; }
@@ -29,8 +29,12 @@ p, a, input { font-size: 14pt; }
 
 .current { background-color: #44475A; border-radius: 10px;}
 
-
 /* DESKTOP */
+.left { float: left; margin: 10px 20px 10px 0}
+.right { float: right; margin: 10px 0 10px 20px}
+
+.left, .right { width: 20%; }
+
 @media only screen and (min-width: 600px){
 	.box {
 		background-color: #282a36;
@@ -41,10 +45,20 @@ p, a, input { font-size: 14pt; }
 	}
 
 	body { background-image: url(images/bg.png); }
+
+	p { text-align: justify; }
 }
 
 
 /* SPECIFIC */
+#bucket_webring {
+	display: flex;
+	list-style: none;
+	padding: 0;
+}
+
+#bucket_webring a { padding: 0 10px; }
+
 #profile_pic {
 	float: left;
 	margin-right: 20px;
