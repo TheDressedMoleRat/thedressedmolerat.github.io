@@ -4,6 +4,17 @@
 }
 
 /* PAGE */
+
+@keyframes bg{
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translate(128px, 128px);
+  }
+}
+
+
 body { 
 	background-color: #282a36; 
 	color: #F8F8F2;
@@ -29,11 +40,15 @@ p { hyphens: auto; }
 
 .current { background-color: #44475A; border-radius: 10px;}
 
-/* DESKTOP */
+/* RESPONSIVENESS */
 .left { float: left; margin: 10px 20px 10px 0}
 .right { float: right; margin: 10px 0 10px 20px}
 
 .left, .right { width: 20%; }
+
+.box {
+	margin: 40px 0;
+}
 
 @media only screen and (min-width: 600px){
 	.box {
@@ -44,20 +59,39 @@ p { hyphens: auto; }
 		border-radius: 15px;
 	}
 
-	body { background-image: url(images/bg.png); }
+	/* this is stolen from https://samotny.neocities.org/ */
+	#bg { 
+		position: fixed;
+		z-index: -2;
+		top: -50%;
+		right: -50%;
+		bottom: -50%;
+		left: -50%;
+		background-image: url('images/bg.png');
+		animation: 6s linear infinite bg;
+	}
 
 	p { text-align: justify; }
 }
 
 
 /* SPECIFIC */
+.john {
+	max-width:732px;
+	width:100%;
+	aspect-ratio: 361 / 42;
+	border:none;
+	margin: 0 auto 40px;
+	display: block;
+}
+
 #bucket_webring {
 	display: flex;
 	list-style: none;
 	padding: 0;
 }
 
-#bucket_webring a { padding: 0 10px; }
+#bucket_webring a { padding: 0 10px; font-size: min(4vw, 14pt); }
 
 #profile_pic {
 	float: left;
