@@ -6,28 +6,29 @@
     <title>OuO</title>
     <link rel="stylesheet" href="../style.css">
     <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');</style>
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../media/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Interactive real time morse keyer on The Dressed Mole-Rat's website.">
     <meta name="darkreader-lock">
 </head>
 <body>
     <div id="bg"></div>
-    <div id="header" class="box">
-        <h1><a onclick="cycle_theme()" title="Click this for a secret ugly theme!">🤖</a> Mole-Rat's Morse Keyer</h1>
-        <a onclick="splash()" id="splash"></a>
-        <ul id="nav" class="sitelen">
-            <li><a href="../">tomo</a></li>
-            <li><a href="../toki pona/">toki+pona</a></li>
-            <li><a href="../ambigenerator/">nasa</a></li>
-            <li><a class="current" href="../morse keyer/">ilo</a></li>
-            <li><a href="../things/">ante</a></li>
-        </ul>
-    </div>
+	<div id="header" class="box">
+		<h1><a onclick="cycle_theme()" title="Click this for a secret ugly theme!">🦩</a> The Dressed Mole-Rat</h1>
+		<a onclick="splash()" id="splash"></a>
+		<ul id="nav" class="sitelen">
+			<li><a href="../">tomo</a></li>
+			<li><a href="../ambigenerator/">nasa</a></li>
+			<li><a class="current" href="./">ilo</a></li>
+			<li><a href="../pali/">pali</a></li>
+			<li><a href="../ijo pona/">ijo+pona</a></li>
+			<li><a href="../toki/">toki</a></li>
+		</ul>
+	</div>
 
     <script src="../main.js"></script>
     
     <div class="box">
-        <h2>Instructions</h2>
+        <h2>Morse keyer</h2>
         <p>Use any key to input morse code! It only works on desktop because I don't know how touch events work!</p>
         <p>Change the length of one unit using the slider.</p>
         <p id="out_paragraph"></p>

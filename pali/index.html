@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:)</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');</style>
+    <link rel="icon" href="../media/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Miscellaneous things on The Dressed Mole-Rat's website.">
+    <meta name="darkreader-lock">
+</head>
+<body>
+    <div id="bg"></div>
+	<div id="header" class="box">
+		<h1><a onclick="cycle_theme()" title="Click this for a secret ugly theme!">🦩</a> The Dressed Mole-Rat</h1>
+		<a onclick="splash()" id="splash"></a>
+		<ul id="nav" class="sitelen">
+			<li><a href="../">tomo</a></li>
+			<li><a href="../ambigenerator/">nasa</a></li>
+			<li><a href="../morse keyer/">ilo</a></li>
+			<li><a class="current" href="./">pali</a></li>
+			<li><a href="../ijo pona/">ijo+pona</a></li>
+			<li><a href="../toki/">toki</a></li>
+		</ul>
+	</div>
+
+    <script src="../main.js"></script>
+    
+    <div class="box">
+        <h2>Things I've made</h2>
+        <p>When people ask about me, I tell them I'm a creative person. I also believe that, even though I don't have too much stuff to show. This page will collect various things I've made and/or am proud of, but for now: Fonts and a song!</p>
+    </div>
+
+    <div class="box" id="fonts">
+        <h2>Fonts</h2>
+        <p>Here are a few small fonts I've made in a web app called fontstruct. It's not a good way to make fonts in my opinion, but it is fun to play around with.</p>
+        <div class="gallery">
+            <img src="../media/images/fonts/arcade neue.png">
+            <img src="../media/images/fonts/five high sample.png">
+            <img src="../media/images/fonts/jetbrainsish.png">
+            <img src="../media/images/fonts/mono one sample.png">
+        </div>
+        <p>This is a modified version of Jetbrains Mono that I've used as my one and only coding font for a few months at this point. I made it intentionally quirky and weird, but I really like it! </p>
+        <div class="gallery"><img src="../media/images/fonts/jetbrains silly.png" style="max-height: 400px;"></div>
+        <p>It's also proportional (not monospaced), even though I use it for coding. This is because propotional typefaces are secretly better than monospaced fonts at everything (except ascii art, terminals, markdown, assembly, etc). My point still stands, regular programming should not require a monospaced font, and the uneven color of monospaced type is pretty ugly, so proportional it is.</p>
+    </div>
+
+    <div class="box">
+        <h2>Songs</h2>
+        <p>I have but dabbled in music composition and production, as in I've sometimes tried putting down notes over chords until I like it. I've made some pretty uninteresting background tracks for small games I've made, but a while ago I made this chiptune (specifically 2A03) song that's over 3 minutes. It is however quite repetitive, which explains the length. Either way I'm very proud of it because I think it's a banger.</p>
+
+        <audio controls>
+            <source src="../media/audio/30 oct 2025.mp3" type="audio/mpeg">
+            The audio is loading and/or will never load.
+        </audio>
+
+        <p>I would love to make more bops, and I will of course put them here in that case.</p>
+
+    </div>
+
+    <div class="box">
+        <h2>This site</h2>
+        <p>Here is a timeline of what's happening on this website:</p>
+        <ul>
+            <img src="../media/images/timeline/klint.jpg" alt="old ambigram" class="right">
+            <li><p>10/5-2023: Finished the first version of the ambigram generator. It is made in ios shortcuts and looks horrendous.</p></li>
+            <li><p>11/5-2023: The ambigenerator is reprogrammed in python using Pillow. It's very slow and hosted on replit.</p></li>
+            <img src="../media/images/timeline/birch.jpg" alt="newer ambigram" class="right">
+            <li><p>24/10-2023: The third version of the generator includes several options per word, and it uses the glyphs marked as <q>alternate</q> in the current one!</p></li>
+            <li><p>27/10-2023: Made a website unrelated to the ambigenerator, but it only had one page and a sentence of text.</p></li>
+            <img src="../media/images/timeline/old website.png" alt="screenshot of my old website" class="right">
+            <li><p>end of 2023: I learned html and css. Literally after I made the website because then I just guessed.</p></li>
+            <li><p>23/1-2024: It's now remade in Javascript and hosted on the second page of the old website!</p></li>
+            <img src="../media/images/timeline/kindle sketch.jpg" alt="sketch of the word kindle" class="right">
+            <li><p>8/2-2024: I finished drawing the new vector glyphs that are still in the generator today!</p></li>
+            <li><p>19/3-2024: The morse keyer was added to my website, making it three pages big!</p></li>
+            <li><p>9/1-2025: After exploring some webrings I realized I should make a better website, and I started working on this one.</p></li>
+            <img src="../media/images/timeline/galileo.png" alt="good ambigram with the newest glyphs" class="right">
+            <li><p>13/1-2025: Added the morse code keyer and ambigram generator, as well as writing an entire essay as the home page.</p></li>
+            <li><p>16/1-2025: Finished the new website and published it on the same github domain as the old one!</p></li>
+            <li><p>11/2-2025: I added a <q>things I've made</q> and a <q>stuff I like</q> page, as well as changing some fonts and adding something one might call a blog.</p></li>
+        </ul>
+    </div>
+
+    <footer>
+        <iframe src="https://john.citrons.xyz/embed?ref=https://thedressedmolerat.github.io/" class="john"></iframe>
+        <p>Created by me in pure HTML, CSS, and a bit of JS. Theme is Dracula. Thank you for visiting!!</p>
+    </footer>
+</body>
+</html>

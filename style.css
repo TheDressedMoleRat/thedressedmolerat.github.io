@@ -8,7 +8,7 @@
 
 @font-face {
 	font-family: "nishiki";
-	src: url(fonts/nishiki-teki-lili.ttf);
+	src: url(media/fonts/nishiki-teki-lili.ttf);
 }
 
 /* PAGE */
@@ -30,7 +30,7 @@ body {
 }
 
 h1 { margin: 20px 0 10px; }
-*:not(.sitelen *) { font-family: "Space Grotesk", "sans serif"; }
+*:not(.sitelen *) { font-family: "Atkinson Hyperlegible Next"; }
 .sitelen * { font-family: "nishiki"; word-break: break-all;}
 .sitelen p, .sitelen a { font-size: 17pt; }
 .sitelen h2 { font-size: 27pt; font-weight: normal; }
@@ -40,6 +40,7 @@ p { hyphens: auto; }
 
 /* HEADER */
 #splash { color: var(--splash); }
+#splash:hover { text-decoration: underline; }
 
 #nav { padding: 0; display: flex; margin: 20px 0 0;}
 #nav li { list-style: none; flex-grow: 1; text-align: center;}
@@ -74,7 +75,7 @@ p { hyphens: auto; }
 		right: -50%;
 		bottom: -50%;
 		left: -50%;
-		background-image: url('images/bg.png');
+		background-image: url('media/images/bg.png');
 		animation: 6s linear infinite bg;
 	}
 
@@ -83,6 +84,16 @@ p { hyphens: auto; }
 
 
 /* SPECIFIC */
+img {
+	max-width: 100%;
+	margin: auto;
+}
+
+.gallery img:hover{
+	transform: scale(2); 
+	transition: transform 0.25s ease;
+}
+
 .john {
 	max-width:732px;
 	width:100%;
@@ -105,17 +116,23 @@ p { hyphens: auto; }
 	margin-right: 20px;
 	margin-bottom: 10px;
 	width: 80px;
-	outline: 2px solid var(--text); /* thickness, style, color */
+	outline: 2px solid var(--secondary_bg); /* thickness, style, color */
 	border-radius: 10px;
 }
+
+.gallery { display: flex; justify-content: center; }
+  
+.gallery * {
+	margin: 10px;
+	width: 100%;
+	max-width: 200px;
+	outline: 3px solid var(--secondary_bg);
+	border-radius: 10px;
+  }
 
 footer { text-align: center; text-shadow: 1px 1px 4px var(--main_bg); }
 .link_button img { margin: 10px; }
 .link_button img:hover { outline: 4px solid var(--links); /* thickness, style, color */ }
-.spaced_list li { margin-bottom: 1em; }
-.image_list { padding: 20px; display: flex; flex-wrap: wrap; justify-content: center;}
-.image_list * { width: min(100%, 250px); object-fit: contain; margin: 20px; }
-
 
 /* INPUTS */
 button {

@@ -1,6 +1,66 @@
-// Ok if you want you can try to read the splash texts here, but where's the fun in that??
-const splash_secret = "ygolopot si neve tahw tub seno rehto on dna ekoj ygolopot eno taht s'ereht woh yzarC§gnihtemos ro tbgl uoy erA§promhcS proZ§)t'nod( .etah yrc eiD .yenoH ?evol hgual eviL§yltnerappa nəiwŋ decnuonorp si neyugN ko hO§seirt regnif eht nehw edih tub gnikool s'eugnot ruoy nehw tuo emoc sbmurc kniht I§pu ti yag ,syag ooW§efil ym fo ekatsim tsrow ,anop ikot ni 'wow ,seye owT' yas t'noD§🤢 ****R **N ****T§.eporuE lleps dluoc uoy ,ureP ni srettel eht egnarraer uoy fI§sseug I sdneped ti ebyam thgir llits si drocer nekorb A§.erac od ylbaborp I gniddik tsuJ .noitacav no era skcuf a evig yM§.thgieh-x ni tif selucsunim s'tebahpla nital eht fo flah yltcaxE§.ralcspiS lagmaN .enfonC bebiL .eH-H§.tcerromhcs llomhcs tkerroK llO§?eep I erehw wonk yehT ?sserdda-PI§!ojukil ,naw akul ,akul ,ut ut ,naw ut ,ut ,naw§'drows' s'noirO§3< evrefecaF enograF§!!uoy morf yawa raf spihsnoitaler ni elpoep evitcarttanU§yrros we .ti tuoba kniht uoy fi eman yzarc a si tfosorciM§.sellah xua ennoté'S .titep nu'd titep nU§yfirret os eno knip eht§3< mehtna lanoitan naidanaC etirovaf ym si maj eht pu pmuP§snaidar π4 rep eciwt thgir llits si ssapmoc nekorb A§)si ti( ynnuf tons ti§ano e ala anos anis al oji e anop ikot ala nek anis§:lluks: rallid yracs livE§ᔨïıᏞ⊂§.htoot doog yllaer yllaer eno naht ,hteet ko fo hcnub a evah rehtar dluow I§)ytterp s'ti kniht i ,tnof eht( .efil si retnI ,evol si retnI§·-· · -·- ·-·- -·· ·-·· ·-· · ···· - --- --§?edoc esrom wonk I wonk uoy diD§3< nwodkram yrram ot tnaw I§3< devoleb ym xobxelF§?etis siht dnif neve uoy did woh§.smrow otni nrut yletelpmoc lliw tI .smrow otni nrut dna§.sruoy ton dna ,etisbew ym s'ti esuaceb ,tnaw I revetahw etirw I erehw etisbew eht ,oi.buhtig.tarelomdesserdeht ot emocleW§sthguoht ruoy rof sthguoht ot emocleW§!?ymonoce siht nI ?gnitsoh fleS§(: tidderbus tnof a saw ereht dias I nehw gnikoj saw I hguoht sdneirf yM§.amam hO§?sredneg s'llay era tahw oS§.stinaemhcs stinaeP§kO ?dnilb era star-elom wonk uoy diD§)3 yllaretil( rebmun a 'gnirevocsid' reliO§?daeh ruoy ni gnippuhsam emit emas eht ta sgnos lareves evah reve uoy oD§?gnidoc rof retteb yllaretil era stnof lanoitroporp wonk uoy diD§reh dekil I ijome gnihgual gniyrc eht kcab gnirb ew naC§...tiaw !!hsilgne ot ipip am okos etalsnart t'noD";
-let splash_texts = [...splash_secret].reverse().join('').split('§');
+// Ok if you want you can read the splash texts here, but where's the fun in that??
+const splash_texts = 
+`Don't translate soko ma pipi to english!! wait...
+Can we bring back the crying laughing emoji I liked her
+Did you know proportional fonts are literally better for coding?
+Do you ever have several songs at the same time mashupping in your head?
+Oiler 'discovering' a number (literally 3)
+Did you know mole-rats are blind? Ok
+Peanits schmeanits.
+So what are yall's genders?
+Oh mama.
+My friends though I was joking when I said there was a font subreddit :(
+Self hosting? In this economy?!
+Welcome to thoughts for your thoughts
+and turn into worms. It will completely turn into worms.
+how did you even find this site?
+Welcome to thedressedmolerat.github.io, the website where I write whatever I want, because it's my website, and not yours.
+Flexbox my beloved <3
+I want to marry markdown <3
+Did you know I know morse code?
+-- --- - ···· · ·-· ··-· ··- -·-· -·- · ·-·
+Inter is love, Inter is life. (the font, i think it's pretty)
+I would rather have a bunch of ok teeth, than one really really good tooth.
+⊂Ꮮıïᔨ
+Evil scary dillar :skull:
+sina ken ala toki pona e ijo la sina sona ala e ona
+it snot funny (it is)
+A broken compass is still right twice per 4π radians
+Pump up the jam is my favorite Canadian national anthem <3
+the pink one so terrify
+Un petit d'un petit. S'étonne aux halles.
+Microsoft is a crazy name if you think about it. ew sorry
+Unattractive people in relationships far away from you!!
+Fargone Faceferve <3 (jKwrYS2a8zA?t=482)
+Orion's 'sword'
+wan, tu, tu wan, tu tu, luka, luka wan, likujo!
+IP-address? They know where I pee?
+Oll Korrekt schmoll schmorrect.
+H-He. Libeb Cnofne. Namgal Sipsclar.
+Exactly half of the latin alphabet's minuscules fit in x-height.
+My give a fucks are on vacation. Just kidding I probably do care.
+A broken record is still right maybe it depends I guess
+If you rearrange the letters in Peru, you could spell Europe.
+T**** N** R****
+Don't say 'Two eyes, wow' in toki pona, worst mistake of my life
+Woo gays, gay it up
+Oh ok Nguyen is pronounced ŋwiən apparently
+Live laugh love? Honey. Die cry hate. (don't)
+Zorp Schmorp
+Are you guys lgbt or something
+Crazy how there's that one topology joke and no other ones but what even is topology
+I am the truest repairman
+Zoo-Wee Mama
+I feel like an umbrella (quoIzf48YeM?t=172)
+It's giving dirt girl from dirt girl (2leQfHW9sX4?t=1075)
+sina toki pona ala la, o moli
+Gazebo? Gazoinksbo
+Bosskeep Gatelight Gasgirl
+Light Keep Boss
+I don't want a history lesson I want a sandwich (dXj97cFU1VM?t=238)
+I could lie, say I likey-like that
+Never heard of the dressed mole-rat? You are one of today's lucky 10,000`.split("\n")
+
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
 
