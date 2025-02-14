@@ -1,98 +1,36 @@
-:root {
-	--main_bg: #282a36;
-	--secondary_bg: #44475A;
-	--text: #F8F8F2;
-	--links: #8BE9FD;
-	--splash: #6272A4;
-}
-
-@font-face {
-	font-family: "nishiki";
-	src: url(media/fonts/nishiki-teki-lili.ttf);
-}
+:root { --main_bg: #282a36; --secondary_bg: #44475A; --text: #F8F8F2; --links: #8BE9FD; --splash: #6272A4; }
+@font-face { font-family: "nishiki"; src: url(media/fonts/nishiki-teki-lili.ttf); }
 
 /* PAGE */
+@keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
 
-@keyframes bg{
-	0%{
-		transform: translateY(0px);
-	}
-	100%{
-		transform: translate(128px, 128px);
-	}
-}
-
-body { 
-	background-color: var(--main_bg); 
-	color: var(--text);
-	width: min(90vw, 960px);
-	margin: 20px auto;
-}
-
-h1 { margin: 20px 0 10px; }
-*:not(.sitelen *) { font-family: "Atkinson Hyperlegible Next"; }
+body { background-color: var(--main_bg); width: min(90vw, 960px);margin: 20px auto; color: var(--text); }
+h1 { margin: 20px 0 10px; font-size: min(); }
+h1, h2, h3 { font-family: "Kalnia"; }
 .sitelen * { font-family: "nishiki"; word-break: break-all;}
-.sitelen p, .sitelen a { font-size: 17pt; }
-.sitelen h2 { font-size: 27pt; font-weight: normal; }
+.sitelen { font-size: 17pt; }
+.sitelen h2 { font-size: 35pt; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
-p, p a, input { font-size: 14pt; }
+p, p a, input, button { font-size: 14pt; font-family: "Atkinson Hyperlegible Next"; }
 p { hyphens: auto; }
+.left { float: left; margin: 10px 20px 10px 0}
+.right { float: right; margin: 10px 0 10px 20px}
+.left, .right { width: 20%; }
+.box { margin: 40px 0; }
 
 /* HEADER */
 #splash { color: var(--splash); }
 #splash:hover { text-decoration: underline; }
-
 #nav { padding: 0; display: flex; margin: 20px 0 0;}
-#nav li { list-style: none; flex-grow: 1; text-align: center;}
+#nav li { list-style: none; flex-grow: 1; text-align: center; }
 #nav a { width: 100%; display: inline-block; padding: 10px 0; }
-
-.current { background-color: var(--secondary_bg); border-radius: 10px;}
-
-/* RESPONSIVENESS */
-.left { float: left; margin: 10px 20px 10px 0}
-.right { float: right; margin: 10px 0 10px 20px}
-
-.left, .right { width: 20%; }
-
-.box {
-	margin: 40px 0;
-}
-
-@media only screen and (min-width: 600px){
-	.box {
-		background-color: var(--main_bg);
-		margin: 40px 0; /* vertical, side */
-		padding: 5px 40px 30px; /* top, side, bottom */
-		outline: 4px solid var(--secondary_bg); /* thickness, style, color */
-		border-radius: 15px;
-	}
-
-	/* this is stolen from https://samotny.neocities.org/ */
-	#bg { 
-		position: fixed;
-		z-index: -2;
-		top: -50%;
-		right: -50%;
-		bottom: -50%;
-		left: -50%;
-		background-image: url('media/images/bg.png');
-		animation: 6s linear infinite bg;
-	}
-
-	p { text-align: justify; }
-}
-
+.current { background-color: var(--secondary_bg); border-radius: 10px; }
 
 /* SPECIFIC */
-img {
-	max-width: 100%;
-	margin: auto;
-}
+.gallery { max-width: 60vw; margin: 0 auto;}
+.gallery * { outline: 3px solid var(--secondary_bg); border-radius: 10px; margin: 10px 0; }
 
-.gallery img:hover{
-	transform: scale(2); 
-	transition: transform 0.25s ease;
-}
+img {max-width: 100%; margin: auto; }
 
 .john {
 	max-width:732px;
@@ -119,16 +57,6 @@ img {
 	outline: 2px solid var(--secondary_bg); /* thickness, style, color */
 	border-radius: 10px;
 }
-
-.gallery { display: flex; justify-content: center; }
-  
-.gallery * {
-	margin: 10px;
-	width: 100%;
-	max-width: 200px;
-	outline: 3px solid var(--secondary_bg);
-	border-radius: 10px;
-  }
 
 footer { text-align: center; text-shadow: 1px 1px 4px var(--main_bg); }
 .link_button img { margin: 10px; }
@@ -170,3 +98,45 @@ input[type="range"] {
 }
 
 button:hover { color: var(--links); }
+
+/* DESKTOP */
+@media only screen and (min-width: 600px){
+	.box {
+		background-color: var(--main_bg);
+		margin: 40px 0; /* vertical, side */
+		padding: 5px 40px 30px; /* top, side, bottom */
+		outline: 4px solid var(--secondary_bg); /* thickness, style, color */
+		border-radius: 15px;
+	}
+
+	/* this is stolen from https://samotny.neocities.org/ */
+	#bg { 
+		position: fixed;
+		z-index: -2;
+		top: -50%;
+		right: -50%;
+		bottom: -50%;
+		left: -50%;
+		background-image: url('media/images/bg.png');
+		animation: 6s linear infinite bg;
+	}
+
+	p { text-align: justify; }
+
+	.gallery { 
+		display: flex; 
+		justify-content: center; 
+		max-width: 100%; 
+	}
+
+	.gallery img:hover { 
+		transform: scale(2); 
+		transition: transform 0.25s ease; 
+	}
+  
+	.gallery * {
+		margin: 10px;
+		width: 100%;
+		max-width: 200px;
+	}
+}

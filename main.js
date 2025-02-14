@@ -38,7 +38,7 @@ IP-address? They know where I pee?
 Oll Korrekt schmoll schmorrect.
 H-He. Libeb Cnofne. Namgal Sipsclar.
 Exactly half of the latin alphabet's minuscules fit in x-height.
-My give a fucks are on vacation. Just kidding I probably do care.
+My give a fucks are on vacation. Just kidding I care <3
 A broken record is still right maybe it depends I guess
 If you rearrange the letters in Peru, you could spell Europe.
 T**** N** R****
@@ -59,7 +59,8 @@ Bosskeep Gatelight Gasgirl
 Light Keep Boss
 I don't want a history lesson I want a sandwich (dXj97cFU1VM?t=238)
 I could lie, say I likey-like that
-Never heard of the dressed mole-rat? You are one of today's lucky 10,000`.split("\n")
+Never heard of the dressed mole-rat? You are one of today's lucky 10,000
+When I risk it for a biscuit then I'm in a good mood`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
