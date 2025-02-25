@@ -1,4 +1,4 @@
-// Ok if you want you can read the splash texts here, but where's the fun in that??
+// Ok if you want you can read the splash texts here, but where's the fun in that?? Just click on them instead it cycles don't worry.
 const splash_texts = 
 `Don't translate soko ma pipi to english!! wait...
 Can we bring back the crying laughing emoji I liked her
@@ -33,7 +33,7 @@ Microsoft is a crazy name if you think about it. ew sorry
 Unattractive people in relationships far away from you!!
 Fargone Faceferve <3 (jKwrYS2a8zA?t=482)
 Orion's 'sword'
-wan, tu, tu wan, tu tu, luka, luka wan, likujo!
+pu-rist jan Usawi be like wan, tu, tu wan, tu tu, luka, luka wan, likujo!
 IP-address? They know where I pee?
 Oll Korrekt schmoll schmorrect.
 H-He. Libeb Cnofne. Namgal Sipsclar.
@@ -44,11 +44,11 @@ If you rearrange the letters in Peru, you could spell Europe.
 T**** N** R****
 Don't say 'Two eyes, wow' in toki pona, worst mistake of my life
 Woo gays, gay it up
-Oh ok Nguyen is pronounced ŋwiən apparently
+Oh ok Nguyen is pronounced ŋwiən apparently??
 Live laugh love? Honey. Die cry hate. (don't)
 Zorp Schmorp
 Are you guys lgbt or something
-Crazy how there's that one topology joke and no other ones but what even is topology
+Crazy how there's that one donut topology joke and no other ones but what even is topology
 I am the truest repairman
 Zoo-Wee Mama
 I feel like an umbrella (quoIzf48YeM?t=172)
@@ -60,7 +60,9 @@ Light Keep Boss
 I don't want a history lesson I want a sandwich (dXj97cFU1VM?t=238)
 I could lie, say I likey-like that
 Never heard of the dressed mole-rat? You are one of today's lucky 10,000
-When I risk it for a biscuit then I'm in a good mood`.split("\n")
+When I risk it for a biscuit then I'm in a good mood
+använd piltangenterna för att styra din figur <3
+I love drinking soowi tello wawa kəpecken nəmacko en cooleh IO kasi`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
