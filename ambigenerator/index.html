@@ -6,7 +6,7 @@
     <title>:]</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="ambigenerator.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Kalnia:wght@100..500&display=swap');</style>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Kalnia:wght@500&display=swap');</style>
     <link rel="icon" href="../media/images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Fast, free, and kinda good ambigram generator known as The Dressed Mole-Rat's Ambigenerator.">
     <meta name="darkreader-lock">
@@ -16,7 +16,7 @@
     <div id="header" class="box">
         <h1><a onclick="cycle_theme()" title="Click this for a secret ugly theme!">🦩</a> The Dressed Mole-Rat</h1>
         <p><a onclick="splash()" id="splash"></a></p>
-        <ul id="nav" class="sitelen">
+        <ul class="bar sitelen">
             <li><a href="../">tomo</a></li>
             <li><a class="current" href="./">nasa</a></li>
             <li><a href="../morse keyer/">ilo</a></li>
@@ -30,9 +30,13 @@
     
     <div id="ambigenerator settings" class="box">
         <h2>Ambigram generator</h2>
-        <p>This is my ambigram generator, or ambigenerator for barely short. You can type a word in the box and click generate, and the generator will make a bunch of rotationally symmetric ambigrams of that word. If you type two words separated by a space, those will be merged into a single ambigram with the two words being the two readings.</p>
-        <p>Check this box to get smaller images → <input type="checkbox" id="smaller images"></p>
-        <p>Check this box to get alternate glyphs → <input type="checkbox" id="alternate glyphs"></p>
+        <p>This is my ambigram generator, or ambigenerator for barely short. You can type a word in the box and click generate, and the generator will make a bunch of rotationally symmetric ambigrams of that word. If you type two words separated by a space, those will be merged into a single ambigram with the two words being the two readings. Choose below one of the three styles of ambigrams available.</p>
+
+        <select id="style dropdown">
+            <option value="new">blocky</option>
+            <option value="old">original</option>
+            <option value="pixel">pixel art</option>
+        </select>
 
         <script src="ambigenerator.js"></script>
         <div>

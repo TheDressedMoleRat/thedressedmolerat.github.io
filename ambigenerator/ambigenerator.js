@@ -1,14 +1,27 @@
 // No what are you doing here? This whole script is a mess I don't know JS leave me alone go away >:(
 // !!!
 
-let modernStartGlyphs = [['a1', 'a2i'], ['r2i'], ['c2i', 'c1'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2'], ['p1i'], ['q2'], ['r2i', 'r1'], ['s2i', 's1'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']]
-let modernMiddleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
-let modernEndGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']];
-// let bannedPairs = [['h2i','y2'],['r1','r2'],['h1','y2'],['v1','v2'],['e1','e2i'],['s1','s2']];
-
-let oldStartGlyphs = [['a1', 'a2i'], ['b2i'], ['c2', 'c1'], ['d2i'], ['e2', 'e1'], ['f1i'], ['g2'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m2', 'm3'], ['n2'], ['o1', 'o2i'], ['p1i'], ['q1', 'q2'], ['r2', 'r1'], ['s2', 's1'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']]
-let oldMiddleGlyphs = [['a2'], ['h2'], ['c1', 'c2'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2'], ['o2i'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']];
-let oldEndGlyphs = [['a2', 'a1i'], ['h2'], ['c1', 'c2'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2', 'h1'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2', 'n1'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']];
+// start, middle, end, strokewidth, height
+let glyphs_lookup = {
+	"old": [
+		[['a1', 'a2i'], ['b2i'], ['c2', 'c1'], ['d2i'], ['e2', 'e1'], ['f1i'], ['g2'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m2', 'm3'], ['n2'], ['o1', 'o2i'], ['p1i'], ['q1', 'q2'], ['r2', 'r1'], ['s2', 's1'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']],
+		[['a2'], ['h2'], ['c2', 'c1'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2'], ['o2i'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']],
+		[['a2', 'a1i'], ['h2'], ['c2', 'c1'], ['d2'], ['e2i', 'e1'], ['f1'], ['g2'], ['h2', 'h1'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3'], ['n2', 'n1'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1', 'y2'], ['z1', 'z2']],
+		100, 600
+	],
+	"new":[
+		[['a1', 'a2i'], ['r2i'], ['c2i', 'c1'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i', 'h2'], ['i1'], ['j1', 'j2'], ['k2i'], ['l1'], ['m2i', 'm3'], ['n2i'], ['o2'], ['p1i'], ['q2'], ['r2i', 'r1'], ['s2i', 's1'], ['t1i'], ['u2'], ['v1i', 'v2'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']],
+		[['a2'], ['h2'], ['c2', 'c1'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']],
+		[['a2', 'a1i'], ['h2'], ['c2', 'c1'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']],
+		100, 600
+	],
+	"pixel": [
+		[['a1', 'a2i'], ['r2i'], ['c2i', 'c1'], ['d2i'], ['e2i', 'e1'], ['f1i'], ['g2i'], ['h2i'], ['i1'], ['j1', 'j2i'], ['k2i'], ['l1'], ['m2', 'm3'], ['n2i'], ['o2'], ['p1i'], ['q2'], ['r2i', 'r1'], ['s2i', 's1'], ['t1i'], ['u2'], ['v1i', 'v2i'], ['w2', 'w3'], ['x2'], ['y1i'], ['z1', 'z2']],
+		[['a2'], ['h2'], ['c2', 'c1'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']],
+		[['a2'], ['h2'], ['c2', 'c1'], ['d2'], ['e2', 'e1'], ['f1'], ['g2'], ['h2'], ['i1'], ['j1', 'j2'], ['k2'], ['l1'], ['m3', 'm2'], ['n2'], ['o2'], ['p1'], ['q2'], ['r1', 'r2'], ['s1', 's2'], ['t1'], ['u2'], ['v1', 'v2'], ['w2', 'w3'], ['x2'], ['y1'], ['z1', 'z2']],
+		6, 36
+	],
+}
 
 function clear() {
 	const canvases = document.querySelectorAll('canvas');
@@ -52,14 +65,11 @@ function spawnCanvas(width, height) {
 	return canvas;
 }
 
-async function getGlyphImage(name, small, modern) {
+async function getGlyphImage(name, style) {
 	return new Promise((resolve) => {
 		const glyph = new Image();
 
-		let folder = 'glyph images/';
-		folder += modern ? 'new' : 'old';
-		folder += small ? '150' : '600';
-		folder += '/';
+		let folder = 'glyph images/' + style + '/';
 
 		glyph.src = folder + name + '.png';
 		glyph.onload = function() { resolve(glyph); };
@@ -70,14 +80,12 @@ function letterIndex(letter) {
 	return letter.charCodeAt(0) - 'a'.charCodeAt(0);
 }
 
-function getPossibleGlyphs(words) {
+function getPossibleGlyphs(words, style) {
 	let glyphs = [[],[]];
-	// I check this again even though I checked it somewhere before but uughhhh
-	let modern = !document.getElementById('alternate glyphs').checked;	
 
-	let starters = modern ? modernStartGlyphs : oldStartGlyphs
-	let middlers = modern ? modernMiddleGlyphs : oldMiddleGlyphs
-	let enders = modern ? modernEndGlyphs : oldEndGlyphs
+	let starters = glyphs_lookup[style][0]
+	let middlers = glyphs_lookup[style][1]
+	let enders = glyphs_lookup[style][2]
 
 	// for both words:
 	for (let wordIndex = 0; wordIndex < 2; wordIndex++) {
@@ -123,8 +131,7 @@ async function generateAmbigram() {
 	clear();
 
 	let words = document.getElementById('ambigenerator input').value;
-	let small = document.getElementById('smaller images').checked;	
-	let modern = !document.getElementById('alternate glyphs').checked;	
+	let style = document.getElementById('style dropdown').value;
 
 	let doubleWords = true;
 	
@@ -148,7 +155,7 @@ async function generateAmbigram() {
 		doubleWords = false;
 	}
 
-	const glyphs = getPossibleGlyphs(words);
+	const glyphs = getPossibleGlyphs(words, style);
 
 	let permutsA = cartesian(glyphs[0]);
 	let permutsB = cartesian(glyphs[1]);
@@ -179,16 +186,20 @@ async function generateAmbigram() {
 	}
 	for (const combo of matchingCombos) {
 		let width = countStrokes(combo[0]);
-		const strokeWidth = small ? 25 : 100;
+		const strokeWidth = glyphs_lookup[style][3];
 		width += 3;
 		width *= strokeWidth;
-		let canvas = spawnCanvas(width, strokeWidth * 6);
+		let canvas = spawnCanvas(width, glyphs_lookup[style][4]);
 		let ctx = canvas.getContext('2d');
+
+		if (style == "pixel") {
+			canvas.style.imageRendering = 'pixelated';
+		}
 
 		// These for loops could be less repetetive but no
 		let x = 0;
 		for (const glyph of combo[0]) {
-			const glyphImage = await getGlyphImage(glyph, small, modern);
+			const glyphImage = await getGlyphImage(glyph, style);
 			ctx.drawImage(glyphImage, x, 0);
 			x += strokeWidth * countStrokes([glyph]);
 		}
@@ -196,7 +207,7 @@ async function generateAmbigram() {
 		
 		x = 0;
 		for (const glyph of combo[1]) {
-			const glyphImage = await getGlyphImage(glyph, small, modern);
+			const glyphImage = await getGlyphImage(glyph, style);
 			ctx.drawImage(glyphImage, x-canvas.width, -canvas.height);
 			x += strokeWidth * countStrokes([glyph]);
 		}

@@ -1,7 +1,6 @@
 // Ok if you want you can read the splash texts here, but where's the fun in that?? Just click on them instead it cycles don't worry.
 const splash_texts = 
 `Don't translate soko ma pipi to english!! wait...
-Can we bring back the crying laughing emoji I liked her
 Did you know proportional fonts are literally better for coding?
 Do you ever have several songs at the same time mashupping in your head?
 Oiler 'discovering' a number (literally 3)
@@ -62,7 +61,8 @@ I could lie, say I likey-like that
 Never heard of the dressed mole-rat? You are one of today's lucky 10,000
 When I risk it for a biscuit then I'm in a good mood
 använd piltangenterna för att styra din figur <3
-I love drinking soowi tello wawa kəpecken nəmacko en cooleh IO kasi`.split("\n")
+I love drinking soowi tello wawa kəpecken nəmacko en cooleh I.O. kasi
+Ok but what reason is there to pronounce a K in et cetera? Where is it??`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
@@ -70,19 +70,25 @@ const splash_element = document.getElementById("splash");
 let theme_index = 0;
 const themes = {
 	default: {
-		main_bg: '#282a36',
-		secondary_bg: '#44475A',
-		text: '#F8F8F2',
-		links: '#8BE9FD',
-		splash: '#6272A4'
+		"vars":{
+			main_bg: '#282a36',
+			secondary_bg: '#44475A',
+			text: '#F8F8F2',
+			links: '#8BE9FD',
+			splash: '#6272A4'
+		},
+		"bg-image":"/media/images/backgrounds/tokipona.png"
 	},
-	test: {
-		main_bg: 'white',
-		secondary_bg: '#ccc',
-		text: '#202122',
-		links: '#36c',
-		splash: '#bb708f'
-	}
+	light: {
+		"vars":{
+			main_bg: 'white',
+			secondary_bg: '#ccc',
+			text: '#202122',
+			links: '#36c',
+			splash: '#bb708f'
+		},
+		"bg-image":"/media/images/backgrounds/white.png"
+	},
 };
 
 function splash() {
@@ -92,9 +98,11 @@ function splash() {
 
 function set_theme(theme_dictionary) {
 	let root = document.querySelector(':root');
-	for ([var_name, color] of Object.entries(theme_dictionary)) {
+	for ([var_name, color] of Object.entries(theme_dictionary["vars"])) {
 		root.style.setProperty("--"+var_name, color);
 	}
+
+	document.getElementById("bg").style.backgroundImage = "url("+theme_dictionary["bg-image"]+")";
 }
 
 function cycle_theme() {
