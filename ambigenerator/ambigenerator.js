@@ -1,5 +1,6 @@
 // No what are you doing here? This whole script is a mess I don't know JS leave me alone go away >:(
 // !!!
+// This might actually be the single worst code file I have ever produced I am not kidding
 
 // start, middle, end, strokewidth, height
 let glyphs_lookup = {
@@ -23,10 +24,11 @@ let glyphs_lookup = {
 	],
 }
 
+// um it doesn't work?
 function clear() {
-	const canvases = document.querySelectorAll('canvas');
-	for (const canvas of canvases) {
-		canvas.remove();
+	const ambigrams = Array.from(document.getElementsByClassName('ambigram_container')); // thanks chatgpt
+	for (const ambigram of ambigrams) {
+		ambigram.remove();
 	}
 }
 
@@ -36,33 +38,6 @@ function spin(canvas) {
 	} else {
 		canvas.style.transform = 'rotate(180deg)'; 
 	}
-}
-
-function spawnCanvas(width, height) {
-	const container = document.createElement('div');
-	container.className = 'ambigram_container';
-
-	const canvas = document.createElement('canvas');
-	container.appendChild(canvas)
-	canvas.width = width;
-	canvas.height = height;
-
-	const ambigramsBox = document.getElementById('ambigrams');
-	ambigramsBox.appendChild(container)
-
-	const colorValues = 'cdef'
-	let color = '#';
-	for (let i=0; i<3; i++) {
-		color += colorValues[Math.floor(Math.random()*4)];
-	}
-
-	let ctx = canvas.getContext('2d');
-	ctx.fillStyle = color;
-	ctx.fillRect(0,0,width,height);
-
-	canvas.addEventListener('click', spin.bind(null, canvas));
-
-	return canvas;
 }
 
 async function getGlyphImage(name, style) {
@@ -125,6 +100,24 @@ function countStrokes(structure) {
 
 function say(choices) {
 	alert(choices[Math.floor(Math.random()*choices.length)]);
+}
+
+function spawnCanvas(width, height) {
+	const canvas = document.createElement('canvas');
+	canvas.width = width;
+	canvas.height = height;
+
+	const colorValues = 'cdef'
+	let color = '#';
+	for (let i=0; i<3; i++) {
+		color += colorValues[Math.floor(Math.random()*4)];
+	}
+
+	let ctx = canvas.getContext('2d');
+	ctx.fillStyle = color;
+	ctx.fillRect(0,0,width,height);
+
+	return canvas;
 }
 
 async function generateAmbigram() {
@@ -192,10 +185,6 @@ async function generateAmbigram() {
 		let canvas = spawnCanvas(width, glyphs_lookup[style][4]);
 		let ctx = canvas.getContext('2d');
 
-		if (style == "pixel") {
-			canvas.style.imageRendering = 'pixelated';
-		}
-
 		// These for loops could be less repetetive but no
 		let x = 0;
 		for (const glyph of combo[0]) {
@@ -210,6 +199,24 @@ async function generateAmbigram() {
 			const glyphImage = await getGlyphImage(glyph, style);
 			ctx.drawImage(glyphImage, x-canvas.width, -canvas.height);
 			x += strokeWidth * countStrokes([glyph]);
+		}
+
+		let img = new Image();
+		img.src = canvas.toDataURL();
+		let img_element = document.body.appendChild(img);
+
+		const container = document.createElement('div');
+		container.className = 'ambigram_container';
+
+		container.appendChild(img_element)
+
+		const ambigramsBox = document.getElementById('ambigrams');
+		ambigramsBox.appendChild(container)
+
+		img_element.addEventListener('click', spin.bind(null, img_element));
+
+		if (style == "pixel") {
+			img_element.style.imageRendering = 'pixelated';
 		}
 	}
 }

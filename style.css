@@ -3,7 +3,7 @@
 
 /* PAGE */
 body {
-	width: min(90vw, 960px);
+	width: min(90vw, 1200px);
 	margin: 20px auto;
 	background-color: var(--main_bg);
 	color: var(--text);
@@ -21,6 +21,10 @@ h1 {
 	margin: 20px 0 10px; 
 }
 
+h2 {
+	font-size: 16pt;
+}
+
 .box {
 	border-bottom: 5px solid var(--secondary_bg);
 	padding-bottom: 20px;
@@ -28,18 +32,13 @@ h1 {
 
 /* OTHER */
 
-a :not(.sitelen) {
-	font-weight: bold;
-	background-color: blue;
-}
-
 img {
 	max-width: 100%;
 }
 
 #splash { color: var(--splash); }
 #splash:hover { text-decoration: underline; }
-.bar { padding: 0; display: flex; margin: 20px 0 0;}
+.bar { padding: 0; display: flex; margin: 20px 0 0; gap: 10px; }
 .bar li { list-style: none; flex-grow: 1; text-align: center; }
 .bar a { width: 100%; display: inline-block; padding: 10px 0; }
 .current, .bar a:hover { background-color: var(--secondary_bg); border-radius: 10px; }
@@ -55,23 +54,21 @@ footer p { text-align: center; }
 }
 
 .gallery { 
-	display: flex;
-	gap: 10px;
-	max-height: 300px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	align-items: center;
+	justify-items: center;
 }
 
-.gallery img { 
+.gallery > * { 
 	border: var(--secondary_bg) 4px solid;
 	border-radius: 8px;
-	background-color: var(--secondary_bg);
-	min-width: 0;
-	object-fit: contain;
-	flex: 1;
+	margin: 0;
 }
 
-.gallery img:hover { 
-	width: min(880px, 90vw);
-	position: absolute;
+.gallery * {
+	width: 100%;
 }
 
 /* DESKTOP */
@@ -101,8 +98,12 @@ footer p { text-align: center; }
 	}
 
 	aside {
-		width: 250px;
+		width: 300px;
 		flex-shrink: 0;
+	}
+
+	.gallery {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 

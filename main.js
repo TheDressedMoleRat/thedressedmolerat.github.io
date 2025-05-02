@@ -44,7 +44,7 @@ Woo gays, gay it up
 Oh ok Nguyen is pronounced ŋwiən apparently??
 Live laugh love? Honey. Die cry hate. (don't)
 Zorp Schmorp
-Are you guys lgbt or something
+Are you lgbt or something
 Crazy how there's that one donut topology joke and no other ones but what even is topology
 I am the truest repairman
 Zoo-Wee Mama
@@ -64,10 +64,8 @@ Ok but what reason is there to pronounce a K in et cetera? Where is it??
 Oh no! Come on, girl. - Terry Mennanecker
 Ugh, food for dinner, again?
 Exercise? I thought you said extra fries!
-my baby loves his apparatus (cAeYMYkew_k?t=2m10s)
 Is it true you went to school with skinny but pretty voice totally tattoo all over da body but pretty drugs taking singing miss wine in the house
 That's numberwang!
-Hi mom, I wish I could come back! (Wm6BuznFKHY?t=980)
 τ > π
 Shortening <i>there are</i> to <i>there's</i> unnerves me slightly.
 sadly I think these splash texts are where most of this websites effort lies
