@@ -43,6 +43,7 @@ img {
 .bar a { width: 100%; display: inline-block; padding: 10px 0; }
 .current, .bar a:hover { background-color: var(--secondary_bg); border-radius: 10px; }
 footer p { text-align: center; }
+.ipa { font-family: system-ui, 'Open Sans', sans-serif }
 
 #profile_pic {
 	float: left;
@@ -109,8 +110,7 @@ footer p { text-align: center; }
 
 /* BORING */
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
-.sitelen * { font-family: "nishiki"; word-break: break-all;}
-.sitelen { font-size: 17pt; }
+.sitelen *, .sitelen { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
 .sitelen h2 { font-size: 35pt; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
 p { hyphens: auto; }
