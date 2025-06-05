@@ -1,5 +1,5 @@
 @font-face { font-family: "nishiki"; src: url(media/fonts/nishiki-teki-lili.ttf); }
-:root { --main_bg: #282a36; --secondary_bg: #44475A; --text: #F8F8F2; --links: #8BE9FD; --splash: #6272A4; }
+:root { --main_bg: #282a36; --secondary_bg: #44475A; --text: #F8F8F2; --links: #ffaad5; --splash: #6272A4; }
 
 /* PAGE */
 body {
@@ -36,12 +36,12 @@ img {
 	max-width: 100%;
 }
 
-#splash { color: var(--splash); }
-#splash:hover { text-decoration: underline; }
+.splash { color: var(--splash); }
+.splash:hover { text-decoration: underline; }
 .bar { padding: 0; display: flex; margin: 20px 0 0; gap: 10px; }
 .bar li { list-style: none; flex-grow: 1; text-align: center; }
 .bar a { width: 100%; display: inline-block; padding: 10px 0; }
-.current, .bar a:hover { background-color: var(--secondary_bg); border-radius: 10px; }
+.bar a[href=""], .bar a:hover { background-color: var(--secondary_bg); border-radius: 10px; }
 footer p { text-align: center; }
 .ipa { font-family: system-ui, 'Open Sans', sans-serif }
 
@@ -109,6 +109,7 @@ footer p { text-align: center; }
 }
 
 /* BORING */
+iframe { border: none; }
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
 .sitelen *, .sitelen { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
 .sitelen h2 { font-size: 35pt; font-weight: normal; }
