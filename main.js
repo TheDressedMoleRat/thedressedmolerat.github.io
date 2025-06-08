@@ -98,7 +98,7 @@ const themes = {
 			links: '#ffaad5',
 			splash: '#6272A4'
 		},
-		"bg-image":"/media/images/backgrounds/tokipona.png"
+		"bg-image":"/media/images/backgrounds/tokipona.webp"
 	},
 	light: {
 		"vars":{
@@ -108,7 +108,7 @@ const themes = {
 			links: '#36c',
 			splash: '#bb708f'
 		},
-		"bg-image":"/media/images/backgrounds/white.png"
+		"bg-image":"/media/images/backgrounds/white.webp"
 	},
 	space: {
 		"vars":{
@@ -131,7 +131,7 @@ function set_theme(theme_dictionary) {
 	let root = document.querySelector(':root');
 	for ([var_name, color] of Object.entries(theme_dictionary["vars"])) {
 		root.style.setProperty("--"+var_name, color);
-	}
+	} 
 
 	let bg_element = document.getElementById("bg")
 	bg_element.style.backgroundImage = "url("+theme_dictionary["bg-image"]+")";
