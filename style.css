@@ -10,7 +10,10 @@ body {
 }
 
 p, p a, input, button, select, select * { 
-	font-size: 14pt; font-family: "Atkinson Hyperlegible Next"; 
+	font-size: 14pt; 
+	font-family: "Atkinson Hyperlegible Next"; 
+	line-height: 1.4;
+
 }
 
 h1, h2, h3 { 
@@ -22,7 +25,7 @@ h1 {
 }
 
 h2 {
-	font-size: 16pt;
+	font-size: 20pt;
 }
 
 .box {
@@ -85,12 +88,16 @@ footer p { text-align: center; }
 		animation: 6s linear infinite bg;
 	}
 
+	#header {
+		margin: 0 10px;
+	}
+
 	.box {
 		background-color: var(--main_bg);
 		border: 5px solid var(--secondary_bg);
-		border-radius: 15px;
-		padding: 20px;
-		margin: 10px;
+		border-radius: 35px;
+		padding: 5px 20px 20px;
+		margin: 20px 10px;
 	}
 
 	#content {

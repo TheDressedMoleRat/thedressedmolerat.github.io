@@ -77,13 +77,16 @@ Americans be like yeah I love studying mathematic
 Apparently Denmark grades 12, 10, 7, 4, 02, 00, -3 instead of A-F
 I'm trying to be linguistically descriptivistic but oh brother
 In Swedish "the fish" and "the fishers" are the same word for some reason
-Also "six" and "sex" are the same
-I'm so glad Swedish doesn't have vowel reduction, it sounds so gross
+Also "six" and "sex" are the same in Swedish
 Every person's just a unicycle, looking for a second wheel
 What the bullcrud?
 Amor vincit aliquas res
 Human rights? Yeah I sure hope she does.
-Logan Pail‽`.split("\n")
+I'm so glad Swedish doesn't have vowel reduction, it sounds so gross
+Logan Pail‽
+How often do you actually think the "I know what you're thinking" thought?
+It's literally just sauce
+The bane of the internet is people who that the webrings somewhere so are hard to find`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
@@ -113,9 +116,9 @@ const themes = {
 	space: {
 		"vars":{
 			main_bg: 'black',
-			secondary_bg: '#333',
-			text: 'white',
-			links: '#c7f',
+			secondary_bg: '#c7f',
+			text: '#FFF',
+			links: '#F33',
 			splash: '#555'
 		},
 		"bg-image":"/media/images/backgrounds/spacebg.gif"

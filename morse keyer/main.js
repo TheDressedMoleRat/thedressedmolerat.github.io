@@ -70,11 +70,12 @@ slider.oninput = update_timings;
 setInterval(update_output, 60);
 
 function update_timings() {
-	dash_ms = 3*slider.value;
-	gap_ms = 3*slider.value;
-	space_ms = 7*slider.value;
+    let unit = 1000 * 60 / (50 * slider.value);
+	dash_ms = 3 * unit;
+	gap_ms = 3 * unit;
+	space_ms = 7 * unit;
 	
-	slider_display.innerHTML = "One unit is " + slider.value + " ms";
+	slider_display.innerHTML = "Current speed: " + slider.value + " words per minute";
 
 	update_output();
 }
