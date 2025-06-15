@@ -99,9 +99,13 @@ const themes = {
 			secondary_bg: '#44475A',
 			text: '#F8F8F2',
 			links: '#ffaad5',
-			splash: '#6272A4'
+			splash: '#6272A4',
+			body_font: "Atkinson Hyperlegible Next",
+			heading_font: "Kalnia",
+			box_rounding: "35px",
+			bg_image: "url(/media/images/backgrounds/tokipona.webp)",
+			bg_animation: "6s linear infinite bg"
 		},
-		"bg-image":"/media/images/backgrounds/tokipona.webp"
 	},
 	light: {
 		"vars":{
@@ -109,19 +113,42 @@ const themes = {
 			secondary_bg: '#ccc',
 			text: '#202122',
 			links: '#36c',
-			splash: '#bb708f'
+			splash: '#bb708f',
+			body_font: "Atkinson Hyperlegible Next",
+			heading_font: "Kalnia",
+			box_rounding: "35px",
+			bg_image:"url(/media/images/backgrounds/white.webp)",
+			bg_animation: "6s linear infinite bg"
 		},
-		"bg-image":"/media/images/backgrounds/white.webp"
+		
 	},
 	space: {
 		"vars":{
-			main_bg: 'black',
-			secondary_bg: '#c7f',
+			main_bg: '#000c',
+			secondary_bg: '#000c',
 			text: '#FFF',
 			links: '#F33',
-			splash: '#555'
-		},
-		"bg-image":"/media/images/backgrounds/spacebg.gif"
+			splash: '#555',
+			body_font: "Times New Roman",
+			heading_font: "Times New Roman",
+			box_rounding: "0px",
+			bg_image:"url(/media/images/backgrounds/spacebg.gif)",
+			bg_animation: "none"
+		}
+	},
+	pink: {
+		"vars":{
+			main_bg: 'white',
+			secondary_bg: '#f7669c',
+			text: '#f7669c',
+			links: '#00abff',
+			splash: '#f7669c',
+			body_font: "Comic Sans MS",
+			heading_font: "Comic Sans MS",
+			box_rounding: "0px",
+			bg_image:"url(/media/images/backgrounds/pink.webp)",
+			bg_animation: "6s linear infinite bg"
+		}
 	}
 };
 
@@ -132,18 +159,9 @@ function splash() {
 
 function set_theme(theme_dictionary) {
 	let root = document.querySelector(':root');
-	for ([var_name, color] of Object.entries(theme_dictionary["vars"])) {
-		root.style.setProperty("--"+var_name, color);
+	for ([var_name, var_value] of Object.entries(theme_dictionary["vars"])) {
+		root.style.setProperty("--"+var_name, var_value);
 	} 
-
-	let bg_element = document.getElementById("bg")
-	bg_element.style.backgroundImage = "url("+theme_dictionary["bg-image"]+")";
-
-	if (theme_dictionary["bg-image"].endsWith(".gif")) {
-		bg_element.style.animation = "none";
-	} else {
-		bg_element.style.animation = "6s linear infinite bg";
-	}
 }
 
 function cycle_theme() {

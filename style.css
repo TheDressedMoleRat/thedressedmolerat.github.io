@@ -1,5 +1,16 @@
 @font-face { font-family: "nishiki"; src: url(media/fonts/nishiki-teki-lili.ttf); }
-:root { --main_bg: #282a36; --secondary_bg: #44475A; --text: #F8F8F2; --links: #ffaad5; --splash: #6272A4; }
+:root { 
+	--main_bg: #282a36; 
+	--secondary_bg: #44475A; 
+	--text: #F8F8F2; 
+	--links: #ffaad5; 
+	--splash: #6272A4; 
+	--body_font: "Atkinson Hyperlegible Next";
+	--heading_font: "Kalnia";
+	--box_rounding: 35px;
+	--bg_image: url('/media/images/backgrounds/tokipona.webp');
+	--bg_animation: "6s linear infinite bg";
+}
 
 /* PAGE */
 body {
@@ -11,13 +22,13 @@ body {
 
 p, p a, input, button, select, select * { 
 	font-size: 14pt; 
-	font-family: "Atkinson Hyperlegible Next"; 
+	font-family: var(--body_font); 
 	line-height: 1.4;
 
 }
 
 h1, h2, h3 { 
-	font-family: "Kalnia"; 
+	font-family: var(--heading_font); 
 }
 
 h1 { 
@@ -84,8 +95,8 @@ footer p { text-align: center; }
 		right: -50%;
 		bottom: -50%;
 		left: -50%;
-		background-image: url('/media/images/backgrounds/tokipona.webp');
-		animation: 6s linear infinite bg;
+		background-image: var(--bg_image);
+		animation: var(--bg_animation);
 	}
 
 	#header {
@@ -95,7 +106,7 @@ footer p { text-align: center; }
 	.box {
 		background-color: var(--main_bg);
 		border: 5px solid var(--secondary_bg);
-		border-radius: 35px;
+		border-radius: var(--box_rounding);
 		padding: 5px 20px 20px;
 		margin: 20px 10px;
 	}
