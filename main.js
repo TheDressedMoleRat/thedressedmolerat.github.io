@@ -86,7 +86,10 @@ I'm so glad Swedish doesn't have vowel reduction, it sounds so gross
 Logan Pail‽
 How often do you actually think the "I know what you're thinking" thought?
 It's literally just sauce
-The bane of the internet is people who that the webrings somewhere so are hard to find`.split("\n")
+The bane of the internet is people who that the webrings somewhere so are hard to find
+Did you know that women are the second most respected gender? The first one might surprise you!
+I don't think more people have been to Berlin than I have
+This website is a mere dream ballet away from being a true gesamtkunstwerk`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");

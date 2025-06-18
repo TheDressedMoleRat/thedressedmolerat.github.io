@@ -20,6 +20,10 @@ body {
 	color: var(--text);
 }
 
+* {
+	cursor: url("media/images/cursor.ico"), auto;
+}
+
 p, p a, input, button, select, select * { 
 	font-size: 14pt; 
 	font-family: var(--body_font); 
@@ -45,6 +49,11 @@ h2 {
 }
 
 /* OTHER */
+
+::selection {
+	background-color: #ff95bd;
+	color: white;
+}
 
 img {
 	max-width: 100%;
@@ -123,6 +132,16 @@ footer p { text-align: center; }
 
 	.gallery {
 		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.two_columns {
+		margin: -20px 0;
+		display: flex;
+	}
+
+	.small_column {
+		width: 300px;
+		flex-shrink: 0;
 	}
 }
 
