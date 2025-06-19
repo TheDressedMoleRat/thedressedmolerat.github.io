@@ -155,7 +155,7 @@ p { hyphens: auto; }
 .left { float: left; margin: 10px 20px 10px 0}
 .right { float: right; margin: 10px 0 10px 20px}
 .left, .right { width: 20%; }
-.john { max-width:732px; width:100%; aspect-ratio: 361 / 42; border:none; margin: 0 auto 40px; display: block; }
+.john { max-width:732px; width:100%; aspect-ratio: 361 / 42; border:none; margin: 20px auto; display: block; }
 .link_button img { margin: 10px; }
 .link_button img:hover { outline: 4px solid var(--links); /* thickness, style, color */ }
 

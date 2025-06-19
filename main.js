@@ -177,3 +177,10 @@ splash();
 console.log("There are " + splash_texts.length + " splash texts in total. I'm trying to add new ones but It's not easy to come up with funny things!!");
 
 set_theme(themes["default"]);
+
+let date_spans = document.getElementsByClassName("date")
+
+for (const span of date_spans) {
+	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24))
+	span.innerHTML = "<strong>" + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</strong>";	
+}
