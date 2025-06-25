@@ -4,6 +4,7 @@
 	--secondary_bg: #44475A; 
 	--text: #F8F8F2; 
 	--links: #ffaad5; 
+	--button_text: white;
 	--splash: #6272A4; 
 	--body_font: "Atkinson Hyperlegible Next";
 	--heading_font: "Kalnia";
@@ -14,7 +15,7 @@
 
 /* PAGE */
 body {
-	width: min(90vw, 1200px);
+	width: min(90vw, 1500px);
 	margin: 20px auto;
 	background-color: var(--main_bg);
 	color: var(--text);
@@ -64,9 +65,12 @@ img {
 .bar { padding: 0; display: flex; margin: 20px 0 0; gap: 10px; }
 .bar li { list-style: none; flex-grow: 1; text-align: center; }
 .bar a { width: 100%; display: inline-block; padding: 10px 0; }
-.bar a[href=""], .bar a:hover { background-color: var(--secondary_bg); border-radius: 10px; }
+.bar a[href=""], .bar a:hover { background-color: var(--secondary_bg); color: var(--button_text); border-radius: 10px; text-decoration: none;}
 footer p { text-align: center; }
 .ipa { font-family: system-ui, 'Open Sans', sans-serif }
+/* these two don't work because js */
+#sillyring br { display: none; }
+#sillyring-image { display: none; }
 
 #profile_pic {
 	float: left;
@@ -96,7 +100,7 @@ footer p { text-align: center; }
 }
 
 /* DESKTOP */
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 1000px){
 	#bg { 
 		position: fixed;
 		z-index: -2;
@@ -122,8 +126,12 @@ footer p { text-align: center; }
 
 	#content {
 		display: flex;
-		flex-direction: row-reverse;
+		flex-direction: row;
 	}
+
+	#left_aside { order: 1; }
+	main { order: 2; }
+	#right_aside { order: 3; }
 
 	aside {
 		width: 300px;
@@ -151,6 +159,7 @@ iframe { border: none; }
 .sitelen *, .sitelen { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
 .sitelen h2 { font-size: 35pt; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
+a:hover { text-decoration: underline; }
 p { hyphens: auto; }
 .left { float: left; margin: 10px 20px 10px 0}
 .right { float: right; margin: 10px 0 10px 20px}
@@ -162,7 +171,7 @@ p { hyphens: auto; }
 /* WEIRD */
 button {
 	background-color: var(--secondary_bg);
-	color: var(--text);
+	color: var(--button_text);
 	border: none;
 	font-size: 14pt;
 	padding: 10px;
@@ -179,7 +188,7 @@ input[type="text"] {
 	border-radius: 10px;
 	outline: none;
 	max-width: 100%;
-	box-sizing: border-box; /* This makes 100% mean full width accounting for the padding of the container */
+	box-sizing: border-box;
 }
 
 input[type="range"] {
@@ -198,7 +207,7 @@ select {
 	background-color: var(--secondary_bg);
 	border: none;
 	border-radius: 10px;
-	color: var(--text);
+	color: var(--button_text);
 	padding: 10px;
 }
 

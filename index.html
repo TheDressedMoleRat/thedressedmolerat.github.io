@@ -13,8 +13,8 @@
 <body>
 	<div id="bg"></div>
 	<div id="header" class="box">
-		<p><a href="https://discord.com/users/536968796288581656" style="float: right" class="splash">(Say hi if you're nice!)</a></p>
-		<h1><a onclick="cycle_theme()" title="Click this for a secret light theme!">🦩</a> The Dressed Mole-Rat</h1>
+		<button onclick="cycle_theme()" style="float: right">Theme</button>
+		<h1>The Dressed Mole-Rat</h1>
 		<p><a onclick="splash()" id="splash" class="splash"></a></p>
 		<ul class="bar sitelen">
 			<li><a href="">tomo</a></li>
@@ -32,7 +32,7 @@
 			<div class="box">
 				<h2>Welcome!</h2>
 				<img src="media/images/profile.webp" alt="soweli" id="profile_pic">
-				<p>My name is the dressed mole-rat <i>(not really)</i>, or jan Awa, and I'm 17 and Swedish. I enjoy languages, typography, programming<a href="https://en.wikipedia.org/wiki/Serial_comma">,</a> and math(s). This website is where I put fun things I want strangers to see.</p>
+				<p>My name is The Dressed Mole-Rat, soweli Awa, or jan Awa, and I'm 17 years old and Swedish. I enjoy languages, typography, programming<a href="https://en.wikipedia.org/wiki/Serial_comma">,</a> and math(s). This website is where I put fun things I want strangers to see.</p>
 				<img src="media/images/memes/guy.gif" alt="cat-gif" class="right">			
 				<p>The real normal person languages I know are Swedish and English, and almost French. I am however also fluent in the constructed language <a href="#toki pona">toki pona</a>, and I enjoy everything there is to consume in the language. Generally, I think grammar and phonetics are interesting too, and I am currently making a conlang. (By currently making, I mean sometimes adding a word and then forgetting about it for a while)</p>
 				<img src="media/images/memes/hamer-min.gif" alt="cat-gif" class="left">			
@@ -54,16 +54,29 @@
 			<iframe src="https://john.citrons.xyz/embed?ref=https://thedressedmolerat.github.io/" class="john"></iframe>
 		</main>
 
-		<aside>
+		<aside id="left_aside">
 			<div class="box">
-				<h2>Bucket Webring!</h2>
-				<p>This is a really cool webring with a bunch of random sites, including me!</p>
-				<ul id="bucket_webring" class="bar sitelen">
+				<h2>Bucket Webring</h2>
+				<ul class="bar sitelen">
 					<li><a href="https://webring.bucketfish.me/redirect.html?to=prev&name=The Dressed Mole-Rat">kama</a></li>
 					<li><a href="https://webring.bucketfish.me/redirect.html?to=next&name=The Dressed Mole-Rat">tawa</a></li>
 					<li><a href="https://webring.bucketfish.me/redirect.html?to=random&name=The Dressed Mole-Rat">nasa</a></li>
 					<li><a href="https://webring.bucketfish.me">ale</a></li>
 				</ul>
+			</div>
+
+			<div class="box">
+				<h2>Hotline Webring!</h2>
+				<ul id="bucket_webring" class="bar sitelen">
+					<li><a href="https://hotlinewebring.club/soweliAwa/previous">kama</a></li>
+					<li><a href="https://hotlinewebring.club/soweliAwa/next">tawa</a></li>
+					<li><a href="https://hotlinewebring.club/">ale</a></li>
+				</ul>
+			</div>
+
+			<div class="box">
+				<h2>Sillyring</h2>
+				<script src="https://silly.possiblyaxolotl.com/ring/webstring.js"></script>
 			</div>
 
 			<div class="box">
@@ -73,15 +86,26 @@
 				<p><a href="https://youtu.be/feqJGFclhaQ" target="_blank">Camille is on the news but outside.</a> - <q>Wow this is quite the fiasco.</q></p>
 				<p><a href="video recs/">Previous video recommendations</a></p>
 			</div>
+			
+		</aside>
 
+		<aside id="right_aside">
+			<div class="box">
+				<h2>Interactives</h2>
+				<p><a href="ambigenerator/">Ambigenerator</a></p>
+				<p><a href="morse keyer/">Morse Code Keyer</a></p>
+			</div>
 			<div class="box">
 				<h2>Site news</h2>
-				<p><span class="date">2025-6-19</span>: Added a box for site news!</p>
-			</div>
-			
-			<div class="box">
-				<h2>Sillyring</h2>
-				<script src="https://silly.possiblyaxolotl.com/ring/webstring.js"></script>
+				<p><span class="date">2025-6-25</span>: Got added to the sillyring!</p>
+				<p><span class="date">2025-6-19</span>: Added this box for site news</p>
+				<p><span class="date">2025-6-8</span>: Converted all images to Webp</p>
+				<p><span class="date">2025-6-5</span>: Added a guestbook!</p>
+				<p><span class="date">2025-4-17</span>: Remade the CSS</p>
+				<p><span class="date">2025-3-3</span>: Added a pixel ambigram style</p>
+				<p><span class="date">2025-1-23</span>: Added a Johnvertisement</p>
+				<p><span class="date">2025-1-22</span>: Got added to the bucket ring!</p>
+				<p><span class="date">2025-1-16</span>: Finished and published this site</p>
 			</div>
 		</aside>
 	</div>

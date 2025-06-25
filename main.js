@@ -94,66 +94,60 @@ This website is a mere dream ballet away from being a true gesamtkunstwerk`.spli
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
 
-let theme_index = 0;
-const themes = {
-	default: {
-		"vars":{
-			main_bg: '#282a36',
-			secondary_bg: '#44475A',
-			text: '#F8F8F2',
-			links: '#ffaad5',
-			splash: '#6272A4',
-			body_font: "Atkinson Hyperlegible Next",
-			heading_font: "Kalnia",
-			box_rounding: "35px",
-			bg_image: "url(/media/images/backgrounds/tokipona.webp)",
-			bg_animation: "6s linear infinite bg"
-		},
+const theme_dicts = [
+	{ // default
+		main_bg: '#282a36',
+		secondary_bg: '#44475A',
+		text: '#F8F8F2',
+		links: '#ffaad5',
+		button_text: 'white',
+		splash: '#6272A4',
+		body_font: "Atkinson Hyperlegible Next",
+		heading_font: "Kalnia",
+		box_rounding: "35px",
+		bg_image: "url(/media/images/backgrounds/tokipona.webp)",
+		bg_animation: "6s linear infinite bg"
 	},
-	light: {
-		"vars":{
-			main_bg: 'white',
-			secondary_bg: '#ccc',
-			text: '#202122',
-			links: '#36c',
-			splash: '#bb708f',
-			body_font: "Atkinson Hyperlegible Next",
-			heading_font: "Kalnia",
-			box_rounding: "35px",
-			bg_image:"url(/media/images/backgrounds/white.webp)",
-			bg_animation: "6s linear infinite bg"
-		},
-		
+	{ // light
+		main_bg: 'white',
+		secondary_bg: '#ccc',
+		text: '#202122',
+		links: '#36c',
+		button_text: "black",
+		splash: '#bb708f',
+		body_font: "Atkinson Hyperlegible Next",
+		heading_font: "Kalnia",
+		box_rounding: "35px",
+		bg_image:"url(/media/images/backgrounds/white.webp)",
+		bg_animation: "6s linear infinite bg"
 	},
-	space: {
-		"vars":{
-			main_bg: '#000c',
-			secondary_bg: '#000c',
-			text: '#FFF',
-			links: '#F33',
-			splash: '#555',
-			body_font: "Times New Roman",
-			heading_font: "Times New Roman",
-			box_rounding: "0px",
-			bg_image:"url(/media/images/backgrounds/spacebg.gif)",
-			bg_animation: "none"
-		}
+	{ // space
+		main_bg: '#000',
+		secondary_bg: '#222',
+		text: '#FFF',
+		links: '#F33',
+		splash: '#555',
+		button_text: 'white',
+		body_font: "Times New Roman",
+		heading_font: "Times New Roman",
+		box_rounding: "0px",
+		bg_image:"url(/media/images/backgrounds/spacebg.gif)",
+		bg_animation: "none"
 	},
-	pink: {
-		"vars":{
-			main_bg: 'white',
-			secondary_bg: '#f7669c',
-			text: '#f7669c',
-			links: '#00abff',
-			splash: '#f7669c',
-			body_font: "Comic Sans MS",
-			heading_font: "Comic Sans MS",
-			box_rounding: "0px",
-			bg_image:"url(/media/images/backgrounds/pink.webp)",
-			bg_animation: "6s linear infinite bg"
-		}
+	{ // pink
+		main_bg: 'white',
+		secondary_bg: '#f7669c',
+		text: '#f7669c',
+		links: '#00abff',
+		splash: '#ff95bd',
+		button_text: 'white',
+		body_font: "Comic Sans MS",
+		heading_font: "Comic Sans MS",
+		box_rounding: "0px",
+		bg_image:"url(/media/images/backgrounds/pink.webp)",
+		bg_animation: "6s linear infinite bg"
 	}
-};
+];
 
 function splash() {
 	splash_index = (splash_index + 1) % splash_texts.length;
@@ -162,21 +156,36 @@ function splash() {
 
 function set_theme(theme_dictionary) {
 	let root = document.querySelector(':root');
-	for ([var_name, var_value] of Object.entries(theme_dictionary["vars"])) {
+	for ([var_name, var_value] of Object.entries(theme_dictionary)) {
 		root.style.setProperty("--"+var_name, var_value);
 	} 
 }
 
 function cycle_theme() {
-	theme_index = (theme_index + 1) % Object.keys(themes).length;
-	console.log("setting " + theme_index);
-	set_theme(Object.values(themes)[theme_index]);
+	let theme_index = (parseInt(read_cookie("theme_index")) + 1) % theme_dicts.length;
+	document.cookie = `theme_index=${theme_index}; path=/; expires=${new Date(Date.now() + 30*24*60*60*1000).toUTCString()}`;
+	set_theme(theme_dicts[theme_index]);
+}
+
+function read_cookie(cookie_name) {
+	cookies = document.cookie.split(";");
+	for (const c of cookies) {
+		if (c.startsWith(cookie_name)) {
+			return c.split("=")[1];
+		}
+	}
 }
 
 splash();
 console.log("There are " + splash_texts.length + " splash texts in total. I'm trying to add new ones but It's not easy to come up with funny things!!");
 
-set_theme(themes["default"]);
+let theme_cookie_value = read_cookie("theme_index");
+if (theme_cookie_value == undefined || theme_cookie_value == "NaN") {
+	set_theme(theme_dicts[0]);
+	document.cookie = `theme_index=0; path=/; expires=${new Date(Date.now() + 30*24*60*60*1000).toUTCString()}`;
+} else {
+	set_theme(theme_dicts[parseInt(theme_cookie_value)]);
+}
 
 let date_spans = document.getElementsByClassName("date")
 
