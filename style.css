@@ -25,7 +25,7 @@ body {
 	cursor: url("media/images/cursor.ico"), auto;
 }
 
-p, p a, input, button, select, select * { 
+p, p a, input, button, select, select *, .not_sitelen { 
 	font-size: 14pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
@@ -156,8 +156,8 @@ footer p { text-align: center; }
 /* BORING */
 iframe { border: none; }
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
-.sitelen *, .sitelen { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
-.sitelen h2 { font-size: 35pt; font-weight: normal; }
+.sitelen { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
+h2.sitelen  { font-size: 35pt; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
 a:hover { text-decoration: underline; }
 p { hyphens: auto; }
