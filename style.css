@@ -1,12 +1,13 @@
 @font-face { font-family: "nishiki"; src: url(media/fonts/nishiki-teki-lili.ttf); }
 :root { 
-	--main_bg: #282a36; 
+	--bg: #282a36;
+	--box_bg: #282a36; 
 	--secondary_bg: #44475A; 
 	--text: #F8F8F2; 
 	--links: #ffaad5; 
 	--button_text: white;
 	--splash: #6272A4; 
-	--body_font: "Atkinson Hyperlegible Next";
+	--body_font: "Atkinson Hyperlegible Next, sans-serif";
 	--heading_font: "Kalnia";
 	--box_rounding: 35px;
 	--bg_image: url('/media/images/backgrounds/tokipona.webp');
@@ -17,7 +18,7 @@
 body {
 	width: min(90vw, 1500px);
 	margin: 20px auto;
-	background-color: var(--main_bg);
+	background-color: var(--box_bg);
 	color: var(--text);
 }
 
@@ -67,7 +68,7 @@ img {
 .bar a { width: 100%; display: inline-block; padding: 10px 0; }
 .bar a[href=""], .bar a:hover { background-color: var(--secondary_bg); color: var(--button_text); border-radius: 10px; text-decoration: none;}
 footer p { text-align: center; }
-.ipa { font-family: system-ui, 'Open Sans', sans-serif }
+.ipa { font-family: system-ui, 'Open Sans, sans-serif', sans-serif }
 /* these two don't work because js */
 #sillyring br { display: none; }
 #sillyring-image { display: none; }
@@ -117,7 +118,7 @@ footer p { text-align: center; }
 	}
 
 	.box {
-		background-color: var(--main_bg);
+		background-color: var(--box_bg);
 		border: 5px solid var(--secondary_bg);
 		border-radius: var(--box_rounding);
 		padding: 5px 20px 20px;
@@ -180,7 +181,7 @@ button {
 }
 
 input[type="text"] {
-	background-color: var(--main_bg);
+	background-color: var(--box_bg);
 	color: var(--text);
 	border: 4px solid var(--secondary_bg);
 	padding: 10px;
@@ -212,3 +213,11 @@ select {
 }
 
 button:hover { color: var(--links); }
+
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--secondary_bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--links); }
+
+html { scrollbar-color: var(--secondary_bg) var(--bg); }
