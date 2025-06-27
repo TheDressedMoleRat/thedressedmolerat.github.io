@@ -195,5 +195,10 @@ let date_spans = document.getElementsByClassName("date")
 
 for (const span of date_spans) {
 	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24))
-	span.innerHTML = "<strong>" + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</strong>";	
+
+	if (window.location.href.endsWith("tp.html")) {
+		span.innerHTML = "󱥫󱥤󱥐󱤽" + days_ago;
+	} else {
+		span.innerHTML = "<strong>" + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</strong>";	
+	}
 }

@@ -1,4 +1,4 @@
-@font-face { font-family: "nishiki"; src: url(media/fonts/nishiki-teki-lili.ttf); }
+@font-face { font-family: "nishiki"; src: url(media/fonts/nishiki.woff2); }
 :root { 
 	--bg: #282a36;
 	--box_bg: #282a36; 
@@ -30,7 +30,12 @@ p, p a, input, button, select, select *, .not_sitelen {
 	font-size: 14pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
+}
 
+.not_sitelen {
+	font-size: 14pt; 
+	font-family: var(--body_font); 
+	line-height: 1.4;
 }
 
 h1, h2, h3 { 
@@ -157,8 +162,9 @@ footer p { text-align: center; }
 /* BORING */
 iframe { border: none; }
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
-.sitelen { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
-h2.sitelen  { font-size: 35pt; font-weight: normal; }
+.sitelen *:not(.not_sitelen) { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
+.sitelen h1 { font-size: 30pt !important; font-weight: normal; }
+.sitelen h2 { font-size: 20pt !important; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
 a:hover { text-decoration: underline; }
 p { hyphens: auto; }
