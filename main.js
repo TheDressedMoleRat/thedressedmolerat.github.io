@@ -100,14 +100,15 @@ const theme_dicts = [
 		box_bg: '#282a36',
 		secondary_bg: '#44475A',
 		text: '#F8F8F2',
-		links: '#ffaad5',
+		links: '#FF79C6',
 		button_text: 'white',
 		splash: '#6272A4',
 		body_font: "Atkinson Hyperlegible Next, sans-serif",
 		heading_font: "Kalnia, serif",
 		box_rounding: "35px",
 		bg_image: "url(/media/images/backgrounds/tokipona.webp)",
-		bg_animation: "6s linear infinite bg"
+		bg_animation: "6s linear infinite bg",
+		abbr: "#f9ffb5"
 	},
 	{ // light
 		bg: 'white',
@@ -121,7 +122,8 @@ const theme_dicts = [
 		heading_font: "Kalnia, serif",
 		box_rounding: "35px",
 		bg_image:"url(/media/images/backgrounds/white.webp)",
-		bg_animation: "6s linear infinite bg"
+		bg_animation: "6s linear infinite bg",
+		abbr: "#792D2D"
 	},
 	{ // space
 		bg: '#000',
@@ -135,7 +137,8 @@ const theme_dicts = [
 		heading_font: "Times New Roman, serif",
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/spacebg.gif)",
-		bg_animation: "none"
+		bg_animation: "none",
+		abbr: "#f9ffb4"
 	},
 	{ // pink
 		bg: '#ff95bd',
@@ -149,7 +152,8 @@ const theme_dicts = [
 		heading_font: "Comic Sans MS, cursive, sans-serif",
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/pink.webp)",
-		bg_animation: "6s linear infinite bg"
+		bg_animation: "6s linear infinite bg",
+		abbr: "#FF29AB"
 	}
 ];
 
@@ -180,7 +184,13 @@ function read_cookie(cookie_name) {
 	}
 }
 
-splash();
+let is_toki_pona = window.location.href.endsWith("tp.html");
+
+if (is_toki_pona) {
+	splash_element.innerHTML = "󱤪󱤽󱥳󱥍󱤰󱤄";
+} else {
+	splash();
+}
 console.log("There are " + splash_texts.length + " splash texts in total. I'm trying to add new ones but It's not easy to come up with funny things!!");
 
 let theme_cookie_value = read_cookie("theme_index");
@@ -196,7 +206,7 @@ let date_spans = document.getElementsByClassName("date")
 for (const span of date_spans) {
 	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24))
 
-	if (window.location.href.endsWith("tp.html")) {
+	if (is_toki_pona) {
 		span.innerHTML = "󱥫󱥤󱥐󱤽" + days_ago;
 	} else {
 		span.innerHTML = "<strong>" + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</strong>";	

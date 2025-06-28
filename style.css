@@ -1,4 +1,5 @@
 @font-face { font-family: "nishiki"; src: url(media/fonts/nishiki.woff2); }
+
 :root { 
 	--bg: #282a36;
 	--box_bg: #282a36; 
@@ -12,6 +13,7 @@
 	--box_rounding: 35px;
 	--bg_image: url('/media/images/backgrounds/tokipona.webp');
 	--bg_animation: "6s linear infinite bg";
+	--abbr: #f9ffb5;
 }
 
 /* PAGE */
@@ -56,6 +58,17 @@ h2 {
 }
 
 /* OTHER */
+
+abbr {
+	cursor: pointer;
+	color: var(--abbr);
+	text-decoration: none;
+}
+
+abbr:hover {
+	color: var(--links);
+	text-decoration-color: var(--links);
+}
 
 ::selection {
 	background-color: #ff95bd;
@@ -162,7 +175,7 @@ footer p { text-align: center; }
 /* BORING */
 iframe { border: none; }
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
-.sitelen *:not(.not_sitelen) { font-family: "nishiki"; word-break: break-all; font-size: 17pt;}
+.sitelen *:not(.not_sitelen) { font-family: "nishiki", var(--body_font); word-break: break-all; font-size: 17pt;}
 .sitelen h1 { font-size: 30pt !important; font-weight: normal; }
 .sitelen h2 { font-size: 20pt !important; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
