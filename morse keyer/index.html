@@ -33,9 +33,10 @@
         <p>Change the interpreted <em>WPM</em> using the slider.</p>
         <p id="out_paragraph"></p>
         <p id="slider_display"></p>
-        <div>
+        <div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
             <input type="range" min="5" max="40" value="20" id="slider"><br>
             <button onclick="clear_text()">clear</button>
+            <p>Automatic timing -> <input type="checkbox" name="auto_threshold" id="auto_threshold"></p>
         </div>
     </div>
 

@@ -64,20 +64,41 @@ let last_toggle = 0
 let slider = document.getElementById("slider");
 let slider_display = document.getElementById("slider_display");
 let out_paragraph = document.getElementById("out_paragraph");
+let auto_checkbox = document.getElementById("auto_threshold");
+
+let dash_ms;
+let gap_ms;
+let space_ms;
 
 update_timings()
 slider.oninput = update_timings;
 setInterval(update_output, 60);
 
-function update_timings() {
-    let unit = 1000 * 60 / (50 * slider.value);
-	dash_ms = 3 * unit;
-	gap_ms = 3 * unit;
-	space_ms = 7 * unit;
+function get_threshold(unsorted_list) {
+	let sorted_list = [...unsorted_list].sort((a,b) => a-b);
+	let log_list = sorted_list.map(Math.log);
 	
-	slider_display.innerHTML = "Current speed: " + slider.value + " words per minute";
+	let biggest_gap = 0;
+	let threshold = 0;
+	
+	for (let i = 0; i < log_list.length-1; i++) {
+		if (log_list[i+1]-log_list[i] > biggest_gap) {
+			biggest_gap = log_list[i+1]-log_list[i];
+			threshold = (sorted_list[i+1]+sorted_list[i]) / 2;
+		}
+	}   
+	
+	return threshold;
+}
 
-	update_output();
+function update_timings() {
+    if (auto_checkbox.checked) { return; }
+    let unit = 1000 * 60 / (50 * slider.value);
+    dash_ms = 3 * unit;
+    gap_ms = 3 * unit;
+    space_ms = 7 * unit;
+	
+	slider_display.textContent = "Current speed: " + slider.value + " words per minute";
 }
 
 function add_duration() {
@@ -116,6 +137,20 @@ function letter(morse) {
 }
 
 function update_output() {
+    if (auto_checkbox.checked) {
+        
+        dash_ms = get_threshold(durations.filter((_, i) => i%2 == 0))
+        unit = dash_ms / 3;
+        gap_ms = 3 * unit;
+        space_ms = 7 * unit;
+        let wpm = Math.round(1200/unit);
+        slider_display.textContent = `Current speed: Automatic (${wpm} wpm)`
+        slider.value = wpm;
+
+    } else {
+        update_timings();
+    }
+
 	let out_string = "";
 	let buffer = "";
 
