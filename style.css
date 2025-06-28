@@ -60,14 +60,28 @@ h2 {
 /* OTHER */
 
 abbr {
+	position: relative;
 	cursor: pointer;
 	color: var(--abbr);
 	text-decoration: none;
 }
 
-abbr:hover {
-	color: var(--links);
-	text-decoration-color: var(--links);
+abbr:hover, abbr:focus {
+	color: var(--links)
+}
+
+abbr:hover::after, abbr:focus::after {
+	content: attr(data-title);
+	position: absolute;
+	left: 0;
+	bottom: -2.5em;
+	background: var(--box_bg);
+	z-index: 10;
+	white-space: nowrap;
+	padding: 3px 12px 4px;
+	border: 5px solid var(--secondary_bg);
+	font-size: 14pt;
+	border-radius: var(--box_rounding);
 }
 
 ::selection {

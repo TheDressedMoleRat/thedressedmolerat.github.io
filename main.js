@@ -153,7 +153,7 @@ const theme_dicts = [
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/pink.webp)",
 		bg_animation: "6s linear infinite bg",
-		abbr: "#FF29AB"
+		abbr: "#FF6A6A"
 	}
 ];
 
