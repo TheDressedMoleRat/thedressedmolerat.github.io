@@ -1,3 +1,4 @@
+// TODO: button works bad
 const morse_dict = {
     ".-": "A",
     "-...": "B",
@@ -112,33 +113,12 @@ function add_duration() {
 	last_toggle = Date.now();
 }
 
-window.addEventListener('keydown', function(event) {
-	if (anyKeyPressed) {
-		return;
-	}
-
-	anyKeyPressed = true;
-
-	add_duration();
-});
-
-window.addEventListener('keyup', function(event) {
-	if (!anyKeyPressed) {
-		return;
-	}
-
-	anyKeyPressed = false;
-
-	add_duration();
-});
-
 function letter(morse) {
 	return (morse in morse_dict) ? morse_dict[morse] : morse;
 }
 
 function update_output() {
     if (auto_checkbox.checked) {
-        
         dash_ms = get_threshold(durations.filter((_, i) => i%2 == 0))
         unit = dash_ms / 3;
         gap_ms = 3 * unit;
@@ -172,7 +152,7 @@ function update_output() {
 	
 	out_string += letter(buffer);
 
-	out_paragraph.textContent = out_string;
+	out_paragraph.textContent = out_string ? out_string : "_";
 }
 
 function clear_text() {
@@ -180,3 +160,50 @@ function clear_text() {
     update_output();
     last_toggle = 0;
 }
+
+// most of this is ChatGPT:
+function handle_press_start() {
+    if (anyKeyPressed == true) { return; }
+    anyKeyPressed = true;
+    add_duration();
+}
+
+function handle_press_end() {
+    if (anyKeyPressed == false) { return; }
+    anyKeyPressed = false;
+    add_duration;
+}
+
+
+window.addEventListener('keydown', function(event) {
+	if (anyKeyPressed) {
+		return;
+	}
+
+	anyKeyPressed = true;
+
+	add_duration();
+});
+
+window.addEventListener('keyup', function(event) {
+	if (!anyKeyPressed) {
+		return;
+	}
+
+	anyKeyPressed = false;
+
+	add_duration();
+});
+
+morse_button.addEventListener('mousedown', handle_press_start);
+morse_button.addEventListener('mouseup', handle_press_end);
+
+morse_button.addEventListener('touchstart', function(e) {
+	e.preventDefault();
+	handle_press_start();
+}, { passive: false });
+
+morse_button.addEventListener('touchend', function(e) {
+	e.preventDefault();
+	handle_press_end();
+}, { passive: false });

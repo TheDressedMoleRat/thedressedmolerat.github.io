@@ -31,10 +31,11 @@
         <h2>Morse keyer</h2>
         <p>Use any key to input morse code! It only works on desktop because I don't know how touch events work!</p>
         <p>Change the interpreted <em>WPM</em> using the slider.</p>
-        <p id="out_paragraph"></p>
+        <p id="out_paragraph">_</p>
         <p id="slider_display"></p>
         <div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
             <input type="range" min="5" max="40" value="20" id="slider"><br>
+            <!-- <button id="morse_button" style="width: 400px;">Tap / Click</button> -->
             <button onclick="clear_text()">clear</button>
             <p>Automatic timing -> <input type="checkbox" name="auto_threshold" id="auto_threshold"></p>
         </div>

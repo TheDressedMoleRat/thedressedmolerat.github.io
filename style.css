@@ -87,6 +87,7 @@ abbr:hover::after, abbr:focus::after {
 ::selection {
 	background-color: #ff95bd;
 	color: white;
+	text-decoration: underline;
 }
 
 img {
@@ -189,7 +190,7 @@ footer p { text-align: center; }
 /* BORING */
 iframe { border: none; }
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
-.sitelen *:not(.not_sitelen) { font-family: "nishiki", var(--body_font); word-break: break-all; font-size: 17pt;}
+.sitelen, .sitelen *:not(.not_sitelen) { font-family: "nishiki", var(--body_font); word-break: break-all; font-size: 17pt;}
 .sitelen h1 { font-size: 30pt !important; font-weight: normal; }
 .sitelen h2 { font-size: 20pt !important; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: pointer; }
@@ -208,7 +209,7 @@ button {
 	color: var(--button_text);
 	border: none;
 	font-size: 14pt;
-	padding: 10px;
+	padding: 10px ;
 	margin: 10px 0px;
 	border-radius: 10px;
 }

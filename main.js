@@ -212,3 +212,7 @@ for (const span of date_spans) {
 		span.innerHTML = "<strong>" + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</strong>";	
 	}
 }
+
+for (const audio of document.querySelectorAll('audio')) {
+	audio.volume = 0.4;
+}
