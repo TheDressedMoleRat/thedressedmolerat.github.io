@@ -63,10 +63,10 @@ Ok but what reason is there to pronounce a K in et cetera? Where is it??
 "I" love randomly inserting quotation marks.
 Oh no! Come on, girl. - Terry Mennanecker
 Ugh, food for dinner, again?
-Exercise? I thought you said extra fries!
 Is it true you went to school with skinny but pretty voice totally tattoo all over da body but pretty drugs taking singing miss wine in the house
 That's numberwang!
 τ > π
+I thought you said extra fries!
 Shortening <i>there are</i> to <i>there's</i> unnerves me slightly.
 sadly I think these splash texts are where most of this websites effort lies
 Oh yeah that classic turn that CLEARLY says "Hurry, boy, it's waiting there for you"
@@ -80,7 +80,6 @@ In Swedish "the fish" and "the fishers" are the same word for some reason
 Also "six" and "sex" are the same in Swedish
 Every person's just a unicycle, looking for a second wheel
 What the bullcrud?
-Amor vincit aliquas res
 Human rights? Yeah I sure hope she does.
 I'm so glad Swedish doesn't have vowel reduction, it sounds so gross
 Logan Pail‽

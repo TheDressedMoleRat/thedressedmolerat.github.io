@@ -46,6 +46,7 @@ h1, h2, h3 {
 
 h1 { 
 	margin: 20px 0 10px; 
+	font-size: min(32px, 7vw);
 }
 
 h2 {
@@ -94,7 +95,10 @@ img {
 	max-width: 100%;
 }
 
-.splash { color: var(--splash); }
+.splash { 
+	color: var(--splash); 
+	font-size: min(18px, 5vw);	
+}
 .splash:hover { text-decoration: underline; }
 .bar { padding: 0; display: flex; margin: 20px 0 0; gap: 10px; }
 .bar li { list-style: none; flex-grow: 1; text-align: center; }
@@ -210,7 +214,7 @@ button {
 	border: none;
 	font-size: 14pt;
 	padding: 10px ;
-	margin: 10px 0px;
+	margin: 10px;
 	border-radius: 10px;
 }
 
