@@ -100,7 +100,7 @@ img {
 	font-size: min(18px, 5vw);	
 }
 .splash:hover { text-decoration: underline; }
-.bar { padding: 0; display: flex; margin: 20px 0 0; gap: 10px; }
+.bar { padding: 0; display: flex; margin: 0; gap: 10px; }
 .bar li { list-style: none; flex-grow: 1; text-align: center; }
 .bar a { width: 100%; display: inline-block; padding: 10px 0; }
 .bar a[href=""], .bar a:hover { background-color: var(--secondary_bg); color: var(--button_text); border-radius: 10px; text-decoration: none;}
@@ -109,6 +109,7 @@ footer p { text-align: center; }
 /* these two don't work because js */
 #sillyring br { display: none; }
 #sillyring-image { display: none; }
+.compact p { margin: 0; }
 
 #profile_pic {
 	float: left;
@@ -138,7 +139,7 @@ footer p { text-align: center; }
 }
 
 /* DESKTOP */
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 970px){
 	#bg { 
 		position: fixed;
 		z-index: -2;

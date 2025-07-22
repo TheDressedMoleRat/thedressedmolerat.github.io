@@ -92,7 +92,8 @@ This website is a mere dream ballet away from being a true gesamtkunstwerk
 Digital dancing? Hey this is fun!
 bye (watch Junferno?)
 If you pronounce Nod and Gnawed the same I don't respect or like you
-A little baby pigeon :o`.split("\n")
+A little baby pigeon :o
+Great vowel shift is my opp`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
@@ -151,8 +152,8 @@ const theme_dicts = [
 		links: '#00abff',
 		splash: '#ff95bd',
 		button_text: 'white',
-		body_font: "Comic Sans MS, cursive, sans-serif",
-		heading_font: "Comic Sans MS, cursive, sans-serif",
+		body_font: "Comic Neue, Comic Sans MS, cursive, sans-serif",
+		heading_font: "Comic Neue, Comic Sans MS, cursive, sans-serif",
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/pink.webp)",
 		bg_animation: "6s linear infinite bg",
