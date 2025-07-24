@@ -13,7 +13,6 @@
 	--box_rounding: 35px;
 	--bg_image: url('/media/images/backgrounds/tokipona.webp');
 	--bg_animation: "6s linear infinite bg";
-	--abbr: #f9ffb5;
 }
 
 /* PAGE */
@@ -63,26 +62,25 @@ h2 {
 abbr {
 	position: relative;
 	cursor: pointer;
-	color: var(--abbr);
-	text-decoration: none;
+	text-decoration-line: underline;
+	text-decoration-style: dotted;
 }
 
 abbr:hover, abbr:focus {
-	color: var(--links)
+	color: var(--links);
 }
 
 abbr:hover::after, abbr:focus::after {
 	content: attr(data-title);
 	position: absolute;
 	left: 0;
-	bottom: -2.5em;
+	top: 1.5em;
 	background: var(--box_bg);
 	z-index: 10;
-	white-space: nowrap;
+	width: 200px;
 	padding: 3px 12px 4px;
 	border: 5px solid var(--secondary_bg);
 	font-size: 14pt;
-	border-radius: var(--box_rounding);
 }
 
 ::selection {
@@ -100,10 +98,39 @@ img {
 	font-size: min(18px, 5vw);	
 }
 .splash:hover { text-decoration: underline; }
-.bar { padding: 0; display: flex; margin: 0; gap: 10px; }
-.bar li { list-style: none; flex-grow: 1; text-align: center; }
-.bar a { width: 100%; display: inline-block; padding: 10px 0; }
-.bar a[href=""], .bar a:hover { background-color: var(--secondary_bg); color: var(--button_text); border-radius: 10px; text-decoration: none;}
+
+
+.bar { 
+	padding: 0; 
+	display: flex; 
+	margin: 0; 
+	gap: 10px; 
+}
+
+.bar li { 
+	list-style: none; 
+	flex-grow: 1; 
+	text-align: center; 
+}
+
+.bar a { 
+	transition: background-color 0.2s ease;
+	width: 100%; 
+	display: inline-block; 
+	padding: 10px 0; 
+	border-radius: 10px;
+}
+
+.bar a[href=""], .bar a:hover { 
+	background-color: var(--secondary_bg); 
+	color: var(--button_text); 
+	text-decoration: none;
+}
+
+.bar a:active {
+	background-color: var(--links); 
+}
+
 footer p { text-align: center; }
 .ipa { font-family: system-ui, 'Open Sans, sans-serif', sans-serif }
 /* these two don't work because js */

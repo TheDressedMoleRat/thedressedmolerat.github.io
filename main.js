@@ -93,7 +93,8 @@ Digital dancing? Hey this is fun!
 bye (watch Junferno?)
 If you pronounce Nod and Gnawed the same I don't respect or like you
 A little baby pigeon :o
-Great vowel shift is my opp`.split("\n")
+Great vowel shift is my opp
+Ahh, no good! Caca!`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
@@ -112,7 +113,6 @@ const theme_dicts = [
 		box_rounding: "35px",
 		bg_image: "url(/media/images/backgrounds/tokipona.webp)",
 		bg_animation: "6s linear infinite bg",
-		abbr: "#f9ffb5"
 	},
 	{ // light
 		bg: 'white',
@@ -127,7 +127,6 @@ const theme_dicts = [
 		box_rounding: "35px",
 		bg_image:"url(/media/images/backgrounds/white.webp)",
 		bg_animation: "6s linear infinite bg",
-		abbr: "#792D2D"
 	},
 	{ // space
 		bg: '#000',
@@ -142,7 +141,6 @@ const theme_dicts = [
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/spacebg.gif)",
 		bg_animation: "none",
-		abbr: "#f9ffb4"
 	},
 	{ // pink
 		bg: '#ff95bd',
@@ -152,12 +150,11 @@ const theme_dicts = [
 		links: '#00abff',
 		splash: '#ff95bd',
 		button_text: 'white',
-		body_font: "Comic Neue, Comic Sans MS, cursive, sans-serif",
-		heading_font: "Comic Neue, Comic Sans MS, cursive, sans-serif",
+		body_font: "Comic Sans MS, Comic Neue, cursive, sans-serif",
+		heading_font: "Comic Sans MS, Comic Neue, cursive, sans-serif",
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/pink.webp)",
 		bg_animation: "6s linear infinite bg",
-		abbr: "#FF6A6A"
 	}
 ];
 
@@ -205,15 +202,15 @@ if (theme_cookie_value == undefined || theme_cookie_value == "NaN") {
 	set_theme(theme_dicts[parseInt(theme_cookie_value)]);
 }
 
-let date_spans = document.getElementsByClassName("date")
+let date_spans = document.getElementsByClassName("date");
 
 for (const span of date_spans) {
-	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24))
+	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24));
 
 	if (is_toki_pona) {
-		span.innerHTML = "󱥫󱥤󱥐󱤽" + days_ago;
+		span.innerHTML = `<abbr data-title='${span.innerHTML}'>` + "󱥫󱥤󱥐󱤽" + days_ago + "</abbr>";
 	} else {
-		span.innerHTML = "<strong>" + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</strong>";	
+		span.innerHTML = `<abbr data-title='${span.innerHTML}'>` + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</abbr>";	
 	}
 }
 
