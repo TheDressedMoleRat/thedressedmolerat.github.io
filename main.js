@@ -108,7 +108,7 @@ const theme_dicts = [
 		links: '#FF79C6',
 		button_text: 'white',
 		splash: '#6272A4',
-		body_font: "Atkinson Hyperlegible Next, sans-serif",
+		body_font: "Atkinson Hyperlegible Next, sans-serif, nishiki",
 		heading_font: "Kalnia, serif",
 		box_rounding: "35px",
 		bg_image: "url(/media/images/backgrounds/tokipona.webp)",
@@ -166,7 +166,11 @@ function splash() {
 function set_theme(theme_dictionary) {
 	let root = document.querySelector(':root');
 	for ([var_name, var_value] of Object.entries(theme_dictionary)) {
-		root.style.setProperty("--"+var_name, var_value);
+		if (var_name.endsWith("font")) {
+			root.style.setProperty("--"+var_name, var_value+", nishiki");
+		} else {
+			root.style.setProperty("--"+var_name, var_value);
+		}
 	} 
 }
 
