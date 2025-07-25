@@ -108,7 +108,7 @@ const theme_dicts = [
 		links: '#FF79C6',
 		button_text: 'white',
 		splash: '#6272A4',
-		body_font: "Atkinson Hyperlegible Next, sans-serif, nishiki",
+		body_font: "Atkinson Hyperlegible Next, sans-serif",
 		heading_font: "Kalnia, serif",
 		box_rounding: "35px",
 		bg_image: "url(/media/images/backgrounds/tokipona.webp)",

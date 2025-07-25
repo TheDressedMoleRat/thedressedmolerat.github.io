@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>:(</title>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Kalnia:wght@500&display=swap');</style>
+	<link rel="stylesheet" href="../style.css">
+	<link rel="icon" href="../media/images/favicon.ico" type="image/x-icon">
+	<meta name="description" content="Miscellaneous things.">
+	<meta name="darkreader-lock">
+</head>
+<body>
+	<div id="bg"></div>
+	<div id="header" class="box">
+		<button onclick="cycle_theme()" style="float: right">Theme</button>
+		<h1>The Dressed Mole-Rat</h1>
+		<p><a onclick="splash()" id="splash" class="splash"></a></p>
+		<ul class="bar sitelen">
+			<li><a href="../" title="home">󱥭</a></li>
+			<li><a href="../pali" title="projects">󱥉</a></li>
+			<li><a href="../ijo pona/" title="things I like">󱤌‍󱥔</a></li>
+			<li><a href="../toki/" title="blog">󱥬</a></li>
+			<li><a href="../lipu" title="guestbook">󱤪</a></li>
+		</ul>
+	</div>
+
+	<script src="../main.js" defer></script>
+	<script src="script.js" defer></script>
+	
+	<div class="box">
+		<h2>This is my test page</h2>
+		<p>Idk I test stuff</p>
+	</div>
+
+	<div class="box">
+		<h2>sitelen Juniko ¯\_(ツ)_/¯</h2>
+		<p>The unicode approximations come from <a href="https://sona.pona.la/wiki/sitelen_Juniko">sona.pona.la</a></p>
+		<textarea id="lasina" placeholder="toki pona latin text here" width="100%" oninput="update_juniko()"></textarea>
+		<table>
+			<tr>
+				<td><p>Segoe UI, system-ui</p></td><td><p><span class="juniko" style="font-family: Segoe UI;">-</span></p></td>
+			</tr>
+			<tr>
+				<td><p>Courier New, monospace</p></td><td><p><span class="juniko" style="font-family: Courier New, Courier, monospace;">-</span></p></td>
+			</tr>
+			<tr>
+				<td><p>Arial, sans-serif</p></td><td><p><span class="juniko" style="font-family: Arial, sans-serif;">-</span></p></td>
+			</tr>
+		</table>
+	</div>
+
+	<footer>
+		<iframe src="https://john.citrons.xyz/embed?ref=https://thedressedmolerat.github.io/" class="john"></iframe>
+		<p>Created by me in pure HTML, CSS, and a bit of JS. Theme is Dracula. Thank you for visiting!!</p>
+	</footer>
+</body>
+</html>
