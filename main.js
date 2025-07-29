@@ -189,6 +189,15 @@ function read_cookie(cookie_name) {
 	}
 }
 
+function toggleFullScreen(video) {
+	if (!document.fullscreenElement) {
+		video.requestFullscreen();
+	} else {
+		document.exitFullscreen?.();
+	}
+}
+
+
 let is_toki_pona = window.location.href.endsWith("tp.html");
 
 if (is_toki_pona) {

@@ -52,6 +52,14 @@ h2 {
 	font-size: 20pt;
 }
 
+/* gradient text, source: https://cssgradient.io/blog/css-gradient-text/ */
+em {
+	background: linear-gradient(to right, var(--links), var(--text));
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .box {
 	border-bottom: 5px solid var(--secondary_bg);
 	padding-bottom: 20px;
@@ -171,8 +179,13 @@ footer p { text-align: center; }
 	width: 100%;
 }
 
+.desktop { display: none; }
 /* DESKTOP */
 @media only screen and (min-width: 970px){
+	.desktop {
+		display: block;
+	}
+
 	#bg { 
 		position: fixed;
 		z-index: -2;

@@ -1,7 +1,171 @@
 let lasina_box = document.getElementById("lasina");
-let every_juniko_p = document.getElementsByClassName("juniko");
+let juniko_p = document.getElementById("juniko");
+let ucsur_p = document.getElementById("ucsur");
+
+const ucsur_list = {
+	"kijetesantakalu": "\u{F1980}",
+	"kokosila": "\u{F1984}",
+	"misikeke": "\u{F1987}",
+	"kepeken": "\u{F1919}",
+	"monsuta": "\u{F197D}",
+	"sitelen": "\u{F1960}",
+	"jasima": "\u{F197F}",
+	"kalama": "\u{F1915}",
+	"kipisi": "\u{F197B}",
+	"kulupu": "\u{F191F}",
+	"lanpan": "\u{F1985}",
+	"majuna": "\u{F19A2}",
+	"namako": "\u{F1978}",
+	"pakala": "\u{F1948}",
+	"palisa": "\u{F194A}",
+	"pimeja": "\u{F194F}",
+	"sijelo": "\u{F195B}",
+	"sinpin": "\u{F195F}",
+	"soweli": "\u{F1962}",
+	"akesi": "\u{F1901}",
+	"alasa": "\u{F1903}",
+	"apeja": "\u{F19A1}",
+	"epiku": "\u{F1983}",
+	"kiwen": "\u{F191B}",
+	"linja": "\u{F1929}",
+	"lukin": "\u{F192E}",
+	"monsi": "\u{F1938}",
+	"nanpa": "\u{F193D}",
+	"nasin": "\u{F193F}",
+	"pilin": "\u{F194E}",
+	"tenpo": "\u{F196B}",
+	"tonsi": "\u{F197E}",
+	"utala": "\u{F1971}",
+	"anpa": "\u{F1905}",
+	"ante": "\u{F1906}",
+	"awen": "\u{F1908}",
+	"esun": "\u{F190B}",
+	"insa": "\u{F190F}",
+	"jaki": "\u{F1910}",
+	"jelo": "\u{F1912}",
+	"kala": "\u{F1914}",
+	"kama": "\u{F1916}",
+	"kasi": "\u{F1917}",
+	"kili": "\u{F191A}",
+	"kule": "\u{F191E}",
+	"kute": "\u{F1920}",
+	"lape": "\u{F1922}",
+	"laso": "\u{F1923}",
+	"lawa": "\u{F1924}",
+	"leko": "\u{F197C}",
+	"lete": "\u{F1926}",
+	"lili": "\u{F1928}",
+	"lipu": "\u{F192A}",
+	"loje": "\u{F192B}",
+	"luka": "\u{F192D}",
+	"lupa": "\u{F192F}",
+	"mama": "\u{F1931}",
+	"mani": "\u{F1932}",
+	"meli": "\u{F1933}",
+	"meso": "\u{F1982}",
+	"mije": "\u{F1935}",
+	"moku": "\u{F1936}",
+	"moli": "\u{F1937}",
+	"musi": "\u{F193B}",
+	"mute": "\u{F193C}",
+	"nasa": "\u{F193E}",
+	"nena": "\u{F1940}",
+	"nimi": "\u{F1942}",
+	"noka": "\u{F1943}",
+	"olin": "\u{F1945}",
+	"open": "\u{F1947}",
+	"pake": "\u{F19A0}",
+	"pali": "\u{F1949}",
+	"pana": "\u{F194C}",
+	"pini": "\u{F1950}",
+	"pipi": "\u{F1951}",
+	"poka": "\u{F1952}",
+	"poki": "\u{F1953}",
+	"pona": "\u{F1954}",
+	"powe": "\u{F19A3}",
+	"sama": "\u{F1956}",
+	"seli": "\u{F1957}",
+	"selo": "\u{F1958}",
+	"seme": "\u{F1959}",
+	"sewi": "\u{F195A}",
+	"sike": "\u{F195C}",
+	"sina": "\u{F195E}",
+	"soko": "\u{F1981}",
+	"sona": "\u{F1961}",
+	"suli": "\u{F1963}",
+	"suno": "\u{F1964}",
+	"supa": "\u{F1965}",
+	"suwi": "\u{F1966}",
+	"taso": "\u{F1968}",
+	"tawa": "\u{F1969}",
+	"telo": "\u{F196A}",
+	"toki": "\u{F196C}",
+	"tomo": "\u{F196D}",
+	"unpa": "\u{F196F}",
+	"walo": "\u{F1972}",
+	"waso": "\u{F1974}",
+	"wawa": "\u{F1975}",
+	"weka": "\u{F1976}",
+	"wile": "\u{F1977}",
+	"ala": "\u{F1902}",
+	"ale": "\u{F1904}",
+	"ali": "\u{F1904}",
+	"anu": "\u{F1907}",
+	"ijo": "\u{F190C}",
+	"ike": "\u{F190D}",
+	"ilo": "\u{F190E}",
+	"jan": "\u{F1911}",
+	"ken": "\u{F1918}",
+	"kin": "\u{F1979}",
+	"kon": "\u{F191D}",
+	"len": "\u{F1925}",
+	"lon": "\u{F192C}",
+	"mun": "\u{F193A}",
+	"oko": "\u{F197A}",
+	"ona": "\u{F1946}",
+	"pan": "\u{F194B}",
+	"sin": "\u{F195D}",
+	"tan": "\u{F1967}",
+	"uta": "\u{F1970}",
+	"wan": "\u{F1973}",
+	"en": "\u{F190A}",
+	"jo": "\u{F1913}",
+	"ko": "\u{F191C}",
+	"ku": "\u{F1988}",
+	"la": "\u{F1921}",
+	"li": "\u{F1927}",
+	"ma": "\u{F1930}",
+	"mi": "\u{F1934}",
+	"mu": "\u{F1939}",
+	"ni": "\u{F1941}",
+	"pi": "\u{F194D}",
+	"pu": "\u{F1955}",
+	"tu": "\u{F196E}",
+	"a": "\u{F1900}",
+	"e": "\u{F1909}",
+	"n": "\u{F1986}",
+	"o": "\u{F1944}",
+	"[": "\u{F1990}",
+	"]": "\u{F1991}",
+	"=": "\u{200D}", 
+	"+": "\u{F1996}",
+	"-": "\u{F1995}",
+	"(": "\u{F1997}",
+	")": "\u{F1998}",
+	"_": "\u{F1999}",
+	"{": "\u{F199A}",
+	"}": "\u{F199B}",
+	".": "\u{F199C}",
+	":": "\u{F199D}",
+	"zz": "\u{3000}",
+	"<": "\u{300C}",
+	">": "\u{300D}",
+	"~~": "\u{FE01}",
+	"~": "\u{FE00}"
+}
 
 const juniko_list = {
+	".": `•`,
 	"a": `ḽ	Ḭ	á	-a	aͥ	α̍	a	ⵒ`,
 	"akesi": `Ӫ	ꗵ	𖠃	ੳ	-0-	.8.	ʘ̈	O:`,
 	"ala": `X	☓	╳	✕	×`,
@@ -63,7 +227,7 @@ const juniko_list = {
 	"mu": `𖠐	ʘ	̊ ☉ ̊`,
 	"mun": `☽	☾	D`,
 	"musi": `☋	C8`,
-	"mute": `lll	⫴	ꔖ`,
+	"mute": `ꔖ	lll	⫴`,
 	"namako": `⊹	𖠲	-|-	✛`,
 	"nanpa": `ꖛ	⌗	#	ⵌ`,
 	"nasa": `౷	൫	@	ᘐ`,
@@ -164,22 +328,32 @@ const juniko_list = {
 	"pake": `T	丅`
 }
 
-function set_juniko(juniko_text) {
-	for (const juniko_p of every_juniko_p) {
-		juniko_p.innerHTML = juniko_text;
-	}
-}
-
 function update_juniko() {
-	if (!lasina_box.value) set_juniko("-");
+	if (!lasina_box.value) {
+		juniko_p.innerHTML = "-";
+		ucsur_p.innerHTML = "-";
+		return;
+	}
 
 	let juniko_output = "";
+	let ucsur_output = "";
+
 	for (const token of lasina_box.value.match(/\w+|[^\w]/g)) { // Thanks chatGPT for the regex :(
 		if (token in juniko_list) {
-			juniko_output += juniko_list[token].split("\t")[0]
+			juniko_output += juniko_list[token].split("\t")[0];
 		} else {
 			juniko_output += token;
 		}
 	}
-	set_juniko(juniko_output);
+
+	for (const token of lasina_box.value.match(/\w+|[^\w]/g)) { // Thanks chatGPT for the regex :(
+		if (token in ucsur_list) {
+			ucsur_output += ucsur_list[token].split("\t")[0];
+		} else {
+			ucsur_output += token;
+		}
+	}
+
+	juniko_p.innerHTML = juniko_output;
+	ucsur_p.innerHTML = ucsur_output;
 }
