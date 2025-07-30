@@ -27,7 +27,7 @@ body {
 	cursor: url("media/images/cursor.ico"), auto;
 }
 
-p, p a, input, button, select, select *, .not_sitelen { 
+p, p a, input, button, select, select *, .not_sitelen, summary, details { 
 	font-size: 14pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
@@ -299,6 +299,7 @@ select {
 
 button:hover { color: var(--links); }
 
+details { margin: 20px 0 10px; }
 
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

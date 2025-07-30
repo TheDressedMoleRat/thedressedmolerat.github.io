@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OuO</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>OuO</title>
 	<style>@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Kalnia:wght@500&display=swap');</style>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="icon" href="../media/images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Interactive real time morse keyer!">
-    <meta name="darkreader-lock">
+	<link rel="stylesheet" href="../style.css">
+	<link rel="icon" href="../media/images/favicon.ico" type="image/x-icon">
+	<meta name="description" content="Interactive real time morse keyer!">
+	<meta name="darkreader-lock">
 </head>
 <body>
-    <div id="bg"></div>
+	<div id="bg"></div>
 	<div id="header" class="box">
 		<button onclick="cycle_theme()" style="float: right">Theme</button>
 		<h1>The Dressed Mole-Rat</h1>
@@ -25,27 +25,92 @@
 		</ul>
 	</div>
 
-    <script src="../main.js"></script>
-    
-    <div class="box">
-        <h2>Morse keyer</h2>
-        <p>Use any key to input morse code! It only works on desktop because I don't know how touch events work!</p>
-        <p>Change the interpreted <em>WPM</em> using the slider.</p>
-        <p id="out_paragraph">_</p>
-        <p id="slider_display"></p>
-        <div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
-            <input type="range" min="5" max="40" value="20" id="slider"><br>
-            <!-- <button id="morse_button" style="width: 400px;">Tap / Click</button> -->
-            <button onclick="clear_text()">clear</button>
-            <p>Automatic timing -> <input type="checkbox" name="auto_threshold" id="auto_threshold"></p>
-        </div>
-    </div>
+	<script src="../main.js"></script>
+	
+	<div class="box">
+		<h2>Morse keyer</h2>
+		<p>Use any key to input morse code! It only works on desktop because I don't know how touch events work!</p>
+		<p>Change the interpreted <em>WPM</em> using the slider.</p>
+		<p id="out_paragraph">_</p>
+		<p id="slider_display"></p>
+		<div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
+			<input type="range" min="5" max="40" value="20" id="slider"><br>
+			<!-- <button id="morse_button" style="width: 400px;">Tap / Click</button> -->
+			<button onclick="clear_text()">clear</button>
+			<p>Automatic timing -> <input type="checkbox" name="auto_threshold" id="auto_threshold" checked="true"></p>
+		</div>
+	</div>
 
-    <script type="text/javascript" src="main.js"></script>
+	<div class="box">
+		<details>
+			<summary>
+				Morse cheat sheet:
+			</summary>
+				.- <em>A</em> |
+				-... <em>B</em> |
+				-.-. <em>C</em> |
+				-.. <em>D</em> |
+				. <em>E</em> |
+				..-. <em>F</em> |
+				--. <em>G</em> |
+				.... <em>H</em> |
+				.. <em>I</em> |
+				.--- <em>J</em> |
+				-.- <em>K</em> |
+				.-.. <em>L</em> |
+				-- <em>M</em> |
+				-. <em>N</em> |
+				--- <em>O</em> |
+				.--. <em>P</em> |
+				--.- <em>Q</em> |
+				.-. <em>R</em> |
+				... <em>S</em> |
+				- <em>T</em> |
+				..- <em>U</em> |
+				...- <em>V</em> |
+				.-- <em>W</em> |
+				-..- <em>X</em> |
+				-.-- <em>Y</em> |
+				--.. <em>Z</em> |
+				.--.- <em>Å</em> |
+				.-.- <em>Ä</em> |
+				---. <em>Ö</em> |
+				.---- <em>1</em> |
+				..--- <em>2</em> |
+				...-- <em>3</em> |
+				....- <em>4</em> |
+				..... <em>5</em> |
+				-.... <em>6</em> |
+				--... <em>7</em> |
+				---.. <em>8</em> |
+				----. <em>9</em> |
+				----- <em>0</em> |
+				.----. <em>'</em> |
+				--..-- <em>,</em> |
+				.-.-.- <em>.</em> |
+				..--.. <em>?</em> |
+				-.-.-- <em>!</em> |
+				-..-. <em>/</em> |
+				-.--. <em>(</em> |
+				-.--.- <em>)</em> |
+				.-... <em>&</em> |
+				---... <em>:</em> |
+				-.-.-. <em>;</em> |
+				-...- <em>=</em> |
+				.-.-. <em>+</em> |
+				-....- <em>-</em> |
+				..--.- <em>_</em> |
+				.-..-. <em>\</em> |
+				...-..- <em>$</em> |
+				.--.-. <em>@</em>
+		</details>
+	</div>
 
-    <footer>
-        <iframe src="https://john.citrons.xyz/embed?ref=https://thedressedmolerat.github.io/" class="john"></iframe>
-        <p>Created by me in pure HTML, CSS, and a bit of JS. Theme is Dracula. Thank you for visiting!!</p>
-    </footer>
+	<script type="text/javascript" src="main.js"></script>
+
+	<footer>
+		<iframe src="https://john.citrons.xyz/embed?ref=https://thedressedmolerat.github.io/" class="john"></iframe>
+		<p>Created by me in pure HTML, CSS, and a bit of JS. Theme is Dracula. Thank you for visiting!!</p>
+	</footer>
 </body>
 </html>
