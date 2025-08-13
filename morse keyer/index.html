@@ -27,83 +27,96 @@
 
 	<script src="../main.js"></script>
 	
-	<div class="box">
-		<h2>Morse keyer</h2>
-		<p>Use any key to input morse code! It only works on desktop because I don't know how touch events work!</p>
-		<p>Change the interpreted <em>WPM</em> using the slider.</p>
-		<p id="out_paragraph">_</p>
-		<p id="slider_display"></p>
-		<div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
-			<input type="range" min="5" max="40" value="20" id="slider"><br>
-			<!-- <button id="morse_button" style="width: 400px;">Tap / Click</button> -->
-			<button onclick="clear_text()">clear</button>
-			<p>Automatic timing -> <input type="checkbox" name="auto_threshold" id="auto_threshold" checked="true"></p>
-		</div>
-	</div>
+	<div id="content">
+		<main>
+			<div class="box">
+				<h2>Morse keyer</h2>
+				<p>Use any key to input morse code! It only works on desktop because I don't know how touch events work!</p>
+				<p>Change the interpreted <em>WPM</em> using the slider.</p>
+				<p id="out_paragraph">_</p>
+				<p id="slider_display"></p>
+				<div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
+					<input type="range" min="5" max="40" value="20" id="slider"><br>
+					<!-- <button id="morse_button" style="width: 400px;">Tap / Click</button> -->
+					<button onclick="clear_text()">clear</button>
+					<p>Automatic timing -> <input type="checkbox" name="auto_threshold" id="auto_threshold" checked="true"></p>
+				</div>
+			</div>
 
-	<div class="box">
-		<details>
-			<summary>
-				Morse cheat sheet:
-			</summary>
-				.- <em>A</em> |
-				-... <em>B</em> |
-				-.-. <em>C</em> |
-				-.. <em>D</em> |
-				. <em>E</em> |
-				..-. <em>F</em> |
-				--. <em>G</em> |
-				.... <em>H</em> |
-				.. <em>I</em> |
-				.--- <em>J</em> |
-				-.- <em>K</em> |
-				.-.. <em>L</em> |
-				-- <em>M</em> |
-				-. <em>N</em> |
-				--- <em>O</em> |
-				.--. <em>P</em> |
-				--.- <em>Q</em> |
-				.-. <em>R</em> |
-				... <em>S</em> |
-				- <em>T</em> |
-				..- <em>U</em> |
-				...- <em>V</em> |
-				.-- <em>W</em> |
-				-..- <em>X</em> |
-				-.-- <em>Y</em> |
-				--.. <em>Z</em> |
-				.--.- <em>Å</em> |
-				.-.- <em>Ä</em> |
-				---. <em>Ö</em> |
-				.---- <em>1</em> |
-				..--- <em>2</em> |
-				...-- <em>3</em> |
-				....- <em>4</em> |
-				..... <em>5</em> |
-				-.... <em>6</em> |
-				--... <em>7</em> |
-				---.. <em>8</em> |
-				----. <em>9</em> |
-				----- <em>0</em> |
-				.----. <em>'</em> |
-				--..-- <em>,</em> |
-				.-.-.- <em>.</em> |
-				..--.. <em>?</em> |
-				-.-.-- <em>!</em> |
-				-..-. <em>/</em> |
-				-.--. <em>(</em> |
-				-.--.- <em>)</em> |
-				.-... <em>&</em> |
-				---... <em>:</em> |
-				-.-.-. <em>;</em> |
-				-...- <em>=</em> |
-				.-.-. <em>+</em> |
-				-....- <em>-</em> |
-				..--.- <em>_</em> |
-				.-..-. <em>\</em> |
-				...-..- <em>$</em> |
-				.--.-. <em>@</em>
-		</details>
+			<div class="box">
+				<details>
+					<summary>
+						Morse cheat sheet:
+					</summary>
+						.- <em>A</em> |
+						-... <em>B</em> |
+						-.-. <em>C</em> |
+						-.. <em>D</em> |
+						. <em>E</em> |
+						..-. <em>F</em> |
+						--. <em>G</em> |
+						.... <em>H</em> |
+						.. <em>I</em> |
+						.--- <em>J</em> |
+						-.- <em>K</em> |
+						.-.. <em>L</em> |
+						-- <em>M</em> |
+						-. <em>N</em> |
+						--- <em>O</em> |
+						.--. <em>P</em> |
+						--.- <em>Q</em> |
+						.-. <em>R</em> |
+						... <em>S</em> |
+						- <em>T</em> |
+						..- <em>U</em> |
+						...- <em>V</em> |
+						.-- <em>W</em> |
+						-..- <em>X</em> |
+						-.-- <em>Y</em> |
+						--.. <em>Z</em> |
+						.--.- <em>Å</em> |
+						.-.- <em>Ä</em> |
+						---. <em>Ö</em> |
+						.---- <em>1</em> |
+						..--- <em>2</em> |
+						...-- <em>3</em> |
+						....- <em>4</em> |
+						..... <em>5</em> |
+						-.... <em>6</em> |
+						--... <em>7</em> |
+						---.. <em>8</em> |
+						----. <em>9</em> |
+						----- <em>0</em> |
+						.----. <em>'</em> |
+						--..-- <em>,</em> |
+						.-.-.- <em>.</em> |
+						..--.. <em>?</em> |
+						-.-.-- <em>!</em> |
+						-..-. <em>/</em> |
+						-.--. <em>(</em> |
+						-.--.- <em>)</em> |
+						.-... <em>&</em> |
+						---... <em>:</em> |
+						-.-.-. <em>;</em> |
+						-...- <em>=</em> |
+						.-.-. <em>+</em> |
+						-....- <em>-</em> |
+						..--.- <em>_</em> |
+						.-..-. <em>\</em> |
+						...-..- <em>$</em> |
+						.--.-. <em>@</em>
+				</details>
+			</div>
+		</main>
+		
+		<aside id="right_aside">
+			<div class="box">
+				<h2>Interactives</h2>
+				<p><a href="../ambigenerator/">Ambigenerator</a></p>
+				<p><a href="../morse keyer/">Morse Code Keyer</a></p>
+				<p><a href="../juniko/">toki pona to Unicode</a></p>
+			</div>
+		</aside>
 	</div>
 
 	<script type="text/javascript" src="main.js"></script>

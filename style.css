@@ -215,7 +215,7 @@ footer p { text-align: center; }
 	}
 
 	#left_aside { order: 1; }
-	main { order: 2; }
+	main { order: 2; flex-grow: 1; }
 	#right_aside { order: 3; }
 
 	aside {

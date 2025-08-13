@@ -28,24 +28,27 @@
 	<script src="../main.js" defer></script>
 	<script src="script.js" defer></script>
 
-	<div class="box">
-		<h2>sitelen Juniko ¯\_(ツ)_/¯</h2>
-		<p>I made this in like three minutes basically for myself, but you can try it out if you want. The Ucsur converter isn't really finished, but there are some special characters like hyphens for combined glyphs!</p>
-		<p>The unicode approximations come from <a href="https://sona.pona.la/wiki/sitelen_Juniko">sona.pona.la</a></p>
-		<textarea id="lasina" placeholder="toki pona latin text here" width="100%" oninput="update_juniko()"></textarea>
-		<p id="juniko">-</p>
-		<p id="ucsur">-</p>
-		<!-- <table>
-			<tr>
-				<td><p>Segoe UI, system-ui</p></td><td><p><span class="juniko" style="font-family: Segoe UI;">-</span></p></td>
-			</tr>
-			<tr>
-				<td><p>Courier New, monospace</p></td><td><p><span class="juniko" style="font-family: Courier New, Courier, monospace;">-</span></p></td>
-			</tr>
-			<tr>
-				<td><p>Arial, sans-serif</p></td><td><p><span class="juniko" style="font-family: Arial, sans-serif;">-</span></p></td>
-			</tr>
-		</table> -->
+	<div id="content">
+		<main>
+
+			<div class="box">
+				<h2>sitelen Juniko ¯\_(ツ)_/¯</h2>
+				<p>I made this in like three minutes basically for myself, but you can try it out if you want. The Ucsur converter isn't really finished, but there are some special characters like hyphens for combined glyphs!</p>
+				<p>The unicode approximations come from <a href="https://sona.pona.la/wiki/sitelen_Juniko">sona.pona.la</a></p>
+				<textarea id="lasina" placeholder="toki pona latin text here" width="100%" oninput="update_juniko()"></textarea>
+				<p id="juniko">-</p>
+				<p id="ucsur">-</p>
+			</div>
+		</main>
+
+		<aside id="right_aside">
+			<div class="box">
+				<h2>Interactives</h2>
+				<p><a href="../ambigenerator/">Ambigenerator</a></p>
+				<p><a href="../morse keyer/">Morse Code Keyer</a></p>
+				<p><a href="../juniko/">toki pona to Unicode</a></p>
+			</div>
+		</aside>
 	</div>
 
 	<footer>

@@ -94,7 +94,9 @@ bye (watch Junferno?)
 If you pronounce Nod and Gnawed the same I don't respect or like you
 A little baby pigeon :o
 Great vowel shift is my opp
-Ahh, no good! Caca!`.split("\n")
+Ahh, no good! Caca!
+Ohhh! It's me, Madi! So sorry I died.
+That feeling when you <q>drill into it, and drain every last drop of fluid</q>`.split("\n")
 
 let splash_index = Math.floor(Math.random() * splash_texts.length);
 const splash_element = document.getElementById("splash");
