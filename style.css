@@ -8,8 +8,8 @@
 	--links: #ffaad5; 
 	--button_text: white;
 	--splash: #6272A4; 
-	--body_font: "Atkinson Hyperlegible Next, sans-serif, nishiki";
-	--heading_font: "Kalnia, nishiki";
+	--body_font: Atkinson Hyperlegible Next, sans-serif, nishiki;
+	--heading_font: Kalnia, nishiki;
 	--box_rounding: 35px;
 	--bg_image: url('/media/images/backgrounds/tokipona.webp');
 	--bg_animation: "6s linear infinite bg";
@@ -54,7 +54,7 @@ h2 {
 
 /* gradient text, source: https://cssgradient.io/blog/css-gradient-text/ */
 em {
-	background: linear-gradient(to right, var(--links), var(--text));
+	background: linear-gradient(to left, var(--links), var(--text));
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -165,14 +165,19 @@ footer p { text-align: center; }
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
-	align-items: center;
+	align-items: flex-start;
 	justify-items: center;
 }
 
-.gallery > * { 
+.gallery img { 
 	border: var(--secondary_bg) 4px solid;
 	border-radius: 8px;
 	margin: 0;
+}
+
+.gallery p {
+	text-align: center;
+	margin-top: 5px;
 }
 
 .gallery * {
