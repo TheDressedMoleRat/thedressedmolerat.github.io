@@ -177,7 +177,8 @@ async function generateAmbigram() {
 		say(["Those two are completely different lengths!\n\n>:(", `${words[0]} doesn't fit with ${words[1]}...`, `How do you even expect me to match ${words[0]} with ${words[1]}?!`]);
 		return;
 	}
-	for (const combo of matchingCombos) {
+	// make an ambgram for the first 10 but no more!!
+	for (const combo of matchingCombos.slice(0, 12)) {
 		let width = countStrokes(combo[0]);
 		const strokeWidth = glyphs_lookup[style][3];
 		width += 3;
