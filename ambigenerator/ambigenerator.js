@@ -1,6 +1,4 @@
-// No what are you doing here? This whole script is a mess I don't know JS leave me alone go away >:(
-// !!!
-// This might actually be the single worst code file I have ever produced I am not kidding
+// https://chatgpt.com/c/68b32255-1cac-832d-a174-78899cdc4f6e
 
 // start, middle, end, strokewidth, height
 let glyphs_lookup = {
@@ -33,11 +31,10 @@ function clear() {
 }
 
 function spin(canvas) {
-	if (canvas.style.transform == 'rotate(180deg)') {
-		canvas.style.transform = 'rotate(0deg)'; 
-	} else {
-		canvas.style.transform = 'rotate(180deg)'; 
-	}
+	let angle = parseInt(canvas.dataset.angle || 0);
+	angle += 180;
+	canvas.dataset.angle = angle;
+	canvas.style.transform = `rotate(${angle}deg)`;
 }
 
 async function getGlyphImage(name, style) {
@@ -214,7 +211,7 @@ async function generateAmbigram() {
 		const ambigramsBox = document.getElementById('ambigrams');
 		ambigramsBox.appendChild(container)
 
-		img_element.addEventListener('click', spin.bind(null, img_element));
+		img_element.addEventListener('click', () => spin(img_element))
 
 		if (style == "pixel") {
 			img_element.style.imageRendering = 'pixelated';

@@ -67,6 +67,10 @@ em {
 
 /* OTHER */
 
+.ambigram_container img {
+	transition: transform 0.7s ease;
+}
+
 textarea {
 	width: 100%;
 	resize: vertical;
