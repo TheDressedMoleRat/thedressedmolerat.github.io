@@ -1,6 +1,6 @@
 // Ok if you want you can read the splash texts here, but where's the fun in that?? Just click on them instead it cycles don't worry.
-const splash_texts = 
-`Don't say "two eyes wow" in toki pona, worst mistake of my life
+const splash_texts = `
+Don't say "two eyes wow" in toki pona, worst mistake of my life || It's 󱥺󱥮󱤀 and you'll have to figure out what that sounds like
 Did you know proportional fonts are literally better for coding?
 Do you ever have several songs at the same time mashupping in your head?
 Oiler 'discovering' a number (literally 3)
@@ -12,12 +12,11 @@ My friends though I was joking when I said there was a font subreddit :(
 Self hosting? In this economy?!
 Welcome to thoughts for your thoughts
 and turn into worms. It will completely turn into worms.
-how did you even find this site?
-Welcome to thedressedmolerat.github.io, the website where I write whatever I want, because it's my website, and not yours.
+Welcome to here, the website where I write whatever I want, because it's my website, and not yours.
 Flexbox my beloved <3
-I want to marry markdown <3
 Did you know I know morse code?
--- --- - ···· · ·-· ··-· ··- -·-· -·- · ·-·
+	-- --- - ···· · ·-· ··-· ··- -·-· -·- · ·-·
+	sorry :)
 Inter is love, Inter is life. (the font, i think it's pretty)
 I would rather have a bunch of ok teeth, than one really really good tooth.
 ⊂Ꮮıïᔨ
@@ -30,32 +29,39 @@ the pink one so terrify
 Un petit d'un petit. S'étonne aux halles.
 Microsoft is a crazy name if you think about it. ew sorry
 Unattractive people in relationships far away from you!!
+	get it because it's the opposite of yeah you get it
 Orion's 'sword'
 pu-rist jan Usawi be like wan, tu, tu wan, tu tu, luka, luka wan, likujo!
 IP-address? They know where I pee?
 Oll Korrekt schmoll schmorrect.
+I want to marry markdown <3
 H-He. Libeb Cnofne. Namgal Sipsclar.
 Exactly half of the latin alphabet's minuscules fit in x-height.
-My give a fucks are on vacation. Just kidding I care <3
+	acemnorsuvwxz / bdfghijklpqty
+My give a fucks are on vacation.
+	Just kidding I care <3
 A broken record is still right maybe it depends I guess
 If you rearrange the letters in Peru, you could spell Europe.
 T***s N*w R***n
 Woo gays, gay it up
 Oh ok Nguyen is pronounced ŋwiən apparently??
-Live laugh love? Honey. Die cry hate. (don't)
-Zorp Schmorp
-Are you lgbt or something
+Live laugh love? Honey. Die cry hate.
+	(don't)
+<q>Zorp Schmorp!</q>
+	<q>Doomsday Prediction Falls Flat as Citizens Spend Evening Enjoying One of Pawnee's Finest Parks</q>
+	That's a reference to when Leslie Knope suggested a very long headline which is funny
+Are you guys lgbt or something
 Crazy how there's that one donut topology joke and no other ones but what even is topology
 I am the truest repairman
 Zoo-Wee Mama
-I feel like an umbrella (quoIzf48YeM?t=172)
+I feel like an umbrella || quoIzf48YeM?t=172
 sina toki pona ala la, o moli
-Gazebo? Gazoinksbo
+Gazebo? More like gazoinksbo || Leslie knope said that once
 Bosskeep Gatelight Gasgirl
-Light Keep Boss
+	Light Keep Boss
 I could lie, say I likey-like that
 Never heard of the dressed mole-rat? You are one of today's lucky 10,000
-It's giving dirt girl from dirt girl (2leQfHW9sX4?t=1075)
+It's giving dirt girl from dirt girl || 2leQfHW9sX4?t=1075
 When I risk it for a biscuit then I'm in a good mood
 använd piltangenterna för att styra din figur <3
 I love drinking soowi tello wawa kəpecken nəmacko en cooleh I.O. kasi
@@ -63,28 +69,29 @@ Ok but what reason is there to pronounce a K in et cetera? Where is it??
 "I" love randomly inserting quotation marks.
 Oh no! Come on, girl. - Terry Mennanecker
 Ugh, food for dinner, again?
-Is it true you went to school with skinny but pretty voice totally tattoo all over da body but pretty drugs taking singing miss wine in the house
+Is it true you went to school with skinny but pretty voice totally tattoo all over da body but pretty drugs taking singing miss wine in the house || Have you seen that interview with Adele it's pretty racist but really funny
 That's numberwang!
 τ > π
+	In the literal sense and the Steve Mould sense
 I thought you said extra fries!
 Shortening <i>there are</i> to <i>there's</i> unnerves me slightly.
 sadly I think these splash texts are where most of this websites effort lies
 Oh yeah that classic turn that CLEARLY says "Hurry, boy, it's waiting there for you"
 But acerooolaaaa
-Boyfriend skinner <3
+Boyfriend skinner <3 || I'm guessing that's what it stands for
 Lelda, Danongorf, and Zink
 Americans be like yeah I love studying mathematic
 Apparently Denmark grades 12, 10, 7, 4, 02, 00, -3 instead of A-F
 I'm trying to be linguistically descriptivistic but oh brother
 In Swedish "the fish" and "the fishers" are the same word for some reason
-Also "six" and "sex" are the same in Swedish
+	Also "six" and "sex" are the same
 Every person's just a unicycle, looking for a second wheel
 What the bullcrud?
 Human rights? Yeah I sure hope she does.
 I'm so glad Swedish doesn't have vowel reduction, it sounds so gross
 Logan Pail‽
 How often do you actually think the "I know what you're thinking" thought?
-It's literally just sauce
+It's literally just sauce || 2ai5NWd8nuo?t=7m59s
 The bane of the internet is people who that the webrings somewhere so are hard to find
 Did you know that women are the second most respected gender? The first one might surprise you!
 I don't think more people have been to Berlin than I have
@@ -97,9 +104,9 @@ Great vowel shift is my opp
 Ahh, no good! Caca!
 Ohhh! It's me, Madi! So sorry I died.
 That feeling when you <q>drill into it, and drain every last drop of fluid</q>
-Flip a ollie for da girls`.split("\n")
+Flip a ollie for da girls`.split("\n").slice(1)
 
-let splash_index = Math.floor(Math.random() * splash_texts.length);
+let splash_index = 0;
 const splash_element = document.getElementById("splash");
 
 const theme_dicts = [
@@ -163,7 +170,13 @@ const theme_dicts = [
 
 function splash() {
 	splash_index = (splash_index + 1) % splash_texts.length;
-	splash_element.innerHTML = splash_texts[splash_index];
+	let splash_split = splash_texts[splash_index].split("||");
+
+	if (splash_split.length == 2) {
+		splash_element.innerHTML = `<abbr data-title="${splash_split[1]}">${splash_split[0]}</abbr>`;
+	} else {
+		splash_element.innerHTML = splash_texts[splash_index];
+	}
 }
 
 function set_theme(theme_dictionary) {
@@ -200,12 +213,25 @@ function toggleFullScreen(video) {
 	}
 }
 
+function spin(canvas) {
+	let angle = parseInt(canvas.dataset.angle || 0);
+	angle += 180;
+	canvas.dataset.angle = angle;
+	canvas.style.transform = `rotate(${angle}deg)`;
+}
 
 let is_toki_pona = window.location.href.endsWith("tp.html");
 
 if (is_toki_pona) {
 	splash_element.innerHTML = "󱤪󱤽󱥳󱥍󱤰󱤄";
 } else {
+	while (true) {
+		splash_index = Math.floor(Math.random() * splash_texts.length);
+		if (!splash_texts[splash_index].startsWith("\t")) {
+			break;
+		}
+	}
+	splash_index -= 1;
 	splash();
 }
 console.log("There are " + splash_texts.length + " splash texts in total. I'm trying to add new ones but It's not easy to come up with funny things!!");
@@ -232,4 +258,8 @@ for (const span of date_spans) {
 
 for (const audio of document.querySelectorAll('audio')) {
 	audio.volume = 0.4;
+}
+
+for (let ambigram of document.getElementsByClassName('ambigram')) {
+	ambigram.addEventListener('click', () => spin(ambigram));
 }

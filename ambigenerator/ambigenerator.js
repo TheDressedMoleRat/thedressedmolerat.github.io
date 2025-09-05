@@ -30,11 +30,11 @@ function clear() {
 	}
 }
 
-function spin(canvas) {
-	let angle = parseInt(canvas.dataset.angle || 0);
+function spin(spin_img) {
+	let angle = parseInt(spin_img.dataset.angle || 0);
 	angle += 180;
-	canvas.dataset.angle = angle;
-	canvas.style.transform = `rotate(${angle}deg)`;
+	spin_img.dataset.angle = angle;
+	spin_img.style.transform = `rotate(${angle}deg)`;
 }
 
 async function getGlyphImage(name, style) {
@@ -117,8 +117,10 @@ function spawnCanvas(width, height) {
 	return canvas;
 }
 
-async function generateAmbigram() {
+async function generateAmbigrams() {
 	clear();
+
+	document.getElementById('loading_text').textContent = "generating...";
 
 	let words = document.getElementById('ambigenerator input').value;
 	let style = document.getElementById('style dropdown').value;
@@ -202,19 +204,23 @@ async function generateAmbigram() {
 		let img = new Image();
 		img.src = canvas.toDataURL();
 		let img_element = document.body.appendChild(img);
-
-		const container = document.createElement('div');
-		container.className = 'ambigram_container';
-
-		container.appendChild(img_element)
+		img_element.className = "ambigram";
 
 		const ambigramsBox = document.getElementById('ambigrams');
-		ambigramsBox.appendChild(container)
+		ambigramsBox.appendChild(img_element);
 
-		img_element.addEventListener('click', () => spin(img_element))
+		img_element.addEventListener('click', () => spin(img_element));
 
 		if (style == "pixel") {
 			img_element.style.imageRendering = 'pixelated';
 		}
 	}
+
+	document.getElementById('loading_text').textContent = "";
 }
+
+addEventListener("keydown", (event) => {
+	if (event.key == "Enter") {
+		generateAmbigrams();
+	} else { console.log(event.key)}
+})

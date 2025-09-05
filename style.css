@@ -67,7 +67,7 @@ em {
 
 /* OTHER */
 
-.ambigram_container img {
+.ambigram_container img, .ambigram {
 	transition: transform 0.7s ease;
 }
 
@@ -76,11 +76,12 @@ textarea {
 	resize: vertical;
 }
 
-abbr {
+abbr:not(.splash abbr) {
 	position: relative;
 	cursor: pointer;
 	text-decoration-line: underline;
 	text-decoration-style: dotted;
+	text-decoration-color: currentColor;
 }
 
 abbr:hover, abbr:focus {
