@@ -32,22 +32,35 @@
 			<div id="ambigenerator settings" class="box">
 				<h2>Ambigram generator</h2>
 				<p>This is my ambigram generator, or ambigenerator for barely short! Write one word by itself, or two with a space between, and click generate. This will generate a bunch of ambigrams, and most of them won't be very good, but at least one should be legible! There are three styles available, I might make more in the future :)</p>
-
 				<p>If you want to use a generated ambigram for anything, just email at <a href="mailto:soweliawa@gmail.com">soweliawa@gmail.com</a> and I'll help!</p>
-
 				<p>I also draw custom ambigrams if you pay me! Check out my <a href="../ambigram info">ambigram info page</a> to learn more.</p>
-		
+			</div>
+			
+			<div class="box">
 				<script src="ambigenerator.js"></script>
 				<div>
-					<select id="style dropdown">
+					<p>Write one word, or two words with a space between:</p>
+					<select id="style_dropdown">
 						<option value="new">blocky</option>
 						<option value="old">original</option>
 						<option value="pixel">pixel art</option>
 					</select>
 					
-					<input type="text" id="ambigenerator input" placeholder="Enter one or two words">
+					<input type="text" id="ambigenerator_input" placeholder="Enter one or two words">
 					<button onclick="generateAmbigrams()">Generate</button>
 				</div>
+
+				<!-- <details>
+					<summary>Choose colors:</summary>
+					<div style="display: flex; gap: 10px;">
+						<p>Foreground:</p>
+						<input type="text" id="bg_color">
+					</div>
+					<div style="display: flex; gap: 10px;">
+						<p>Background:</p>
+						<input type="text" id="fg_color">
+					</div>
+				</details> -->
 			</div>
 
 			<div class="box">
@@ -58,6 +71,11 @@
 		</main>
 
 		<aside id="right_aside">
+			<div class="box">
+				<h2>Want a custom ambigram?</h2>
+				<p>Of course you do. I take custom ambigram <a href="ambigram info/">commissions</a> for $20, wowzers!</p>
+			</div>
+
 			<div class="box">
 				<h2>Interactives</h2>
 				<p><a href="../ambigenerator/">Ambigenerator</a></p>

@@ -1,5 +1,3 @@
-// https://chatgpt.com/c/68b32255-1cac-832d-a174-78899cdc4f6e
-
 // start, middle, end, strokewidth, height
 let glyphs_lookup = {
 	"old": [
@@ -23,8 +21,8 @@ let glyphs_lookup = {
 }
 
 // um it doesn't work?
-function clear() {
-	const ambigrams = Array.from(document.getElementsByClassName('ambigram_container')); // thanks chatgpt
+function clear_ambigrams() {
+	const ambigrams = Array.from(document.getElementsByClassName('ambigram'))
 	for (const ambigram of ambigrams) {
 		ambigram.remove();
 	}
@@ -118,18 +116,16 @@ function spawnCanvas(width, height) {
 }
 
 async function generateAmbigrams() {
-	clear();
 
-	document.getElementById('loading_text').textContent = "generating...";
-
-	let words = document.getElementById('ambigenerator input').value;
-	let style = document.getElementById('style dropdown').value;
+	let words = document.getElementById('ambigenerator_input').value;
+	let style = document.getElementById('style_dropdown').value;
 
 	let doubleWords = true;
 	
 	// Check if string is valid
 	if ((/[^a-zA-Z\s]/.test(words))) {
 		say(["No no, you can't include anything other than letters..", 'No special characters...\nYou silly goose.', 'Only letters pleeease!']);
+		return;
 	}
 
 	words = words.toLowerCase().split(' ');
@@ -176,7 +172,13 @@ async function generateAmbigrams() {
 		say(["Those two are completely different lengths!\n\n>:(", `${words[0]} doesn't fit with ${words[1]}...`, `How do you even expect me to match ${words[0]} with ${words[1]}?!`]);
 		return;
 	}
-	// make an ambgram for the first 10 but no more!!
+
+	// If the function has gotten to this point it's valid and good
+	clear_ambigrams();
+
+	document.getElementById('loading_text').textContent = "generating...";
+
+	// make an ambgram for the first 12 but no more!!
 	for (const combo of matchingCombos.slice(0, 12)) {
 		let width = countStrokes(combo[0]);
 		const strokeWidth = glyphs_lookup[style][3];
