@@ -1,0 +1,15 @@
+body {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #282a36;
+	color: white;
+}
+
+* {
+	font-family: system-ui, sans-serif;
+	font-size: xx-large;
+	text-align: center;
+}
