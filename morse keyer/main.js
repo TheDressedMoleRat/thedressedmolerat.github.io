@@ -1,4 +1,4 @@
-// TODO: button works bad
+// TODO: get a threshold for up-signals, and check if that or down-signals is a better option, and figure out when up-signals should know there is no word-space, only letter and min space.
 const morse_dict = {
 	".-": "A",
 	"-...": "B",
@@ -96,10 +96,8 @@ function get_threshold(unsorted_list) {
 	// a very ditty message like "she is her" has 20 dits to 1 dah = a ratio of 20
 	// "mom or tom" has 2 dits to 18 dahs = a ratio of 0.111...
 	if (dit_dah_ratio < 0.1) {
-		console.log("removing shortie " + sorted_list[0] + " cuz of ratio " + dit_dah_ratio);
 		return get_threshold(sorted_list.slice(1)); // remove first
 	} else if (dit_dah_ratio > 20) {
-		console.log("removing longie " + sorted_list[-1] + " cuz of ratio " + dit_dah_ratio);
 		return get_threshold(sorted_list.slice(0, -1)) // remove last
 	}
 
@@ -171,13 +169,20 @@ function update_output() {
 }
 
 function clear_text() {
-	navigator.clipboard.writeText(out_paragraph.innerHTML + "\n" + get_threshold(durations.filter((_,i) => i%2==0)) + "\n" + durations.filter((_,i) => i%2==0).join("\n"));
 	durations = [];
 	update_output();
 	last_toggle = 0;
 }
 
 window.addEventListener('keydown', function(event) {
+	if (event.key == "Backspace") {
+		clear_text();
+		return;
+	} else if (event.key == "Escape") {
+		navigator.clipboard.writeText(durations.filter((_,i) => i%2==0).join("\n") + "\n\n---\n\n" + durations.filter((_,i) => i%2==1).join("\n"));
+	}
+
+
 	if (anyKeyPressed) {
 		return;
 	}
