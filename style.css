@@ -299,6 +299,16 @@ input[type="range"] {
 	box-sizing: border-box;
 }
 
+details {
+	/* background-color: #0003; */
+	border: 4px solid var(--secondary_bg);
+	border-radius: 10px;
+}
+
+details > * {
+	padding: 10px 20px;
+}
+
 select {
 	background-color: var(--secondary_bg);
 	border: none;
