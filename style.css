@@ -192,6 +192,7 @@ footer p { text-align: center; }
 
 .display {
 	width: max(70%, 700px);
+	max-width: 100%;
 	margin: 10px auto;
 	text-align: center;
 }
