@@ -68,6 +68,7 @@ em {
 /* OTHER */
 
 .ambigram_container img, .ambigram {
+	cursor: url("media/images/cursorhand.ico"), auto;
 	transition: transform 0.7s ease;
 }
 
@@ -78,7 +79,7 @@ textarea {
 
 abbr:not(.splash abbr) {
 	position: relative;
-	cursor: pointer;
+	cursor: url("media/images/cursorhand.ico"), auto;
 	text-decoration-line: underline;
 	text-decoration-style: dotted;
 	text-decoration-color: currentColor;
@@ -189,7 +190,24 @@ footer p { text-align: center; }
 	width: 100%;
 }
 
+.display {
+	width: max(70%, 700px);
+	margin: 10px auto;
+	text-align: center;
+}
+
+.display img {
+	border: var(--secondary_bg) 4px solid;
+	border-radius: 8px;
+}
+
+.display p {
+	margin-top: 10px;
+	margin-bottom: 40px;
+}
+
 .desktop { display: none; }
+
 /* DESKTOP */
 @media only screen and (min-width: 970px){
 	.desktop {
@@ -254,7 +272,7 @@ iframe { border: none; }
 .sitelen, .sitelen *:not(.not_sitelen) { font-family: "nishiki", var(--body_font); word-break: break-all; font-size: 17pt;}
 .sitelen h1 { font-size: 30pt !important; font-weight: normal; }
 .sitelen h2 { font-size: 20pt !important; font-weight: normal; }
-a { color: var(--links); text-decoration: none; cursor: pointer; }
+a { color: var(--links); text-decoration: none; cursor: url("media/images/cursorhand.ico"), auto; }
 a:hover { text-decoration: underline; }
 p { hyphens: auto; }
 .left { float: left; margin: 10px 20px 10px 0}
@@ -290,7 +308,7 @@ input[type="text"], textarea {
 input[type="range"] {
 	appearance: none;
 	background: var(--secondary_bg);
-	cursor: pointer;
+	cursor: url("media/images/cursorhand.ico"), auto;
 	width: 400px;
 	height: 10px;
 	border-radius: 10px;
