@@ -1,4 +1,4 @@
-@font-face { font-family: "nishiki"; src: url(media/fonts/nishiki.woff2); }
+@font-face { font-family: "nishiki"; src: url("/media/fonts/nishiki.woff2"); }
 
 :root { 
 	--bg: #282a36;
@@ -24,7 +24,7 @@ body {
 }
 
 * {
-	cursor: url("media/images/cursor.ico"), auto;
+	cursor: url("/media/images/cursor.ico"), auto;
 }
 
 p, p a, input, button, select, select *, .not_sitelen, summary, details { 
@@ -68,7 +68,7 @@ em {
 /* OTHER */
 
 .ambigram_container img, .ambigram {
-	cursor: url("media/images/cursorhand.ico"), auto;
+	cursor: url("/media/images/cursorhand.ico"), auto;
 	transition: transform 0.7s ease;
 }
 
@@ -79,7 +79,7 @@ textarea {
 
 abbr:not(.splash abbr) {
 	position: relative;
-	cursor: url("media/images/cursorhand.ico"), auto;
+	cursor: url("/media/images/cursorhand.ico"), auto;
 	text-decoration-line: underline;
 	text-decoration-style: dotted;
 	text-decoration-color: currentColor;
@@ -273,7 +273,7 @@ iframe { border: none; }
 .sitelen, .sitelen *:not(.not_sitelen) { font-family: "nishiki", var(--body_font); word-break: break-all; font-size: 17pt;}
 .sitelen h1 { font-size: 30pt !important; font-weight: normal; }
 .sitelen h2 { font-size: 20pt !important; font-weight: normal; }
-a { color: var(--links); text-decoration: none; cursor: url("media/images/cursorhand.ico"), auto; }
+a { color: var(--links); text-decoration: none; cursor: url("/media/images/cursorhand.ico"), auto; }
 a:hover { text-decoration: underline; }
 p { hyphens: auto; }
 .left { float: left; margin: 10px 20px 10px 0}
@@ -309,7 +309,7 @@ input[type="text"], textarea {
 input[type="range"] {
 	appearance: none;
 	background: var(--secondary_bg);
-	cursor: url("media/images/cursorhand.ico"), auto;
+	cursor: url("/media/images/cursorhand.ico"), auto;
 	width: 400px;
 	height: 10px;
 	border-radius: 10px;

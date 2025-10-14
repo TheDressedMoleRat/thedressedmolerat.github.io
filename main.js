@@ -104,7 +104,15 @@ Great vowel shift is my opp
 Ahh, no good! Caca!
 Ohhh! It's me, Madi! So sorry I died.
 That feeling when you <q>drill into it, and drain every last drop of fluid</q>
-Flip a ollie for da girls`.split("\n").slice(1)
+Flip a ollie for da girls
+ona li mijomi e akesi!!!!!!!!!
+Being hard to believe, after allegedly trying to go back to repeatedly inspiring fear using rag-tag groups of suspicious-looking clowns, despite resistance.
+Just musing in my Brandity Brand Cocoon™
+Can English stop with -ous please?
+The Swedish alphabet has a prime number of letters to the sadness of everyone
+Does anyone read these?
+Nishiki-teki my beloved
+This is the last splash text so if you click it you'll loop around to the first one!`.split("\n").slice(1)
 
 let splash_index = 0;
 const splash_element = document.getElementById("splash");
