@@ -27,7 +27,7 @@ body {
 	cursor: url("/media/images/cursor.ico"), auto;
 }
 
-p, p a, input, button, select, select *, .not_sitelen, summary, details { 
+p, p a, input, button, select, select *, .not_sitelen, details { 
 	font-size: 14pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
@@ -39,8 +39,9 @@ p, p a, input, button, select, select *, .not_sitelen, summary, details {
 	line-height: 1.4;
 }
 
-h1, h2, h3 { 
+h1, h2, h3, summary { 
 	font-family: var(--heading_font); 
+	font-weight: normal;
 }
 
 h1 { 
@@ -48,7 +49,9 @@ h1 {
 	font-size: min(32px, 7vw);
 }
 
-h2 {
+h2, summary {
+	margin-top: 0.67em;
+	margin-bottom: 0.2em;
 	font-size: 20pt;
 }
 
@@ -70,6 +73,10 @@ em {
 .ambigram_container img, .ambigram {
 	cursor: url("/media/images/cursorhand.ico"), auto;
 	transition: transform 0.7s ease;
+}
+
+summary, summary * {
+	cursor: url("/media/images/cursorhand.ico"), auto;
 }
 
 textarea {
@@ -153,7 +160,6 @@ img {
 
 footer p { text-align: center; }
 .ipa { font-family: system-ui, 'Open Sans, sans-serif', sans-serif }
-/* these two don't work because js */
 #sillyring br { display: none; }
 #sillyring-image { display: none; }
 .compact p { margin: 5px 0 0; }
@@ -324,9 +330,7 @@ details {
 	border-radius: 10px;
 }
 
-details > * {
-	padding: 10px 20px;
-}
+
 
 select {
 	background-color: var(--secondary_bg);
