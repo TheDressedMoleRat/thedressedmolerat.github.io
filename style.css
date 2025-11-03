@@ -68,6 +68,11 @@ em {
 	padding-bottom: 20px;
 }
 
+details {
+	padding-left: 20px;
+	border-radius: var(--box_rounding);
+}
+
 /* OTHER */
 
 .ambigram_container img, .ambigram {
@@ -327,7 +332,6 @@ input[type="range"] {
 details {
 	/* background-color: #0003; */
 	border: 4px solid var(--secondary_bg);
-	border-radius: 10px;
 }
 
 

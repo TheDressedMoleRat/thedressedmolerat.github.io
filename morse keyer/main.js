@@ -104,15 +104,37 @@ function get_threshold(unsorted_list) {
 	return threshold;
 }
 
+function get_real_wpm() {
+	let units = 0;
+	total_duration = 0;
+
+	durations.forEach((duration, i) => {
+		total_duration += duration;
+		let is_down_duration = (i % 2 == 0);
+
+		if (is_down_duration) {
+			if (duration > dash_ms) { units += 3; }
+			else { units += 1; }
+		}
+		else {
+			if (duration > space_ms) { units += 7; }
+			else if (duration > gap_ms) { units += 3; }
+			else { units += 1; }
+		}
+	});
+
+	return Math.round(1200 / (total_duration / units));
+}
+
 function update_timings() {
 	if (auto_checkbox.checked) { return; }
 	let unit = 1000 * 60 / (50 * slider.value);
 	dash_ms = 3 * unit;
 	gap_ms = 3 * unit;
 	space_ms = 7 * unit;
-	
-	slider_display.textContent = "Current speed: " + slider.value + " words per minute";
-}
+
+	let real_wpm = get_real_wpm()
+	slider_display.textContent = `Keyer speed: ${slider.value} wpm. Actual speed: ${isNaN(real_wpm) ? 0 : real_wpm} words per minute`;}
 
 function add_duration() {
 	if (last_toggle == 0) {
@@ -137,7 +159,12 @@ function update_output() {
 		gap_ms = 3 * unit;
 		space_ms = 7 * unit;
 		let wpm = Math.round(1200/unit);
-		slider_display.textContent = `Current speed: Automatic (${wpm} wpm)`
+
+		wpm = wpm==Infinity ? 0 : wpm;
+
+		let real_wpm = get_real_wpm();
+
+		slider_display.textContent = `Keyer speed: [${wpm} wpm]. Actual speed: ${isNaN(real_wpm) ? 0 : real_wpm} words per minute`;
 		slider.value = wpm;
 
 	} else {
