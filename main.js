@@ -118,6 +118,20 @@ let splash_index = 0;
 const splash_element = document.getElementById("splash");
 
 const theme_dicts = [
+	{ // christmas
+		bg: '#ff4141ff',
+		box_bg: '#f02f2fff',
+		secondary_bg: '#f5706e',
+		text: '#F8F8F2',
+		links: '#5cd64cff',
+		button_text: 'white',
+		splash: '#ffb0b0ff',
+		body_font: "Atkinson Hyperlegible Next, sans-serif",
+		heading_font: "Kalnia, serif",
+		box_rounding: "35px",
+		bg_image: "url(/media/images/backgrounds/christmas.png)", //"repeating-linear-gradient(45deg, #f5706e, #f5706e 30px, #ec2b2b 30px, #f33 60px)",
+		bg_animation: "6s linear infinite bg"
+	},
 	{ // default
 		bg: '#282a36',
 		box_bg: '#282a36',
