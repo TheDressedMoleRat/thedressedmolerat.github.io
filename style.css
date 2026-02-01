@@ -27,10 +27,14 @@ body {
 	cursor: url("/media/images/cursor.ico"), auto;
 }
 
-p, a, input, button, select, select *, .not_sitelen, details { 
+p, a, li, input, button, select, select *, .not_sitelen, details { 
 	font-size: 14pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
+}
+
+li {
+	margin: 20px 0px;
 }
 
 .not_sitelen {
@@ -39,7 +43,7 @@ p, a, input, button, select, select *, .not_sitelen, details {
 	line-height: 1.4;
 }
 
-h1, h2, h3, summary { 
+h1, h2, h3 { 
 	font-family: var(--heading_font); 
 	font-weight: normal;
 }
@@ -49,7 +53,7 @@ h1 {
 	font-size: min(32px, 5vw);
 }
 
-h2, summary {
+h2 {
 	margin-top: 0.67em;
 	margin-bottom: 0.2em;
 	font-size: 20pt;
@@ -69,8 +73,7 @@ em {
 }
 
 details {
-	padding-left: 20px;
-	border-radius: var(--box_rounding);
+	margin-top: 20px;
 }
 
 /* OTHER */
@@ -82,6 +85,15 @@ details {
 
 summary, summary * {
 	cursor: url("/media/images/cursorhand.ico"), auto;
+}
+
+summary {
+	display: block;
+	color: var(--links);
+}
+
+summary:hover {
+	text-decoration: underline;
 }
 
 textarea {
@@ -102,6 +114,7 @@ abbr:hover, abbr:focus {
 }
 
 abbr:hover::after, abbr:focus::after {
+	font-family: var(--body_font);
 	content: attr(data-title);
 	position: absolute;
 	left: 0;
@@ -335,13 +348,6 @@ input[type="range"] {
 	box-sizing: border-box;
 }
 
-details {
-	/* background-color: #0003; */
-	border: 4px solid var(--secondary_bg);
-}
-
-
-
 select {
 	background-color: var(--secondary_bg);
 	border: none;
@@ -352,7 +358,6 @@ select {
 
 button:hover { color: var(--links); }
 
-details { margin: 20px 0 10px; }
 
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

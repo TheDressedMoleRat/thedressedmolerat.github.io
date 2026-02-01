@@ -8,6 +8,9 @@ root_head = ''.join(root_lines.split(delimit)[0])
 
 changed = []
 for p in sorted(Path('.').rglob('*.html')):
+	if f"{p.parent}/{p.name}" == "./index.html":
+		continue
+
 	text = p.read_text(encoding='utf-8')
 
 	if delimit not in text:
@@ -15,7 +18,7 @@ for p in sorted(Path('.').rglob('*.html')):
 		continue
 
 	rest = text.split(delimit)[1]
-	new = root_head.replace(f'href="/{p.parent}"', 'href=""').replace('href=""', 'href="home"') + delimit + rest
+	new = root_head.replace('href=""', 'href="/"').replace(f'href="/{p.parent}"', 'href=""') + delimit + rest
 
 	if new != text:
 		p.write_text(new, encoding='utf-8')
