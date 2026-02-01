@@ -37,6 +37,10 @@ li {
 	margin: 20px 0px;
 }
 
+.bar li {
+	margin: 0;
+}
+
 .not_sitelen {
 	font-size: 14pt; 
 	font-family: var(--body_font); 
