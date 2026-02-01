@@ -46,7 +46,7 @@ h1, h2, h3, summary {
 
 h1 { 
 	margin: 20px 0 10px; 
-	font-size: min(32px, 7vw);
+	font-size: min(32px, 5vw);
 }
 
 h2, summary {
@@ -137,12 +137,14 @@ img {
 	display: flex; 
 	margin: 0; 
 	gap: 10px; 
+	overflow-x: scroll;
 }
 
 .bar li { 
 	list-style: none; 
 	flex-grow: 1; 
 	text-align: center; 
+	min-width: 40px;
 }
 
 .bar a { 
@@ -224,6 +226,10 @@ footer p { text-align: center; }
 @media only screen and (min-width: 970px){
 	.desktop {
 		display: block;
+	}
+
+	.bar li {
+		min-width: 0px;
 	}
 
 	#bg { 
