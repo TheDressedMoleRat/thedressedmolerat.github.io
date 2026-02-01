@@ -182,7 +182,7 @@ footer p { text-align: center; }
 .ipa { font-family: system-ui, 'Open Sans, sans-serif', sans-serif }
 #sillyring br { display: none; }
 #sillyring-image { display: none; }
-.compact p { margin: 5px 0 0; }
+.compact li, .compact p { margin: 5px 0 0; }
 
 #profile_pic {
 	float: left;
