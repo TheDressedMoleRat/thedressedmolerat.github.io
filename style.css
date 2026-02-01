@@ -161,7 +161,7 @@ img {
 	list-style: none; 
 	flex-grow: 1; 
 	text-align: center; 
-	min-width: 40px;
+	min-width: 50px;
 }
 
 .bar a { 
@@ -190,8 +190,9 @@ footer p { text-align: center; }
 
 #profile_pic {
 	float: left;
-	margin-right: 20px;
-	margin-bottom: 10px;
+	/* margin-right: 20px;
+	margin-bottom: 10px; */
+	margin: 12px 20px 10px 0px;
 	width: 80px;
 	outline: 2px solid var(--secondary_bg); /* thickness, style, color */
 	border-radius: 10px;
