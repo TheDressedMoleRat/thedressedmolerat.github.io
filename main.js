@@ -112,6 +112,7 @@ Can English stop with -ous please?
 The Swedish alphabet has a prime number of letters to the sadness of everyone
 Does anyone read these?
 Nishiki-teki my beloved
+You will never have a rich dad, you will always have a tiny baby bitch dad
 This is the last splash text so if you click it you'll loop around to the first one!`.split("\n").slice(1)
 
 let splash_index = 0;

@@ -27,7 +27,7 @@ body {
 	cursor: url("/media/images/cursor.ico"), auto;
 }
 
-p, p a, input, button, select, select *, .not_sitelen, details { 
+p, a, input, button, select, select *, .not_sitelen, details { 
 	font-size: 14pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
