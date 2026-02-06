@@ -341,6 +341,14 @@ input[type="text"], textarea {
 	box-sizing: border-box;
 }
 
+.cryptic p {
+	display: inline;
+}
+
+.cryptic input[type="text"] {
+	margin: 15px 0px 0px 0px;
+}
+
 input[type="range"] {
 	appearance: none;
 	background: var(--secondary_bg);
