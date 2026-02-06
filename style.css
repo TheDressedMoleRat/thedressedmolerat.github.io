@@ -347,6 +347,7 @@ input[type="text"], textarea {
 
 .cryptic input[type="text"] {
 	margin: 15px 0px 0px 0px;
+	width: 150px;
 }
 
 input[type="range"] {
