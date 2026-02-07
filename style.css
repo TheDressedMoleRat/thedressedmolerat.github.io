@@ -28,7 +28,7 @@ body {
 }
 
 p, a, li, input, button, select, select *, .not_sitelen, details { 
-	font-size: 14pt; 
+	font-size: 15pt; 
 	font-family: var(--body_font); 
 	line-height: 1.4;
 }
@@ -41,12 +41,6 @@ li {
 	margin: 0;
 }
 
-.not_sitelen {
-	font-size: 14pt; 
-	font-family: var(--body_font); 
-	line-height: 1.4;
-}
-
 h1, h2, h3 { 
 	font-family: var(--heading_font); 
 	font-weight: normal;
@@ -54,13 +48,13 @@ h1, h2, h3 {
 
 h1 { 
 	margin: 20px 0 10px; 
-	font-size: min(32px, 5vw);
+	font-size: min(42px, 5vw);
 }
 
 h2 {
 	margin-top: 0.67em;
 	margin-bottom: 0.2em;
-	font-size: 20pt;
+	font-size: 25pt;
 }
 
 /* gradient text, source: https://cssgradient.io/blog/css-gradient-text/ */
@@ -144,7 +138,7 @@ img {
 
 .splash { 
 	color: var(--splash); 
-	font-size: min(18px, 5vw);	
+	font-size: min(15pt, 5vw);	
 }
 .splash:hover { text-decoration: underline; }
 
