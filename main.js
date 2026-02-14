@@ -49,7 +49,7 @@ Live laugh love? Honey. Die cry hate.
 	(don't)
 <q>Zorp Schmorp!</q>
 	<q>Doomsday Prediction Falls Flat as Citizens Spend Evening Enjoying One of Pawnee's Finest Parks</q>
-	That's a reference to when Leslie Knope suggested a very long headline which is funny
+	That's a reference to when Leslie Knope suggested a very long headline to a news article, which is funny
 Are you guys lgbt or something
 Crazy how there's that one donut topology joke and no other ones but what even is topology
 I am the truest repairman
@@ -64,7 +64,7 @@ Never heard of the dressed mole-rat? You are one of today's lucky 10,000
 It's giving dirt girl from dirt girl || 2leQfHW9sX4?t=1075
 When I risk it for a biscuit then I'm in a good mood
 använd piltangenterna för att styra din figur <3
-I love drinking soowi tello wawa kəpecken nəmacko en cooleh I.O. kasi
+I love drinking soowi tello wawa <span class="ipa">kəpecken nəmacko</span> en cooleh I.O. kasi
 Ok but what reason is there to pronounce a K in et cetera? Where is it??
 "I" love randomly inserting quotation marks.
 Oh no! Come on, girl. - Terry Mennanecker

@@ -116,7 +116,7 @@ abbr:hover::after, abbr:focus::after {
 	content: attr(data-title);
 	position: absolute;
 	left: 0;
-	top: 1.5em;
+	top: 100%;
 	background: var(--box_bg);
 	z-index: 10;
 	width: 200px;
@@ -124,6 +124,7 @@ abbr:hover::after, abbr:focus::after {
 	border: 2px solid var(--secondary_bg);
 	font-size: 14pt;
 	border-radius: 5px;
+	color: var(--text)
 }
 
 ::selection {
