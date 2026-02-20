@@ -305,7 +305,6 @@ iframe { border: none; }
 .sitelen h2 { font-size: 20pt !important; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: url("/media/images/cursorhand.ico"), auto; }
 a:hover { text-decoration: underline; }
-p { hyphens: auto; }
 .left { float: left; margin: 10px 20px 10px 0}
 .right { float: right; margin: 10px 0 10px 20px}
 .left, .right { width: 20%; }
