@@ -235,6 +235,17 @@ footer p { text-align: center; }
 
 .desktop { display: none; }
 
+table, th, td {
+	border: 3px solid var(--secondary_bg);
+	border-collapse: collapse;
+	padding: 6px 12px;
+}
+
+table {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
 /* DESKTOP */
 @media only screen and (min-width: 970px){
 	.desktop {
