@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>:3</title>
-	<style>@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Kalnia:wght@500&display=swap&family=Comic+Neue:ital,wght@0,700;1,700&display=swap');</style>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Kalnia:wght@500&display=swap&family=Comic+Neue:ital,wght@0,700;1,700&display=swap');
+	</style>
 	<link rel="stylesheet" href="/style.css">
 	<link rel="icon" href="/media/images/favicon.ico" type="image/x-icon">
 	<meta name="description" content="Hello I'm known as Dressed Mole-Rat or jan Awa, depending on who you are.">
 	<meta name="darkreader-lock">
 </head>
+
 <body>
 	<div id="bg"></div>
 	<div id="header" class="box">
@@ -36,27 +40,29 @@
 			<li><a href="/guestbook">󱤪</a></li>
 		</ul>
 	</div>
-	
+
 	<script src="/main.js" defer></script>
-	
+
 	<!-- END HEADER -->
-	
+
 	<div id="content">
 		<main>
 			<div class="box">
 				<h2>Tap code trainer</h2>
-				<p>This is a trainer I made for me and my friend for decoding <a href="https://en.wikipedia.org/wiki/Tap_code">tap code</a>. Make sure to have sound turned on, then use the button to play one letter at a time. When the whole word is revealed, a new one will be chosen randomly.</p>
+				<p>This is a practice thing I made for me and my friend for decoding <a href="https://en.wikipedia.org/wiki/Tap_code">tap code</a>. Make sure to have sound turned on, then use the button to play a word. I also made an <a href="easy.html">easier version</a> that plays one letter at a time.</p>
 
-				<audio preload="auto" src="tap.wav" id="audio"></audio>
+				<div id="input_check" class="cryptic">
+					<input type="text" id="input_box">
+					<button>Check</button>
+					<p id="result"></p>
+				</div>
 
-				<p id="out_paragraph">_</p>
 				<p id="slider_display"></p>
 				<div style="display:flex;align-items: center; gap:20px; flex-wrap: wrap;">
 					<input type="range" min="5" max="50" value="20" id="slider"><br>
-					<button onclick="play_letter()" id="next_letter_button">new word</button>
+					<button onclick="play_word()" id="next_letter_button">new word</button>
 				</div>
 			</div>
-
 
 			<details class="box">
 				<summary>
@@ -64,19 +70,61 @@
 				</summary>
 
 				<table>
-					<tr><th> </th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-					<tr><th>1</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td></tr>
-					<tr><th>2</th><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td></tr>
-					<tr><th>3</th><td>L</td><td>M</td><td>N</td><td>O</td><td>P</td></tr>
-					<tr><th>4</th><td>Q</td><td>R</td><td>S</td><td>T</td><td>U</td></tr>
-					<tr><th>5</th><td>V</td><td>W</td><td>X</td><td>Y</td><td>Z</td></tr>
+					<tr>
+						<th> </th>
+						<th>1</th>
+						<th>2</th>
+						<th>3</th>
+						<th>4</th>
+						<th>5</th>
+					</tr>
+					<tr>
+						<th>1</th>
+						<td>A</td>
+						<td>B</td>
+						<td>C</td>
+						<td>D</td>
+						<td>E</td>
+					</tr>
+					<tr>
+						<th>2</th>
+						<td>F</td>
+						<td>G</td>
+						<td>H</td>
+						<td>I</td>
+						<td>J</td>
+					</tr>
+					<tr>
+						<th>3</th>
+						<td>L</td>
+						<td>M</td>
+						<td>N</td>
+						<td>O</td>
+						<td>P</td>
+					</tr>
+					<tr>
+						<th>4</th>
+						<td>Q</td>
+						<td>R</td>
+						<td>S</td>
+						<td>T</td>
+						<td>U</td>
+					</tr>
+					<tr>
+						<th>5</th>
+						<td>V</td>
+						<td>W</td>
+						<td>X</td>
+						<td>Y</td>
+						<td>Z</td>
+					</tr>
 				</table>
 				<p>Every letter is knocked in two groups, first y, then x. This means the first column can be memorized and counted along during the first group, and then the following part of the alphabet can be counted during the second, to get to the letter that's knocked.</p>
 				<p>C (<code>. ...</code>) also represents K, because there isn't enough space for all 26 letters.</p>
 			</details>
 
 		</main>
-		
+
 		<aside id="right_aside">
 			<div class="box">
 				<h2>Interactives</h2>
@@ -90,8 +138,9 @@
 	<script type="text/javascript" src="main.js"></script>
 
 	<footer>
-		<iframe src="https://john.citrons.xyz/embed?ref=https://thedressedmolerat.github.io/" class="john"></iframe>
-		<p>Created by me in pure HTML, CSS, and a bit of JS. If you have a question (or just like the site), email me! <a href="mailto:soweliawa@gmail.com">soweliawa@gmail.com</a></p>
+		<p>Created by me in pure HTML, CSS, and a bit of JS. If you have a question (or just like the site), email me!
+		<a href="mailto:soweliawa@gmail.com">soweliawa@gmail.com</a></p>
 	</footer>
 </body>
+
 </html>

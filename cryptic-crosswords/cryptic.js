@@ -22,15 +22,12 @@ for (const cryptic_div of document.getElementsByClassName("cryptic")) {
 	let hash = cryptic_div.dataset.hash
 
 	button.addEventListener("click", async () => {
-		if (1) {
-			if (await sha256(input.value.toLowerCase()) == hash) {
-				p.textContent = "You got it!"
-				p.style.color = "#50fa7b"
-			} else {
-				p.textContent = "Incorrect"
-				p.style.color = "#ff5555"
-			}
-
+		if (await sha256(input.value.toLowerCase()) == hash) {
+			p.textContent = "You got it!"
+			p.style.color = "#50fa7b"
+		} else {
+			p.textContent = "Incorrect"
+			p.style.color = "#ff5555"
 		}
 	})
 }
