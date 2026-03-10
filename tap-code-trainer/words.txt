@@ -253,7 +253,6 @@ cause
 cave
 cavity
 cell
-centi-
 ceremony
 certain
 certificate
@@ -412,7 +411,6 @@ death
 debit
 debt
 December
-deci-
 decision
 deck
 decrease
@@ -612,14 +610,12 @@ fingerprint
 fire
 firearm
 fired
-fire-engine
 firefly
 fireman
 fireplace
 firework
 firing
 first
-first-rate
 fish
 fisher
 five
@@ -716,7 +712,6 @@ gold
 goldfish
 good
 goodlooking
-good-morning
 goodnight
 government
 grain
@@ -745,7 +740,6 @@ guide
 gum
 gun
 gunboat
-gun-carriage
 gunmetal
 gunpowder
 habit
@@ -913,7 +907,6 @@ kettle
 key
 kick
 kidney
-kilo-
 kind
 king
 kiss
@@ -992,7 +985,6 @@ locus
 long
 longitude
 look
-looking-glass
 loose
 loss
 loud
@@ -1053,13 +1045,11 @@ message
 metabolism
 metal
 meter
-micro-
 microscope
 middle
 military
 milk
 mill
-milli-
 million
 mind
 mine
@@ -1850,7 +1840,6 @@ turn
 turning
 twelve
 twenty
-twenty-one
 twice
 twin
 twist
@@ -1936,8 +1925,6 @@ weekend
 weight
 welcome
 well
-well-being
-well-off
 west
 wet
 whatever
@@ -1993,7 +1980,6 @@ wrist
 writer
 writing
 wrong
-x-ray
 yawn
 year
 yearbook

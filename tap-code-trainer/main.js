@@ -2,7 +2,7 @@ let slider = document.getElementById("slider");
 let slider_display = document.getElementById("slider_display");
 let input_box = document.getElementById("input_box");
 let next_letter_button = document.getElementById("next_letter_button");
-let random_word;
+let word;
 let result_p = document.getElementById("result");
 let words = [];
 const alphabet = "abcdefghijlmnopqrstuvwxyz";
@@ -29,10 +29,10 @@ async function play_word() {
 	}
 
 	while (true) {
-		random_word = words[Math.floor(Math.random() * words.length)];
-		random_word = random_word.toLowerCase();
-		random_word = random_word.replace(/[^a-z]/gi, '');
-		if (random_word.length > 3) break;
+		word = words[Math.floor(Math.random() * words.length)];
+		word = word.toLowerCase();
+		word = word.replace(/[^a-z]/gi, '');
+		if (word.length > 3) break;
 	}
 
 	playing = true;
@@ -40,8 +40,8 @@ async function play_word() {
 	result_p.textContent = "";
 	input_box.value = "";
 
-	for (let i = 0; i < random_word.length; i++) {
-		let letter = random_word[i].replace("k", "c");
+	for (let i = 0; i < word.length; i++) {
+		let letter = word[i].replace("k", "c");
 
 		let x = alphabet.indexOf(letter) % 5 + 1;
 		let y = Math.floor(alphabet.indexOf(letter) / 5) + 1;
@@ -58,7 +58,7 @@ async function play_word() {
 			await new Promise(r => setTimeout(r, 8000 / slider.value));
 		}
 
-		if (i != random_word.length - 1) {
+		if (i != word.length - 1) {
 			await new Promise(r => setTimeout(r, 24000 / slider.value));
 		}
 	}
@@ -69,7 +69,7 @@ async function play_word() {
 
 
 // main
-fetch('words.txt')
+fetch('/media/words.txt')
 	.then(r => r.text())
 	.then(text => {
 		words = text.split("\n");
@@ -89,11 +89,11 @@ let button = children[1];
 let p = children[2];
 
 button.addEventListener("click", () => {
-	if (input.value.toLowerCase()?.replace("c", "k") == random_word?.replace("c", "k")) {
+	if (input.value.toLowerCase()?.replace("c", "k") == word?.replace("c", "k")) {
 		p.textContent = "You got it!";
 		p.style.color = "#50fa7b";
 	} else {
-		p.textContent = "Incorrect. Answer: " + random_word;
+		p.textContent = "Incorrect. Answer: " + word;
 		p.style.color = "#ff5555";
 	}
 })

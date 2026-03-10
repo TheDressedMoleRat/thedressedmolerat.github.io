@@ -85,7 +85,7 @@ async function play_letter() {
 }
 
 // main
-fetch('words.txt')
+fetch('/media/words.txt')
 	.then(r => r.text())
 	.then(text => {
 		words = text.split("\n");
