@@ -113,6 +113,9 @@ The Swedish alphabet has a prime number of letters to the sadness of everyone
 Does anyone read these?
 Nishiki-teki my beloved
 You will never have a rich dad, you will always have a tiny baby bitch dad
+OLD radio shows
+Would you rather have a gay thot or a son daughter?
+US AGAINST THE WORLD SHAKING ASS IN THE PARKING LOT
 This is the last splash text so if you click it you'll loop around to the first one!`.split("\n").slice(1)
 
 let splash_index = 0;
@@ -182,7 +185,7 @@ function splash() {
 	let splash_split = splash_texts[splash_index].split("||");
 
 	if (splash_split.length == 2) {
-		splash_element.innerHTML = `<abbr data-title="${splash_split[1]}">${splash_split[0]}</abbr>`;
+		splash_element.innerHTML = `<abbr tabindex=0 data-title="${splash_split[1]}">${splash_split[0]}</abbr>`;
 	} else {
 		splash_element.innerHTML = splash_texts[splash_index];
 	}
@@ -259,9 +262,9 @@ for (const span of date_spans) {
 	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24));
 
 	if (is_toki_pona) {
-		span.innerHTML = `<abbr data-title='${span.innerHTML}'>` + "󱥫󱥤󱥐󱤽" + days_ago + "</abbr>";
+		span.innerHTML = `<abbr tabindex=0 data-title='${span.innerHTML}'>` + "󱥫󱥤󱥐󱤽" + days_ago + "</abbr>";
 	} else {
-		span.innerHTML = `<abbr data-title='${span.innerHTML}'>` + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</abbr>";	
+		span.innerHTML = `<abbr tabindex=0 data-title='${span.innerHTML}'>` + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</abbr>";	
 	}
 }
 

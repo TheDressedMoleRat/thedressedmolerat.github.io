@@ -57,12 +57,9 @@ h2 {
 	font-size: 25pt;
 }
 
-/* gradient text, source: https://cssgradient.io/blog/css-gradient-text/ */
 em {
-	background: linear-gradient(to left, var(--links), var(--text));
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
+	text-decoration-style: wavy;
+	text-decoration-line: underline;
 }
 
 .box {
