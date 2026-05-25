@@ -102,7 +102,7 @@ function spawnCanvas(width, height) {
 	canvas.width = width;
 	canvas.height = height;
 
-	const colorValues = 'cdef'
+	const colorValues = 'bcef'
 	let color = '#';
 	for (let i=0; i<3; i++) {
 		color += colorValues[Math.floor(Math.random()*4)];

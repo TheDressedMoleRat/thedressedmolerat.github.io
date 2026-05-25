@@ -110,6 +110,7 @@ Being hard to believe, after allegedly trying to go back to repeatedly inspiring
 Just musing in my Brandity Brand Cocoon™
 Can English stop with -ous please?
 The Swedish alphabet has a prime number of letters to the sadness of everyone
+Namaste namaste imma stay UP
 Does anyone read these?
 Nishiki-teki my beloved
 You will never have a rich dad, you will always have a tiny baby bitch dad
