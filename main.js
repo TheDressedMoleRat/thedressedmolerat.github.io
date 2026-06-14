@@ -54,14 +54,14 @@ Are you guys lgbt or something
 Crazy how there's that one donut topology joke and no other ones but what even is topology
 I am the truest repairman
 Zoo-Wee Mama
-I feel like an umbrella || https://youtu.be/quoIzf48YeM?t=2m52s
+I feel like an umbrella
 sina toki pona ala la, o moli
 Gazebo? More like gazoinksbo
 Bosskeep Gatelight Gasgirl
 	Light Keep Boss
 I could lie, say I likey-like that
 Never heard of the dressed mole-rat? You are one of today's lucky 10,000
-It's giving dirt girl from dirt girl || https://youtu.be/2leQfHW9sX4?t=1075
+It's giving dirt girl from dirt girl
 When I risk it for a biscuit then I'm in a good mood
 använd piltangenterna för att styra din figur <3
 I love drinking soowi tello wawa <span class="ipa">kəpecken nəmacko</span> en cooleh I.O. kasi
@@ -185,13 +185,8 @@ const theme_dicts = [
 ];
 
 function splash() {
-	let splash_split = splash_texts[splash_index].split("||");
-	if (splash_split.length == 2) {
-		window.open(splash_split[1], '_blank').focus();
-	} 
-	
 	splash_index = (splash_index + 1) % splash_texts.length;
-	splash_element.innerHTML = splash_texts[splash_index].split("||")[0];
+	splash_element.innerHTML = splash_texts[splash_index];
 }
 
 function set_theme(theme_dictionary) {
