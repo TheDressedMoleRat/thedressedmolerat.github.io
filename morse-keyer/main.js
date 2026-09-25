@@ -68,7 +68,9 @@ function get_real_wpm() {
 }
 
 function update_timings() {
-	if (auto_checkbox.checked) { return; }
+	if (auto_checkbox.checked) { 
+		auto_checkbox.checked = false;
+	}
 	let unit = 1000 * 60 / (50 * slider.value);
 	dash_ms = 3 * unit;
 	gap_ms = 3 * unit;

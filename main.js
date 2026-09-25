@@ -46,7 +46,6 @@ T***s N*w R***n
 Woo gays, gay it up
 Oh ok Nguyen is pronounced ŋwiən apparently??
 Live laugh love? Honey. Die cry hate.
-	(don't)
 <q>Zorp Schmorp!</q>
 	<q>Doomsday Prediction Falls Flat as Citizens Spend Evening Enjoying One of Pawnee's Finest Parks</q>
 	That's a reference to when Leslie Knope suggested a very long headline to a news article, which is funny
@@ -91,7 +90,7 @@ Human rights? Yeah I sure hope she does.
 I'm so glad Swedish doesn't have vowel reduction, it sounds so gross
 Logan Pail‽
 How often do you actually think the "I know what you're thinking" thought?
-It's literally just sauce || https://youtu.be/2ai5NWd8nuo?t=7m59s
+It's literally just sauce
 The bane of the internet is people who that the webrings somewhere so are hard to find
 Did you know that women are the second most respected gender? The first one might surprise you!
 I don't think more people have been to Berlin than I have
@@ -120,6 +119,11 @@ US AGAINST THE WORLD SHAKING ASS IN THE PARKING LOT
 You know my code, hoes before bros!
 	Uteruses before duderuses
 	Ovaries before brovaries
+Click me click me click me!!
+	Thanks
+She 󱥰 on my 󱥊 til I 󱤜
+She 󱦅 on my 󱦀 til I 󱥋
+She 󱤵 on my 󱤳 til I 󱥾
 This is the last splash text so if you click it you'll loop around to the first one!`.split("\n").slice(1)
 
 let splash_index = 0;
@@ -257,12 +261,16 @@ if (theme_cookie_value == undefined || theme_cookie_value == "NaN") {
 let date_spans = document.getElementsByClassName("date");
 
 for (const span of date_spans) {
-	days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24));
+	let days_ago = Math.floor((Date.now()-Date.parse(span.innerHTML))/(1000*60*60*24));
 
 	if (is_toki_pona) {
 		span.innerHTML = `<abbr tabindex=0 data-title='${span.innerHTML}'>` + "󱥫󱥤󱥐󱤽" + days_ago + "</abbr>";
 	} else {
-		span.innerHTML = `<abbr tabindex=0 data-title='${span.innerHTML}'>` + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</abbr>";	
+		if (days_ago < 0) {
+			span.innerHTML = `<abbr tabindex=0 data-title='${span.innerHTML}'>` + "in " + -days_ago + (days_ago==-1 ? " day" : " days") + "</abbr>";	
+		} else {
+			span.innerHTML = `<abbr tabindex=0 data-title='${span.innerHTML}'>` + days_ago + (days_ago==1 ? " day ago" : " days ago") + "</abbr>";	
+		}
 	}
 }
 
