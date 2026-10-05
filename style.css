@@ -356,7 +356,7 @@ input[type="range"] {
 	appearance: none;
 	background: var(--secondary_bg);
 	cursor: url("/media/images/cursorhand.ico"), auto;
-	width: 400px;
+	width: 200px;
 	height: 10px;
 	border-radius: 10px;
 	margin: 10px 0px;

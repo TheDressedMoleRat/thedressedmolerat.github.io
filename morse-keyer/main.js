@@ -13,6 +13,20 @@ let dash_ms;
 let gap_ms;
 let space_ms;
 
+const smoothing = 0.001
+let started = false;
+
+const audio_context = new AudioContext();
+const oscillatior = audio_context.createOscillator();
+const gain = audio_context.createGain();
+
+oscillatior.frequency.value = 600;
+oscillatior.type = "sine";
+gain.gain.setValueAtTime(0, audio_context.currentTime)
+
+oscillatior.connect(gain);
+gain.connect(audio_context.destination);
+
 update_timings()
 slider.oninput = update_timings;
 setInterval(update_output, 60);
@@ -148,39 +162,37 @@ window.addEventListener('keydown', function(event) {
 	if (event.key == "Backspace") {
 		clear_text();
 		return;
-	} else if (event.key == "Escape") {
-		navigator.clipboard.writeText(durations.filter((_,i) => i%2==0).join("\n") + "\n\n---\n\n" + durations.filter((_,i) => i%2==1).join("\n"));
 	}
-
 
 	if (anyKeyPressed) {
 		return;
 	}
+
+	if (!started) {
+		oscillatior.start();
+		started = true;
+	}
+
+	const now = audio_context.currentTime;
+	gain.gain.setTargetAtTime(0.3, now, smoothing);
 
 	anyKeyPressed = true;
 
 	add_duration();
 });
 
-window.addEventListener('keyup', function(event) {
+function release(event) {
 	if (!anyKeyPressed) {
 		return;
 	}
 
+	const now = audio_context.currentTime;
+	gain.gain.setTargetAtTime(0, now, smoothing);
+
 	anyKeyPressed = false;
 
 	add_duration();
-});
+}
 
-// morse_button.addEventListener('mousedown', handle_press_start);
-// morse_button.addEventListener('mouseup', handle_press_end);
-
-// morse_button.addEventListener('touchstart', function(e) {
-// 	e.preventDefault();
-// 	handle_press_start();
-// }, { passive: false });
-
-// morse_button.addEventListener('touchend', function(e) {
-// 	e.preventDefault();
-// 	handle_press_end();
-// }, { passive: false });
+window.addEventListener('keyup', release);
+window.addEventListener('blur', release);
