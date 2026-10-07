@@ -74,7 +74,7 @@ That's numberwang!
 	In the literal sense and the Steve Mould sense
 I thought you said extra fries!
 Shortening <i>there are</i> to <i>there's</i> unnerves me slightly.
-sadly I think these splash texts are where most of this websites effort lies
+sadly I think these splash texts are where most of this website's effort lies
 Oh yeah that classic turn that CLEARLY says "Hurry, boy, it's waiting there for you"
 But acerooolaaaa
 Boyfriend skinner <3
@@ -234,7 +234,7 @@ function spin(canvas) {
 	canvas.style.transform = `rotate(${angle}deg)`;
 }
 
-let is_toki_pona = window.location.href.endsWith("tp.html");
+let is_toki_pona = window.location.href.endsWith("toki-pona/");
 
 if (is_toki_pona) {
 	splash_element.innerHTML = "󱤪󱤽󱥳󱥍󱤰󱤄";

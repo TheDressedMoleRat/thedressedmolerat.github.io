@@ -308,7 +308,7 @@ table {
 /* BORING */
 iframe { border: none; }
 @keyframes bg { 0%{transform:translateY(0px);} 100%{transform:translate(128px,128px);} }
-.sitelen, .sitelen *:not(.not_sitelen) { font-family: "nishiki", var(--body_font); word-break: break-all; font-size: 17pt;}
+* { word-break: break-all; overflow-wrap: anywhere; white-space: normal;}
 .sitelen h1 { font-size: 30pt !important; font-weight: normal; }
 .sitelen h2 { font-size: 20pt !important; font-weight: normal; }
 a { color: var(--links); text-decoration: none; cursor: url("/media/images/cursorhand.ico"), auto; }
