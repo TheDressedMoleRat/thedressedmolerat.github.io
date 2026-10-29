@@ -130,7 +130,21 @@ let splash_index = 0;
 const splash_element = document.getElementById("splash");
 
 const theme_dicts = [
-	{ // default
+	{ // pink
+		bg: '#ff95bd',
+		box_bg: 'white',
+		secondary_bg: '#f7669c',
+		text: '#f7669c',
+		links: '#00abff',
+		splash: '#ff95bd',
+		button_text: 'white',
+		body_font: "Comic Sans MS, Comic Neue, cursive, sans-serif",
+		heading_font: "Comic Sans MS, Comic Neue, cursive, sans-serif",
+		box_rounding: "0px",
+		bg_image:"url(/media/images/backgrounds/pink.webp)",
+		bg_animation: "6s linear infinite bg",
+	},
+	{ // dark
 		bg: '#282a36',
 		box_bg: '#282a36',
 		secondary_bg: '#44475A',
@@ -171,20 +185,6 @@ const theme_dicts = [
 		box_rounding: "0px",
 		bg_image:"url(/media/images/backgrounds/spacebg.gif)",
 		bg_animation: "none",
-	},
-	{ // pink
-		bg: '#ff95bd',
-		box_bg: 'white',
-		secondary_bg: '#f7669c',
-		text: '#f7669c',
-		links: '#00abff',
-		splash: '#ff95bd',
-		button_text: 'white',
-		body_font: "Comic Sans MS, Comic Neue, cursive, sans-serif",
-		heading_font: "Comic Sans MS, Comic Neue, cursive, sans-serif",
-		box_rounding: "0px",
-		bg_image:"url(/media/images/backgrounds/pink.webp)",
-		bg_animation: "6s linear infinite bg",
 	}
 ];
 
