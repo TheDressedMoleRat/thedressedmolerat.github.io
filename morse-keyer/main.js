@@ -27,8 +27,8 @@ gain.gain.setValueAtTime(0, audio_context.currentTime)
 oscillatior.connect(gain);
 gain.connect(audio_context.destination);
 
-update_timings()
-slider.oninput = update_timings;
+if (auto_checkbox) update_timings();
+if (slider) slider.oninput = update_timings;
 setInterval(update_output, 60);
 
 function get_threshold(unsorted_list) {
@@ -91,7 +91,8 @@ function update_timings() {
 	space_ms = 7 * unit;
 
 	let real_wpm = get_real_wpm()
-	slider_display.textContent = `Keyer speed: ${slider.value} wpm. Actual speed: ${isNaN(real_wpm) ? 0 : real_wpm} words per minute`;}
+	slider_display.textContent = `Keyer speed: ${slider.value} wpm. Actual speed: ${isNaN(real_wpm) ? 0 : real_wpm} words per minute`;
+}
 
 function add_duration() {
 	if (last_toggle == 0) {
@@ -110,7 +111,7 @@ function letter(morse) {
 }
 
 function update_output() {
-	if (auto_checkbox.checked) {
+	if (auto_checkbox == null || auto_checkbox.checked) {
 		dash_ms = get_threshold(durations.filter((_, i) => i%2 == 0))
 		unit = dash_ms / 3;
 		gap_ms = 3 * unit;
@@ -121,8 +122,8 @@ function update_output() {
 
 		let real_wpm = get_real_wpm();
 
-		slider_display.textContent = `Keyer speed: [${wpm} wpm]. Actual speed: ${isNaN(real_wpm) ? 0 : real_wpm} words per minute`;
-		slider.value = wpm;
+		if (slider_display) slider_display.textContent = `Keyer speed: [${wpm} wpm]. Actual speed: ${isNaN(real_wpm) ? 0 : real_wpm} words per minute`;
+		if (slider) slider.value = wpm;
 
 	} else {
 		update_timings();
